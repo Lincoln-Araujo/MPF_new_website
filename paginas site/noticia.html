@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <title>MPF — Notícia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>:root{--brand:#150063;}</style>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-gray-900 focus:shadow">
+      Pular para o conteúdo
+    </a>
+
+    <!-- (Use o MESMO topbar + header do noticias.html aqui) -->
+    <!-- Para economizar, copie e cole o header inteiro de noticias.html -->
+
+    <main id="main-content" class="mx-auto max-w-7xl px-4 py-8">
+      <!-- Breadcrumb -->
+      <nav aria-label="Breadcrumb" class="text-sm text-gray-600">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="index.html" class="hover:underline">Início</a></li>
+          <li class="text-gray-300">/</li>
+          <li><a href="noticias.html" class="hover:underline">Notícias</a></li>
+          <li class="text-gray-300">/</li>
+          <li class="text-gray-900 font-medium">Notícia</li>
+        </ol>
+      </nav>
+
+      <article class="mt-6 grid gap-6 lg:grid-cols-12">
+        <!-- Conteúdo -->
+        <div class="lg:col-span-8">
+          <header class="rounded-2xl border border-gray-200 bg-white p-6 sm:p-8">
+            <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Destaque institucional</p>
+            <h1 class="mt-2 text-2xl sm:text-3xl font-semibold leading-tight">
+              Título da notícia (placeholder)
+            </h1>
+            <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-600">
+              <span><strong class="text-gray-900">Data:</strong> 18/12/2025</span>
+              <span><strong class="text-gray-900">Autor:</strong> Assessoria</span>
+              <span><strong class="text-gray-900">Categoria:</strong> Comunicação</span>
+            </div>
+          </header>
+
+          <!-- Imagem destaque -->
+          <div class="mt-6 overflow-hidden rounded-2xl border border-gray-200 bg-gray-200">
+            <div class="aspect-[3/2] overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=80"
+                alt="Imagem relacionada à notícia"
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          <!-- Corpo -->
+          <section class="mt-6 rounded-2xl border border-gray-200 bg-white p-6 sm:p-8">
+            <div class="prose max-w-none">
+              <!-- Placeholder: Plone “corpo da notícia” entra aqui -->
+              <p class="text-gray-700 leading-relaxed">
+                Aqui entra o texto completo da notícia. No Plone, isso é o corpo do item “Notícia”.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Se tiver subtítulos, listas e links, o layout aguenta bem.
+              </p>
+            </div>
+
+            <!-- Anexos (placeholder) -->
+            <div class="mt-8 border-t border-gray-200 pt-6">
+              <h2 class="text-lg font-semibold">Anexos</h2>
+              <ul class="mt-3 grid gap-2 text-sm">
+                <li>
+                  <a href="#" class="inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-3 hover:bg-gray-50">
+                    <span class="font-medium">Documento.pdf</span>
+                    <span class="text-gray-600">— 250 KB</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4 grid gap-6">
+          <section class="rounded-2xl border border-gray-200 bg-white p-6">
+            <h2 class="text-lg font-semibold">Compartilhar</h2>
+            <div class="mt-4 grid gap-2">
+              <a class="rounded-xl border border-gray-200 px-4 py-3 hover:bg-gray-50" href="#">Copiar link</a>
+              <a class="rounded-xl border border-gray-200 px-4 py-3 hover:bg-gray-50" href="#">Enviar por e-mail</a>
+            </div>
+          </section>
+
+          <section class="rounded-2xl border border-gray-200 bg-white p-6">
+            <h2 class="text-lg font-semibold">Relacionadas</h2>
+            <ul class="mt-4 grid gap-3 text-sm">
+              <li><a class="hover:underline" href="noticia.html">Notícia relacionada 1 (placeholder)</a></li>
+              <li><a class="hover:underline" href="noticia.html">Notícia relacionada 2 (placeholder)</a></li>
+              <li><a class="hover:underline" href="noticia.html">Notícia relacionada 3 (placeholder)</a></li>
+            </ul>
+          </section>
+        </aside>
+      </article>
+    </main>
+
+    <!-- (Use o MESMO footer do noticias.html aqui) -->
+  </body>
+</html>

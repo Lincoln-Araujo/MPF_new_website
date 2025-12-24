@@ -1,0 +1,140 @@
+<!-- Skip link -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-gray-900 focus:shadow"
+    >
+      Pular para o conteúdo
+    </a>
+
+    <!-- Topbar -->
+    <div class="bg-[color:var(--brand)] text-white">
+      <div class="mx-auto max-w-[1440px] px-4 py-2 text-sm flex items-center justify-between gap-3">
+        <a href="https://www.mpu.mp.br" target="_blank" class="truncate">
+          Ministério Público da União
+          <span class="opacity-80">| Rede Institucional</span>
+        </a>
+        <nav aria-label="Links institucionais" class="hidden sm:flex items-center gap-4">
+          <a class="hover:underline" href="#">Acesso à informação</a>
+          <a class="hover:underline" href="#">Transparência</a>
+          <a class="hover:underline" href="#">Mapa do site</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 py-3">
+      <div class="mx-auto max-w-[1440px]  px-4 flex items-center justify-between gap-4">
+        <!-- Marca (texto + monograma maior) -->
+        <a href="#" class="flex items-center gap-3 min-w-0">
+          <div
+            class="h-30 w-30 sm:h-30 sm:w-30 bg-[color:var(--brand)]/10 grid place-items-center"
+            aria-hidden="true"
+          >
+            <span class="text-lg sm:text-5xl font-bold text-[color:var(--brand)] tracking-wide">MPF</span>
+          </div>
+
+          <div class="min-w-0 leading-tight">
+            <p class="text-sm sm:text-sm font-semibold text-gray-900 truncate">Ministério Público Federal</p>
+            <p class="text-sm text-gray-600 truncate">Portal institucional</p>
+          </div>
+        </a>
+
+        <!-- Nav desktop -->
+        <nav aria-label="Navegação principal" class="hidden lg:flex items-center gap-6">
+          <a class="text-gray-900 hover:text-[color:var(--brand)] font-medium" href="#">Notícias</a>
+          <a class="text-gray-900 hover:text-[color:var(--brand)] font-medium" href="#">Serviços</a>
+          <a class="text-gray-900 hover:text-[color:var(--brand)] font-medium" href="#">Institucional</a>
+          <a class="text-gray-900 hover:text-[color:var(--brand)] font-medium" href="#">Contato</a>
+        </nav>
+
+        <!-- Busca + Menu -->
+        <div class="flex items-center gap-2">
+          <form class="hidden md:block" role="search" aria-label="Buscar no site">
+            <label class="sr-only" for="site-search">Buscar</label>
+            <div class="flex items-center gap-2">
+              <input
+                id="site-search"
+                name="q"
+                type="search"
+                placeholder="Buscar…"
+                class="w-72 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+              />
+              <button
+                type="submit"
+                class="rounded-xl bg-[color:var(--brand)] px-4 py-2 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+              >
+                Buscar
+              </button>
+            </div>
+          </form>
+
+          <button
+            type="button"
+            data-menu-button
+            class="lg:hidden inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile overlay -->
+      <div data-menu-overlay class="fixed inset-0 z-40 bg-black/40" hidden></div>
+
+      <!-- Mobile panel -->
+      <nav
+        id="mobile-menu"
+        data-menu-panel
+        class="fixed right-0 top-0 z-50 h-full w-[88%] max-w-sm bg-white shadow-xl border-l border-gray-200"
+        hidden
+        tabindex="-1"
+        aria-label="Menu mobile"
+      >
+        <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+          <p class="font-semibold text-gray-900">Menu</p>
+          <button
+            type="button"
+            class="rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+            aria-label="Fechar menu"
+            data-menu-close
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="p-4">
+          <form class="md:hidden" role="search" aria-label="Buscar no site (mobile)">
+            <label class="sr-only" for="site-search-mobile">Buscar</label>
+            <input
+              id="site-search-mobile"
+              name="q"
+              type="search"
+              placeholder="Buscar…"
+              class="w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+            />
+            <button
+              type="submit"
+              class="mt-2 w-full rounded-xl bg-[color:var(--brand)] px-4 py-2 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+            >
+              Buscar
+            </button>
+          </form>
+
+          <div class="mt-6 grid gap-2">
+            <a class="rounded-xl px-3 py-2 text-gray-900 hover:bg-gray-50 font-medium" href="#">Notícias</a>
+            <a class="rounded-xl px-3 py-2 text-gray-900 hover:bg-gray-50 font-medium" href="#">Serviços</a>
+            <a class="rounded-xl px-3 py-2 text-gray-900 hover:bg-gray-50 font-medium" href="#">Institucional</a>
+            <a class="rounded-xl px-3 py-2 text-gray-900 hover:bg-gray-50 font-medium" href="#">Contato</a>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-gray-200 grid gap-2 text-sm">
+            <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Acesso à informação</a>
+            <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Transparência</a>
+            <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Mapa do site</a>
+          </div>
+        </div>
+      </nav>
+    </header>
