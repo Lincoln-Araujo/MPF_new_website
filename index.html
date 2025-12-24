@@ -2,350 +2,478 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>MPF — Notícias e serviços</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>MPF — Notícias e serviços</title>
 
-    <!-- Tailwind CDN (protótipo rápido) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CDN (protótipo rápido) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-        :root {
-            --brand: #150063;
-          }
-    </style>
+  <!-- Titillium Web -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --mpf-blue: #150063;
+      --brand: var(--mpf-blue);
+      --shade-dark: rgba(0,0,0,.55);
+      --shade-dark-2: rgba(0,0,0,.25);
+    }
+
+    body {
+      font-family: "Titillium Web", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+  </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
-    <!-- Skip link -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-gray-900 focus:shadow">
-      Pular para o conteúdo
-    </a>
+  <!-- Skip link -->
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-gray-900 focus:shadow">
+    Pular para o conteúdo
+  </a>
 
-    <!-- Topbar -->
-    <div class="bg-[color:var(--brand)] text-white">
-        <div class="mx-auto max-w-[1440px] px-4 py-2 text-sm flex items-center justify-between gap-3">
-            <a href="https://www.mpu.mp.br" target="_blank" class="truncate">
-                Ministério Público da União
-                <span class="opacity-80">| Rede Institucional</span>
-            </a>
-            <nav aria-label="Links institucionais" class="hidden sm:flex items-center gap-4">
-                <a class="hover:underline" href="#">Acesso à informação</a>
-                <a class="hover:underline" href="#">Transparência</a>
-                <a class="hover:underline" href="#">Ouvidoria</a>
-            </nav>
-        </div>
-    </div>
+  <header class="bg-white border-b border-gray-200">
+  <div class="mx-auto max-w-[1440px] px-4">
 
-    <!-- Header -->
-    <header class="bg-white border-b border-gray-200 py-3">
-        <div class="mx-auto max-w-[1440px]  px-4 flex items-center justify-between gap-4">
-            <!-- Marca (texto + monograma maior) -->
-            <a href="#" class="flex items-center gap-3 min-w-0">
-                <div class="h-30 w-30 sm:h-30 sm:w-30 bg-[color:var(--brand)]/10 grid place-items-center" aria-hidden="true">
-                    <span class="text-lg sm:text-5xl font-bold text-[color:var(--brand)] tracking-wide">MPF</span>
-                </div>
+    <!-- Linha superior: Logo grande + acessibilidade + links institucionais -->
+    <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
 
-                <div class="min-w-0 leading-tight">
-                    <p class="text-sm sm:text-sm font-semibold text-gray-900 truncate">Ministério Público Federal</p>
-                    <p class="text-sm text-gray-600 truncate">Portal institucional</p>
-                </div>
-            </a>
+      <!-- LOGO (grande) -->
+      <a href="#" class="flex items-center gap-4">
+        <img
+          src="assets/logo-mpf.png"
+          alt="Ministério Público Federal"
+          class="h-28 sm:h-28 w-auto"
+        />
+      </a>
 
-            <!-- Nav desktop -->
-            <nav aria-label="Navegação principal" class="hidden lg:flex items-center gap-6">
-                <a class="text-gray-900 hover:text-[color:var(--brand)] font-medium" href="#">Notícias</a>
-                <a class="text-gray-900 hover:text-[color:var(--brand)] font-medium" href="#">Serviços</a>
-                <a class="text-gray-900 hover:text-[color:var(--brand)] font-medium" href="#">Institucional</a>
-                <a class="text-gray-900 hover:text-[color:var(--brand)] font-medium" href="#">Contato</a>
-            </nav>
+      <!-- Direita (desktop): acessibilidade + links institucionais -->
+      <div class="hidden md:flex items-center gap-6">
 
-            <!-- Busca + Menu -->
-            <div class="flex items-center gap-2">
-                <form class="hidden md:block" role="search" aria-label="Buscar no site">
-                    <label class="sr-only" for="site-search">Buscar</label>
-                    <div class="flex items-center gap-2">
-                        <input id="site-search" name="q" type="search" placeholder="Buscar…" class="w-72 rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" />
-                        <button type="submit" class="rounded-xl bg-[color:var(--brand)] px-4 py-2 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                            Buscar
-                        </button>
-                    </div>
-                </form>
+        <!-- Ferramentas de acessibilidade -->
+        <div class="flex items-center gap-2 text-sm">
+          <a
+            href="#acessibilidade"
+            class="rounded-lg px-2 py-1 text-gray-700 hover:bg-gray-50 hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            aria-label="Ir para informações de acessibilidade"
+          >
+            Acessibilidade
+          </a>
 
-                <button type="button" data-menu-button class="lg:hidden inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-                aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
-                    ☰
-                </button>
-            </div>
-        </div>
+          <div class="h-5 w-px bg-gray-200" aria-hidden="true"></div>
 
-        <!-- Mobile overlay -->
-        <div data-menu-overlay class="fixed inset-0 z-40 bg-black/40" hidden></div>
-
-        <!-- Mobile panel -->
-        <nav id="mobile-menu" data-menu-panel class="fixed right-0 top-0 z-50 h-full w-[88%] max-w-sm bg-white shadow-xl border-l border-gray-200" hidden tabindex="-1" aria-label="Menu mobile">
-            <div class="p-4 border-b border-gray-200 flex items-center justify-between">
-                <p class="font-semibold text-gray-900">Menu</p>
-                <button type="button" class="rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" aria-label="Fechar menu" data-menu-close>
-                    ✕
-                </button>
-            </div>
-
-            <div class="p-4">
-                <form class="md:hidden" role="search" aria-label="Buscar no site (mobile)">
-                    <label class="sr-only" for="site-search-mobile">Buscar</label>
-                    <input id="site-search-mobile" name="q" type="search" placeholder="Buscar…" class="w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" />
-                    <button type="submit" class="mt-2 w-full rounded-xl bg-[color:var(--brand)] px-4 py-2 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Buscar
-                    </button>
-                </form>
-
-                <div class="mt-6 grid gap-2">
-                    <a class="rounded-xl px-3 py-2 text-gray-900 hover:bg-gray-50 font-medium" href="#">Notícias</a>
-                    <a class="rounded-xl px-3 py-2 text-gray-900 hover:bg-gray-50 font-medium" href="#">Serviços</a>
-                    <a class="rounded-xl px-3 py-2 text-gray-900 hover:bg-gray-50 font-medium" href="#">Institucional</a>
-                    <a class="rounded-xl px-3 py-2 text-gray-900 hover:bg-gray-50 font-medium" href="#">Contato</a>
-                </div>
-
-                <div class="mt-6 pt-6 border-t border-gray-200 grid gap-2 text-sm">
-                    <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Acesso à informação</a>
-                    <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Transparência</a>
-                    <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Mapa do site</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Page -->
-    <div class="mpf-tailwind">
-        <main id="main-content" class="mx-auto max-w-[1440px] px-6 py-8">
-            <!-- Faixa institucional -->
-            <div class="mb-8 relative overflow-hidden rounded-2xl border border-gray-200 bg-white">
-                <div class="absolute inset-0 bg-gradient-to-r from-[color:var(--brand)]/10 via-white to-white"></div>
-                <div class="relative p-6 sm:p-8">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Portal</p>
-                    <h1 class="mt-2 text-2xl sm:text-3xl font-semibold leading-tight">
-                        Notícias e serviços do Ministério Público Federal
-                    </h1>
-                    <p class="mt-2 text-sm text-gray-600 max-w-prose">
-                        Acesso rápido às principais informações e serviços.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Destaque + Serviços -->
-            <section class="grid gap-6 lg:grid-cols-3">
-                <!-- COLUNA ESQUERDA: destaque + banner -->
-                <div class="lg:col-span-2 grid gap-6">
-                    <!-- Destaque -->
-                    <article class="rounded-2xl bg-white border border-gray-200">
-                        <div class="grid md:grid-cols-12">
-                            <!-- Imagem 15/10 (3:2) -->
-                            <div class="md:col-span-6 bg-gray-200">
-                                <div class="aspect-[3/2] rounded-l-2xl md:aspect-auto md:h-full overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=80" alt="Imagem institucional ilustrativa" class="h-full w-full object-cover" loading="lazy" />
-                                </div>
-                            </div>
-
-                            <!-- Texto -->
-                            <div class="md:col-span-6 p-6 sm:p-8 flex flex-col">
-                                <div class="flex flex-wrap items-center gap-2">
-                                    <span class="inline-flex items-center rounded-full bg-[color:var(--brand)]/10 pr-3 py-1 text-xs font-semibold text-[color:var(--brand)]">
-                                        Destaque institucional
-                                    </span>
-                                    <span class="text-xs text-gray-500">18/12/2025 • Assessoria</span>
-                                </div>
-
-                                <!-- TÍTULO (fonte antiga) -->
-                                <h2 class="mt-3 text-xl sm:text-2xl font-semibold leading-tight">
-                                    MPF atua em tema de grande relevância pública com medidas emergenciais
-                                </h2>
-
-                                <!-- DESCRIÇÃO (fonte antiga) -->
-                                <p class="mt-3 text-base text-gray-600 leading-relaxed max-w-prose">
-                                    Texto-resumo curto (2–3 linhas) para contextualizar. Isso deixa a home “viva” e bem institucional, sem cara de manchete sensacionalista.
-                                </p>
-
-                                <!-- Botões -->
-                                <div class="mt-auto pt-5 flex flex-wrap items-center gap-3">
-                                    <a href="#" class="inline-flex items-center justify-center rounded-xl bg-[color:var(--brand)] px-5 py-2.5 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                                        Ler notícia
-                                    </a>
-                                    <a href="#" class="inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                                        Ver todas as notícias
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Banner placeholder -->
-                    <section class="rounded-2xl border border-gray-200 bg-white h-[140px] grid place-items-center text-sm text-gray-500" aria-label="banner">
-                        banner
-                    </section>
-                </div>
-
-                <!-- COLUNA DIREITA: serviços -->
-                <aside class="overflow-hidden rounded-2xl bg-white border border-gray-200">
-                    <div class="p-6 border-b border-gray-200">
-                        <h2 class="text-lg font-semibold">Serviços</h2>
-                        <p class="mt-1 text-sm text-gray-600">Acesso rápido aos links mais usados.</p>
-                    </div>
-
-                    <div class="p-4 grid gap-2">
-                        <a class="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" href="#">
-                            <p class="font-medium">Denúncias e representações</p>
-                            <p class="text-sm text-gray-600">Envie informações e acompanhe orientações.</p>
-                        </a>
-
-                        <a class="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" href="#">
-                            <p class="font-medium">Acesso à informação</p>
-                            <p class="text-sm text-gray-600">Pedidos, prazos e transparência.</p>
-                        </a>
-
-                        <a class="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" href="#">
-                            <p class="font-medium">Contatos e endereços</p>
-                            <p class="text-sm text-gray-600">Unidades e canais oficiais.</p>
-                        </a>
-
-                        <a class="rounded-xl border border-gray-200 bg-white px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" href="#">
-                            <p class="font-medium">Perguntas frequentes</p>
-                            <p class="text-sm text-gray-600">Dúvidas comuns e orientações.</p>
-                        </a>
-                    </div>
-
-                    <div class="p-4 pt-0">
-                        <a href="#" class="inline-flex w-full items-center justify-center rounded-xl bg-gray-900 px-4 py-2.5 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-gray-900/20">
-                            Ver todos os serviços
-                        </a>
-                    </div>
-                </aside>
-            </section>
-
-
-
-
-            <!-- Últimas notícias -->
-            <section class="mt-10">
-                <div class="flex items-end justify-between gap-4">
-                    <div>
-                        <h2 class="text-xl font-semibold">Últimas notícias</h2>
-                        <p class="mt-1 text-sm text-gray-600">Atualizações institucionais e comunicados.</p>
-                    </div>
-                    <a href="#" class="text-sm font-medium text-[color:var(--brand)] hover:underline">Ver todas</a>
-                </div>
-
-                <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    <article class="overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow transition-shadow flex-col">
-                        <!-- Padronização: mesma proporção em todos os cards -->
-                        <div class="aspect-[16/9] overflow-hidden bg-gray-200">
-                            <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80" alt="Imagem ilustrativa de notícia" class="h-full w-full object-cover" loading="lazy" />
-                        </div>
-                        <div class="p-5 flex flex-col gap-2 flex-grow">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicação</p>
-                            <h3 class="mt-2 text-lg font-semibold leading-snug">
-                  <a
-                    href="#"
-                    class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded"
-                  >
-                    MPF divulga nota técnica sobre tema relevante
-                  </a>
-                </h3>
-                            <p class="mt-2 text-sm text-gray-600 leading-relaxed">
-                                Resumo curto da notícia. 2 linhas no máximo pra manter o card limpo.
-                            </p>
-                            <p class="mt-auto text-xs text-gray-500">18/12/2025</p>
-                        </div>
-                    </article>
-
-                    <article class="overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow transition-shadow flex-col">
-                        <div class="aspect-[16/9] overflow-hidden bg-gray-200">
-                            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80" alt="Imagem ilustrativa de documento" class="h-full w-full object-cover" loading="lazy" />
-                        </div>
-                        <div class="p-5 flex flex-col gap-2 flex-grow">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Atuação</p>
-                            <h3 class="mt-2 text-lg font-semibold leading-snug">
-                  <a
-                    href="#"
-                    class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded"
-                  >
-                    Ação institucional é apresentada em reunião pública
-                  </a>
-                </h3>
-                            <p class="mt-2 text-sm text-gray-600 leading-relaxed">
-                                Resumo curto e objetivo, mantendo leitura fácil e visual institucional.
-                            </p>
-                            <p class="mt-auto text-xs text-gray-500">18/12/2025</p>
-                        </div>
-                    </article>
-
-                    <article class="overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow transition-shadow flex-col">
-                        <div class="aspect-[16/9] overflow-hidden bg-gray-200">
-                            <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80" alt="Imagem ilustrativa de atendimento" class="h-full w-full object-cover" loading="lazy" />
-                        </div>
-                        <div class="p-5 flex flex-col gap-2 flex-grow">
-                            <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Serviços</p>
-                            <h3 class="mt-2 text-lg font-semibold leading-snug">
-                  <a
-                    href="#"
-                    class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded"
-                  >
-                    Orientações de atendimento e canais oficiais
-                  </a>
-                </h3>
-                            <p class="mt-2 text-sm text-gray-600 leading-relaxed">
-                                Breve descrição para guiar o usuário e reduzir fricção.
-                            </p>
-                            <p class="mt-auto text-xs text-gray-500">18/12/2025</p>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-            <!-- Mais lidas + Atalhos -->
-            <section class="mt-10 grid gap-6 lg:grid-cols-3">
-                <div class="lg:col-span-2 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                    <h2 class="text-lg font-semibold">Mais lidas</h2>
-                    <ol class="mt-4 grid gap-3">
-                        <li class="flex gap-3">
-                            <span class="mt-0.5 h-6 w-6 shrink-0 rounded-lg bg-[color:var(--brand)]/10 text-[color:var(--brand)] grid place-items-center text-xs font-semibold">1</span
-                >
-                <a
-                  class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded"
-                  href="#"
-                >
-                  Comunicado institucional sobre tema de interesse público
-                </a>
-              </li>
-              <li class="flex gap-3">
-                <span
-                  class="mt-0.5 h-6 w-6 shrink-0 rounded-lg bg-[color:var(--brand)]/10 text-[color:var(--brand)] grid place-items-center text-xs font-semibold"
-                  >2</span
-                >
-                <a
-                  class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded"
-                  href="#"
-                >
-                  Orientações e canais oficiais de atendimento
-                </a>
-              </li>
-              <li class="flex gap-3">
-                <span
-                  class="mt-0.5 h-6 w-6 shrink-0 rounded-lg bg-[color:var(--brand)]/10 text-[color:var(--brand)] grid place-items-center text-xs font-semibold"
-                  >3</span
-                >
-                <a
-                  class="font-medium hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded"
-                  href="#"
-                >
-                  Nota técnica: perguntas frequentes e procedimentos
-                </a>
-              </li>
-            </ol>
+          <!-- Fonte A- / A / A+ -->
+          <div class="flex items-center gap-1" aria-label="Tamanho do texto">
+            <button
+              type="button"
+              data-font="decrease"
+              class="rounded-lg border border-gray-200 px-2 py-1 text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              aria-label="Diminuir tamanho do texto"
+            >
+              A-
+            </button>
+            <button
+              type="button"
+              data-font="reset"
+              class="rounded-lg border border-gray-200 px-2 py-1 text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              aria-label="Restaurar tamanho do texto"
+            >
+              A
+            </button>
+            <button
+              type="button"
+              data-font="increase"
+              class="rounded-lg border border-gray-200 px-2 py-1 text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              aria-label="Aumentar tamanho do texto"
+            >
+              A+
+            </button>
           </div>
 
-          <aside class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div class="h-5 w-px bg-gray-200" aria-hidden="true"></div>
+
+          <!-- Alto contraste (switch) -->
+          <button
+            type="button"
+            data-contrast-toggle
+            role="switch"
+            aria-checked="false"
+            class="rounded-lg border border-gray-200 px-3 py-1 text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            aria-label="Ativar alto contraste"
+          >
+            Alto contraste
+          </button>
+
+          <div class="h-5 w-px bg-gray-200" aria-hidden="true"></div>
+
+          <!-- VLibras (atalho / placeholder) -->
+          <a
+            href="#vlibras"
+            class="rounded-lg border border-gray-200 px-3 py-1 text-gray-800 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            aria-label="Ativar VLibras"
+          >
+            VLibras
+          </a>
+        </div>
+
+        <!-- Links obrigatórios -->
+        <nav aria-label="Links institucionais" class="flex items-center gap-4 text-sm">
+          <a href="#" class="text-gray-700 hover:underline">Acesso à informação</a>
+          <a href="#" class="text-gray-700 hover:underline">Transparência</a>
+          <a href="#" class="text-gray-700 hover:underline">Ouvidoria</a>
+        </nav>
+      </div>
+
+      <!-- Mobile: botão menu -->
+      <div class="flex items-center justify-between md:hidden">
+        <p class="text-sm text-gray-600">Portal institucional</p>
+        <button
+          type="button"
+          data-menu-button
+          class="inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Linha inferior: navegação + busca -->
+    <div class="flex items-center justify-between gap-6 py-3 border-t border-gray-100">
+      <nav aria-label="Navegação principal" class="hidden lg:flex items-center gap-6">
+        <a class="font-medium text-gray-900 hover:text-[color:var(--mpf-blue)]" href="#">Serviços</a>
+        <a class="font-medium text-gray-900 hover:text-[color:var(--mpf-blue)]" href="#">Notícias</a>
+        <a class="font-medium text-gray-900 hover:text-[color:var(--mpf-blue)]" href="#">Institucional</a>
+        <a class="font-medium text-gray-900 hover:text-[color:var(--mpf-blue)]" href="#">Contato</a>
+      </nav>
+
+      <form class="hidden md:flex items-center gap-2" role="search" aria-label="Buscar no site">
+        <label class="sr-only" for="site-search">Buscar</label>
+        <input
+          id="site-search"
+          name="q"
+          type="search"
+          placeholder="Buscar…"
+          class="w-64 rounded-xl border border-gray-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+        />
+        <button
+          type="submit"
+          class="rounded-xl bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+        >
+          Buscar
+        </button>
+      </form>
+    </div>
+
+    <!-- (Opcional) Menu mobile: aqui você pode incluir as ferramentas também -->
+    <!-- Mantém seu painel mobile atual; dentro dele, coloque um bloco "Acessibilidade" com os mesmos botões -->
+  </div>
+</header>
+
+
+
+  <!-- Page -->
+  <div class="mpf-tailwind">
+    <main id="main-content" class="mx-auto max-w-[1440px] px-6 py-8">
+      <!-- Faixa institucional (com imagem + shade) -->
+
+
+
+
+      <!-- Serviços (70%) + Banner + Destaques (30%) -->
+      <section aria-labelledby="hub-servicos-titulo" class="grid gap-6 lg:grid-cols-12 lg:items-stretch">
+        <!-- COLUNA 70% — SERVIÇOS -->
+        <div class="lg:col-span-8">
+          <div class="h-full overflow-hidden rounded-2xl border border-gray-200 bg-white flex flex-col">
+            <!-- Cabeçalho com imagem + shade -->
+            <header class="relative overflow-hidden">
+              <div class="relative h-28 sm:h-32 md:h-36">
+                <img src="./assets/MPF-sede.jpg"
+                  alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              </div>
+
+              <!-- Shade garantido -->
+              <div class="absolute inset-0"
+                style="background: linear-gradient(90deg, rgba(0,0,0,.80) 0%, rgba(0,0,0,.50) 45%, rgba(0,0,0,.28) 100%);">
+              </div>
+
+              <div class="absolute inset-0 p-6 sm:p-8 flex items-end">
+                <div class="text-white max-w-2xl">
+                  <p class="text-xs font-semibold uppercase tracking-wider opacity-90">
+                    Para o cidadão
+                  </p>
+                  <h2 id="hub-servicos-titulo" class="mt-2 text-2xl sm:text-3xl font-semibold leading-tight">
+                    Serviços
+                  </h2>
+                  <p class="mt-2 text-sm sm:text-base text-white/90">
+                    Acesse rápido os serviços mais procurados do MPF.
+                  </p>
+                </div>
+              </div>
+            </header>
+
+            <!-- Grid -->
+            <div class="p-6 sm:p-8 flex-1">
+              <ul class="grid gap-4 sm:grid-cols-2">
+                <li>
+                  <a href="#"
+                    class="group block h-full rounded-2xl border border-gray-200 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    <div class="flex items-start gap-4">
+                      <div
+                        class="h-11 w-11 shrink-0 rounded-2xl bg-[color:var(--brand)]/10 grid place-items-center border border-[color:var(--brand)]/15"
+                        aria-hidden="true">
+                        <span class="text-[color:var(--brand)] font-bold">P</span>
+                      </div>
+                      <div class="min-w-0">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:underline">Protocolo</h3>
+                        <p class="mt-1 text-sm text-gray-600 leading-relaxed">
+                          Envie documentos ao MPF e acompanhe o andamento do seu pedido.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#"
+                    class="group block h-full rounded-2xl border border-gray-200 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    <div class="flex items-start gap-4">
+                      <div
+                        class="h-11 w-11 shrink-0 rounded-2xl bg-[color:var(--brand)]/10 grid place-items-center border border-[color:var(--brand)]/15"
+                        aria-hidden="true">
+                        <span class="text-[color:var(--brand)] font-bold">D</span>
+                      </div>
+                      <div class="min-w-0">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:underline">Denúncia</h3>
+                        <p class="mt-1 text-sm text-gray-600 leading-relaxed">
+                          Informe irregularidades ou solicite providências ao Ministério Público Federal.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#"
+                    class="group block h-full rounded-2xl border border-gray-200 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    <div class="flex items-start gap-4">
+                      <div
+                        class="h-11 w-11 shrink-0 rounded-2xl bg-[color:var(--brand)]/10 grid place-items-center border border-[color:var(--brand)]/15"
+                        aria-hidden="true">
+                        <span class="text-[color:var(--brand)] font-bold">🔎</span>
+                      </div>
+                      <div class="min-w-0">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:underline">Pesquisa de processos</h3>
+                        <p class="mt-1 text-sm text-gray-600 leading-relaxed">
+                          Consulte processos e documentos públicos do MPF.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#"
+                    class="group block h-full rounded-2xl border border-gray-200 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    <div class="flex items-start gap-4">
+                      <div
+                        class="h-11 w-11 shrink-0 rounded-2xl bg-[color:var(--brand)]/10 grid place-items-center border border-[color:var(--brand)]/15"
+                        aria-hidden="true">
+                        <span class="text-[color:var(--brand)] font-bold">🎓</span>
+                      </div>
+                      <div class="min-w-0">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:underline">Concursos</h3>
+                        <p class="mt-1 text-sm text-gray-600 leading-relaxed">
+                          Informações sobre Concurso PGR e Concurso Estágio.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#"
+                    class="group block h-full rounded-2xl border border-gray-200 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    <div class="flex items-start gap-4">
+                      <div
+                        class="h-11 w-11 shrink-0 rounded-2xl bg-[color:var(--brand)]/10 grid place-items-center border border-[color:var(--brand)]/15"
+                        aria-hidden="true">
+                        <span class="text-[color:var(--brand)] font-bold">O</span>
+                      </div>
+                      <div class="min-w-0">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:underline">Ouvidoria</h3>
+                        <p class="mt-1 text-sm text-gray-600 leading-relaxed">
+                          Envie reclamações, elogios, sugestões ou pedidos de informação.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#"
+                    class="group block h-full rounded-2xl border border-gray-200 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    <div class="flex items-start gap-4">
+                      <div
+                        class="h-11 w-11 shrink-0 rounded-2xl bg-[color:var(--brand)]/10 grid place-items-center border border-[color:var(--brand)]/15"
+                        aria-hidden="true">
+                        <span class="text-[color:var(--brand)] font-bold">C</span>
+                      </div>
+                      <div class="min-w-0">
+                        <h3 class="text-lg font-semibold text-gray-900 group-hover:underline">Certidões</h3>
+                        <p class="mt-1 text-sm text-gray-600 leading-relaxed">
+                          Emita certidões negativas relacionadas ao MPF.
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+
+              <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <p class="text-xs text-gray-600">
+                  Não achou? Use a página completa de serviços.
+                </p>
+
+                <a href="/mpfservicos"
+                  class="inline-flex items-center justify-center rounded-xl bg-[color:var(--brand)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  Ver todos os serviços
+                </a>
+              </div>
+
+              <!-- Últimas notícias (compacto, pra preencher o espaço sem competir) -->
+<section aria-labelledby="ultimas-titulo" class="mt-6 rounded-2xl border border-gray-200 bg-gray-50 p-5">
+  <div class="flex items-center justify-between gap-4">
+    <h3 id="ultimas-titulo" class="text-sm font-semibold text-gray-900">
+      Últimas notícias
+    </h3>
+    <a href="#" class="text-xs font-semibold text-[color:var(--brand)] hover:underline">
+      Ver todas
+    </a>
+  </div>
+
+  <ol class="mt-4 grid gap-3">
+    <li class="rounded-xl bg-white border border-gray-200 px-4 py-3">
+      <p class="text-[11px] text-gray-500">18/12/2025 • Comunicação</p>
+      <a href="#" class="mt-1 block text-sm font-semibold leading-snug hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+        Nota técnica sobre tema relevante
+      </a>
+    </li>
+
+    <li class="rounded-xl bg-white border border-gray-200 px-4 py-3">
+      <p class="text-[11px] text-gray-500">18/12/2025 • Atuação</p>
+      <a href="#" class="mt-1 block text-sm font-semibold leading-snug hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+        Ação institucional apresentada em reunião pública
+      </a>
+    </li>
+
+    <li class="rounded-xl bg-white border border-gray-200 px-4 py-3">
+      <p class="text-[11px] text-gray-500">18/12/2025 • Serviços</p>
+      <a href="#" class="mt-1 block text-sm font-semibold leading-snug hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+        Orientações de atendimento e canais oficiais
+      </a>
+    </li>
+  </ol>
+</section>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUNA 30% — BANNER (pequeno) + DESTAQUES -->
+        <aside class="lg:col-span-4 flex flex-col gap-6">
+          <!-- Destaques: flex-1 pra esticar e igualar altura no desktop -->
+          <section aria-labelledby="destaques-titulo"
+            class="flex-1 rounded-2xl border border-gray-200 bg-white overflow-hidden flex flex-col">
+
+            <div class="p-6 grid gap-4">
+              <article class="rounded-2xl border border-gray-200 overflow-hidden">
+                <div class="aspect-[16/10] overflow-hidden bg-gray-200">
+                  <img
+                    src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1200&q=80"
+                    alt="Imagem do destaque"
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-4">
+                  <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
+                    Notícias
+                  </p>
+                  <h3 class="mt-1 text-base font-semibold leading-snug">
+                    <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                      Título do destaque (placeholder)
+                    </a>
+                  </h3>
+                  <p class="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-2">
+                    Resumo curto (1–2 linhas) para orientar o clique.
+                  </p>
+                  <p class="mt-3 text-xs text-gray-500">18/12/2025 • Assessoria</p>
+                </div>
+              </article>
+
+              <article class="rounded-2xl border border-gray-200 p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
+                  Comunicado
+                </p>
+                <h3 class="mt-1 text-base font-semibold leading-snug">
+                  <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                    Segundo destaque (placeholder)
+                  </a>
+                </h3>
+                <p class="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-2">
+                  Texto curto para manter leitura rápida.
+                </p>
+                <p class="mt-3 text-xs text-gray-500">18/12/2025</p>
+              </article>
+
+              <article class="rounded-2xl border border-gray-200 p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
+                  Institucional
+                </p>
+                <h3 class="mt-1 text-base font-semibold leading-snug">
+                  <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                    Terceiro destaque (placeholder)
+                  </a>
+                </h3>
+                <p class="mt-2 text-sm text-gray-600 leading-relaxed line-clamp-2">
+                  Texto curto para manter leitura rápida.
+                </p>
+                <p class="mt-3 text-xs text-gray-500">18/12/2025</p>
+              </article>
+
+              <a href="#"
+                class="mt-auto inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                Ver mais notícias
+              </a>
+            </div>
+          </section>
+
+          <!-- Banner pequeno (logo abaixo de Serviços) -->
+          <section aria-label="Banner" class="rounded-2xl border border-gray-200 bg-white overflow-hidden">
+            <div class="relative h-[100vh] max-h-[170px] bg-gray-200">
+              <img
+                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80"
+                alt=""
+                class="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 p-4 flex items-end">
+                <p class="text-xs font-semibold uppercase tracking-wider text-white/95">Banner</p>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </section>      
+
+      <div class=" mt-8 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
             <h2 class="text-lg font-semibold">Atalhos</h2>
             <div class="mt-4 grid gap-2 text-sm">
               <a
@@ -367,80 +495,67 @@
                 Endereços e contatos
               </a>
             </div>
-          </aside>
-        </section>
+        </div>
+    </main>
 
-        <!-- Callout -->
-        <section class="mt-10 rounded-2xl bg-white border border-gray-200 shadow-sm p-6 sm:p-8">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-              <h2 class="text-lg font-semibold">Precisa de um serviço específico?</h2>
-              <p class="mt-1 text-sm text-gray-600">Acesse a página de serviços para ver categorias e links.</p>
+    <!-- Footer -->
+    <footer class="mt-3 border-t border-gray-200 bg-white">
+      <div class="mx-auto max-w-[1440px] px-4 py-10 grid gap-10 lg:grid-cols-4">
+        <div class="lg:col-span-2">
+          <a href="#" class="flex items-center gap-3 min-w-0">
+            <div class="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl bg-[color:var(--brand)]/10 grid place-items-center"
+              aria-hidden="true">
+              <span class="text-2xl sm:text-4xl font-bold text-[color:var(--brand)] tracking-wide">MPF</span>
             </div>
-            <a
-              href="#"
-              class="inline-flex items-center justify-center rounded-xl bg-[color:var(--brand)] px-5 py-2.5 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-            >
-              Ir para Serviços
-            </a>
+
+            <div class="min-w-0 leading-tight">
+              <p class="text-sm sm:text-base font-semibold text-gray-900 truncate">Ministério Público Federal</p>
+              <p class="text-sm text-gray-600 truncate">Portal institucional</p>
+            </div>
+          </a>
+
+          <p class="mt-4 text-sm text-gray-600 leading-relaxed max-w-prose">
+            Conteúdo institucional para acesso rápido a informações, notícias e serviços.
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <a href="#" class="text-sm font-medium text-[color:var(--brand)] hover:underline">Acessibilidade</a>
+            <span class="text-gray-300">•</span>
+            <a href="#" class="text-sm font-medium text-[color:var(--brand)] hover:underline">Política de privacidade</a>
+            <span class="text-gray-300">•</span>
+            <a href="#" class="text-sm font-medium text-[color:var(--brand)] hover:underline">Ouvidoria</a>
           </div>
-        </section>
-      </main>
+        </div>
 
-      <!-- Footer -->
-      <footer class="mt-3 border-t border-gray-200 bg-white">
-        <div class="mx-auto max-w-[1440px] px-4 py-10 grid gap-10 lg:grid-cols-4">
-          <div class="lg:col-span-2">
-            <a href="#" class="flex items-center gap-3 min-w-0">
-                <div class="h-30 w-30 sm:h-30 sm:w-30 bg-[color:var(--brand)]/10 grid place-items-center" aria-hidden="true">
-                    <span class="text-lg sm:text-5xl font-bold text-[color:var(--brand)] tracking-wide">MPF</span>
-                </div>
+        <nav aria-label="Links do rodapé" class="grid gap-2 text-sm">
+          <p class="font-semibold text-gray-900">Serviços</p>
+          <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Atendimento</a>
+          <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Denúncias</a>
+          <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Consultas</a>
+          <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Perguntas frequentes</a>
+        </nav>
 
-                <div class="min-w-0 leading-tight">
-                    <p class="text-sm sm:text-sm font-semibold text-gray-900 truncate">Ministério Público Federal</p>
-                    <p class="text-sm text-gray-600 truncate">Portal institucional</p>
-                </div>
-            </a>
+        <div class="grid gap-2 text-sm">
+          <p class="font-semibold text-gray-900">Contato</p>
+          <p class="text-gray-700">Telefone: (00) 0000-0000</p>
+          <p class="text-gray-700">E-mail: contato@mpf.example</p>
+          <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Endereços e unidades</a>
+        </div>
+      </div>
 
-            <p class="mt-4 text-sm text-gray-600 leading-relaxed max-w-prose">
-                Conteúdo institucional para acesso rápido a informações, notícias e serviços.
-            </p>
+      <div class="bg-gray-50 border-t border-gray-200">
+        <div class="mx-auto max-w-[1440px] px-4 py-4 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-xs text-gray-600">
+          <p>© <span id="year"></span> MPF — Conteúdo institucional</p>
+          <p>Portal institucional do Ministério Público Federal</p>
+        </div>
+      </div>
+    </footer>
+  </div>
 
-            <div class="mt-4 flex flex-wrap gap-2">
-                <a href="#" class="text-sm font-medium text-[color:var(--brand)] hover:underline">Acessibilidade</a>
-                <span class="text-gray-300">•</span>
-                <a href="#" class="text-sm font-medium text-[color:var(--brand)] hover:underline">Política de privacidade</a>
-                <span class="text-gray-300">•</span>
-                <a href="#" class="text-sm font-medium text-[color:var(--brand)] hover:underline">Ouvidoria</a>
-            </div>
-            </div>
-
-            <nav aria-label="Links do rodapé" class="grid gap-2 text-sm">
-                <p class="font-semibold text-gray-900">Serviços</p>
-                <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Atendimento</a>
-                <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Denúncias</a>
-                <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Consultas</a>
-                <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Perguntas frequentes</a>
-            </nav>
-
-            <div class="grid gap-2 text-sm">
-                <p class="font-semibold text-gray-900">Contato</p>
-                <p class="text-gray-700">Telefone: (00) 0000-0000</p>
-                <p class="text-gray-700">E-mail: contato@mpf.example</p>
-                <a class="text-gray-700 hover:text-[color:var(--brand)]" href="#">Endereços e unidades</a>
-            </div>
-            </div>
-
-            <div class="bg-gray-50 border-t border-gray-200">
-                <div class="mx-auto max-w-[1440px] px-4 py-4 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-xs text-gray-600">
-                    <p>© <span id="year"></span> MPF — Conteúdo institucional</p>
-                    <p>Portal institucional do Ministério Público Federal</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script src="app.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="app.js"></script>
 </body>
 
 </html>
