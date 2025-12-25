@@ -1,0 +1,185 @@
+:root{
+  --mpf-blue:#150063;
+  --brand:var(--mpf-blue);
+
+  --shade-dark:rgba(0,0,0,.55);
+  --shade-dark-2:rgba(0,0,0,.25);
+
+  --ease-out: cubic-bezier(.2,.8,.2,1);
+  --t-fast: 140ms;
+  --t-med: 220ms;
+  --t-slow: 320ms;
+}
+
+/* Tipografia base */
+body{
+  font-family:"Titillium Web",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background-color:#f3f4f6; /* deixa mais “oficial” e menos clean */
+}
+
+/* Ajuste global p/ acessibilidade de fonte (A-/A/A+) */
+html{ font-size: var(--base-font-size, 16px); }
+
+/* Leve “faixa” institucional no topo do conteúdo */
+.mpf-tailwind main{
+  background: linear-gradient(180deg, rgba(21,0,99,.03), rgba(255,255,255,0) 240px);
+}
+
+/* Navegação superior (mais “barra oficial”) */
+.mpf-nav-item{
+  display:flex;
+  align-items:center;
+  padding:1rem;
+  height:100%;
+  font-size:0.95rem;
+  font-weight:700;
+  color:#111827; /* gray-900 */
+
+  border-left:1px solid rgba(0,0,0,.08);
+  border-right:1px solid rgba(0,0,0,.08);
+
+  background:transparent;
+  transition: background-color .2s ease, box-shadow .2s ease, color .2s ease;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.mpf-nav-item:hover{
+  background-color:rgba(21,0,99,.06);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 1px 2px rgba(0,0,0,.06);
+  color:var(--brand);
+}
+.mpf-nav-item:focus-visible{
+  outline:2px solid rgba(21,0,99,.45);
+  outline-offset:-2px;
+}
+.mpf-nav-item.is-active{
+  background-color:rgba(21,0,99,.09);
+  font-weight:700;
+}
+
+/* Alto contraste (simples) */
+body.hc{
+  background:#000 !important;
+  color:#fff !important;
+}
+body.hc a{ color:#fff; text-decoration:underline; }
+body.hc .bg-white{ background:#000 !important; }
+body.hc .text-gray-900,
+body.hc .text-gray-800,
+body.hc .text-gray-700,
+body.hc .text-gray-600,
+body.hc .text-gray-500{
+  color:#fff !important;
+}
+body.hc .border-gray-200,
+body.hc .border-gray-100,
+body.hc .border-gray-300{
+  border-color:rgba(255,255,255,.35) !important;
+}
+body.hc .bg-gray-50,
+body.hc .bg-gray-100{
+  background:#000 !important;
+}
+body.hc .shadow,
+body.hc .shadow-sm,
+body.hc .shadow-xl{
+  box-shadow:none !important;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* Links / cards: micro-interações discretas */
+a, button{
+  transition: background-color var(--t-fast) var(--ease-out),
+              color var(--t-fast) var(--ease-out),
+              border-color var(--t-fast) var(--ease-out),
+              box-shadow var(--t-fast) var(--ease-out),
+              transform var(--t-fast) var(--ease-out),
+              opacity var(--t-fast) var(--ease-out);
+}
+
+/* Um “lift” leve em cards clicáveis (sem exagero) */
+a.group:hover{
+  transform: translateY(-1px);
+}
+a.group:active{
+  transform: translateY(0);
+}
+
+/* Botão hambúrguer -> X */
+.mpf-burger{
+  width: 22px;
+  height: 16px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mpf-burger span{
+  display:block;
+  height: 2px;
+  width: 100%;
+  background: #111827;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform var(--t-med) var(--ease-out), opacity var(--t-med) var(--ease-out);
+}
+
+/* Estado aberto (vamos aplicar no HTML um atributo/data via JS) */
+html.menu-open .mpf-burger span:nth-child(1){
+  transform: translateY(7px) rotate(45deg);
+}
+html.menu-open .mpf-burger span:nth-child(2){
+  opacity: 0;
+}
+html.menu-open .mpf-burger span:nth-child(3){
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Animação do painel mobile */
+[data-menu-panel]{
+  transform: translateX(12px);
+  opacity: 0;
+  transition: transform var(--t-slow) var(--ease-out), opacity var(--t-slow) var(--ease-out);
+  will-change: transform, opacity;
+}
+
+html.menu-open [data-menu-panel]{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Overlay com fade */
+[data-menu-overlay]{
+  opacity: 0;
+  transition: opacity var(--t-slow) var(--ease-out);
+}
+html.menu-open [data-menu-overlay]{
+  opacity: 1;
+}
+
+/* dropdown "Mais" */
+[data-more-menu] a{
+  display:block;
+  padding: .6rem .75rem;
+  font-size: .95rem;
+  color:#111827;
+  text-decoration:none;
+}
+[data-more-menu] a:hover{
+  background:#f9fafb;
+}
+
+/* mantém o botão do menu sempre acima do painel */
+[data-menu-button]{ position: relative; z-index: 90; }
+
+/* quando aberto: fixa no mesmo canto (vira X) */
+html.menu-open [data-menu-button]{
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 9999;
+  background: #fff;
+}
+
