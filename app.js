@@ -6,32 +6,6 @@
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  const getCssMs = (varName, fallbackMs) => {
-    const v = getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
-    const n = parseFloat(v);
-    return Number.isFinite(n) ? n : fallbackMs;
-  };
-
-  const waitForTransition = (el, fallbackMs) =>
-    new Promise((resolve) => {
-      let done = false;
-
-      const finish = () => {
-        if (done) return;
-        done = true;
-        el.removeEventListener("transitionend", onEnd);
-        resolve();
-      };
-
-      const onEnd = (e) => {
-        // às vezes vários properties disparam; qualquer um serve
-        if (e.target === el) finish();
-      };
-
-      el.addEventListener("transitionend", onEnd, { once: false });
-      window.setTimeout(finish, fallbackMs);
-    });
-
   /* 2) Menu mobile (a11y + animação + burger) */
   (() => {
     const btn = $("[data-menu-button]");
@@ -48,22 +22,25 @@
     const getFocusable = () => $$(focusableSelector, panel);
     const isOpen = () => btn.getAttribute("aria-expanded") === "true";
 
-    const slowMs = getCssMs("--t-slow", 320);
+    const setBtnLabel = (open) => {
+      btn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+      const sr = btn.querySelector(".sr-only");
+      if (sr) sr.textContent = open ? "Fechar menu" : "Abrir menu";
+    };
 
     const openMenu = () => {
       if (isOpen()) return;
-
       lastFocus = document.activeElement;
 
       panel.hidden = false;
       overlay.hidden = false;
 
-      // reflow para garantir que o CSS pegue o estado inicial (opacity/transform)
+      // força reflow para garantir transição
       // eslint-disable-next-line no-unused-expressions
       panel.offsetHeight;
 
       btn.setAttribute("aria-expanded", "true");
-      btn.setAttribute("aria-label", "Fechar menu");
+      setBtnLabel(true);
       root.classList.add("menu-open");
       document.body.style.overflow = "hidden";
 
@@ -71,18 +48,19 @@
       (focusables[0] || panel).focus();
     };
 
-    const closeMenu = async () => {
+    const closeMenu = () => {
       if (!isOpen()) return;
 
       btn.setAttribute("aria-expanded", "false");
-      btn.setAttribute("aria-label", "Abrir menu");
+      setBtnLabel(false);
       root.classList.remove("menu-open");
       document.body.style.overflow = "";
 
-      await waitForTransition(panel, slowMs);
-
-      panel.hidden = true;
-      overlay.hidden = true;
+      // espera transição antes de esconder
+      window.setTimeout(() => {
+        panel.hidden = true;
+        overlay.hidden = true;
+      }, 320);
 
       if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
     };
@@ -172,7 +150,7 @@
     });
   })();
 
-  /* 5) “Mais” no menu desktop (joga links excedentes pro dropdown) */
+  /* 5) “Mais” no menu desktop (move links excedentes pro dropdown) */
   (() => {
     const nav = document.querySelector('nav[aria-label="Navegação principal"]');
     if (!nav) return;
@@ -187,13 +165,13 @@
       moreMenu.hidden = true;
       moreBtn.setAttribute("aria-expanded", "false");
     };
-
     const openMore = () => {
       moreMenu.hidden = false;
       moreBtn.setAttribute("aria-expanded", "true");
     };
 
-    moreBtn.addEventListener("click", () => {
+    moreBtn.addEventListener("click", (e) => {
+      e.preventDefault();
       const expanded = moreBtn.getAttribute("aria-expanded") === "true";
       expanded ? closeMore() : openMore();
     });
@@ -205,7 +183,8 @@
       if (e.key === "Escape") closeMore();
     });
 
-    const putBackOverflowLinks = () => {
+    const putBackOverflow = () => {
+      // move links do dropdown de volta pro UL antes do "Mais"
       const links = Array.from(moreMenu.querySelectorAll("a"));
       links.forEach((a) => {
         a.removeAttribute("role");
@@ -216,72 +195,104 @@
       moreMenu.innerHTML = "";
     };
 
-    const getRealItems = () => Array.from(ul.children).filter((li) => li !== moreItem);
+    const getRealItems = () =>
+      Array.from(ul.children).filter((li) => li !== moreItem);
 
-    const navVisible = () => getComputedStyle(nav).display !== "none";
+    const isOverflowing = () => ul.scrollWidth > ul.clientWidth + 1;
 
-    const isOverflowing = () => {
-      // medir por scrollWidth é mais estável do que getBoundingClientRect (fontes, zoom, etc)
-      return ul.scrollWidth > ul.clientWidth + 1;
-    };
-
-    const moveLastToMore = () => {
+    const moveOneToMore = () => {
       const items = getRealItems();
-      // evita ficar só com 1 item no menu
-      if (items.length <= 2) return false;
-
+      if (items.length <= 2) return false; // mantém pelo menos 2 itens visíveis
       const li = items[items.length - 1];
-      if (!li) return false;
+      const a = li?.querySelector("a");
+      if (!li || !a) {
+        li?.remove();
+        return true;
+      }
 
-      const link = li.querySelector("a");
       li.remove();
-
-      if (!link) return true;
 
       const menuLi = document.createElement("li");
       menuLi.setAttribute("role", "none");
-      link.setAttribute("role", "menuitem");
-      menuLi.appendChild(link);
+      a.setAttribute("role", "menuitem");
+      menuLi.appendChild(a);
       moreMenu.prepend(menuLi);
-
       return true;
     };
 
     const rebuild = () => {
       closeMore();
-      putBackOverflowLinks();
+      putBackOverflow();
 
-      moreItem.hidden = true;
-      moreMenu.hidden = true;
-
-      if (!navVisible()) return;
-
-      // 1) primeiro testa sem o "Mais"
-      if (!isOverflowing()) return;
-
-      // 2) se estourou, liga o "Mais" e vai movendo do fim até caber
-      moreItem.hidden = false;
-
-      // o "Mais" em si ocupa espaço, então precisamos reavaliar
-      while (isOverflowing()) {
-        const moved = moveLastToMore();
-        if (!moved) break;
+      // se o nav estiver oculto (ex.: abaixo do lg), não mede
+      const navVisible = getComputedStyle(nav).display !== "none";
+      if (!navVisible) {
+        moreItem.hidden = true;
+        return;
       }
 
-      // se acabou não movendo nada, não mostra
+      // começa com "Mais" escondido
+      moreItem.hidden = true;
+
+      // se estourar sem o "Mais", mostra e move do fim até caber
+      if (isOverflowing()) {
+        moreItem.hidden = false;
+
+        // por ter mostrado o "Mais", pode precisar mover mais de um item
+        while (isOverflowing()) {
+          const moved = moveOneToMore();
+          if (!moved) break;
+        }
+      }
+
+      // se não tem nada no dropdown, garante "Mais" escondido
       if (moreMenu.children.length === 0) {
         moreItem.hidden = true;
         closeMore();
       }
     };
 
-    // ResizeObserver pega resize do container; também rodamos em load + quando fontes terminam de carregar
     const ro = new ResizeObserver(rebuild);
     ro.observe(ul);
-
     window.addEventListener("load", rebuild);
-    if (document.fonts && typeof document.fonts.ready?.then === "function") {
-      document.fonts.ready.then(rebuild).catch(() => {});
-    }
+  })();
+
+  /* 6) Cookies */
+  (() => {
+    const banner = $("#cookie-banner");
+    if (!banner) return;
+
+    const accept = $("#cookie-accept", banner);
+    const reject = $("#cookie-reject", banner);
+    const settingsBtn = $("#cookie-settings", banner);
+    const settingsPanel = $("#cookie-settings-panel", banner);
+
+    const key = "mpf-cookie-consent"; // accepted | rejected
+
+    const hide = () => {
+      banner.hidden = true;
+      settingsPanel.hidden = true;
+    };
+    const show = () => {
+      banner.hidden = false;
+    };
+
+    const saved = localStorage.getItem(key);
+    if (saved !== "accepted" && saved !== "rejected") show();
+
+    accept?.addEventListener("click", () => {
+      localStorage.setItem(key, "accepted");
+      hide();
+    });
+
+    reject?.addEventListener("click", () => {
+      localStorage.setItem(key, "rejected");
+      hide();
+    });
+
+    settingsBtn?.addEventListener("click", () => {
+      const isHidden = settingsPanel.hidden;
+      settingsPanel.hidden = !isHidden;
+    });
   })();
 })();
