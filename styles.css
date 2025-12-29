@@ -296,3 +296,24 @@ html.menu-open [data-menu-button]{
   opacity: .9;
   background: var(--brand);
 }
+
+html, body { overflow-x: hidden; }
+
+[data-menu-panel]{
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+html.menu-open [data-menu-panel]{
+  transform: translateX(0);
+  opacity: 1;
+}
+
+html.menu-open, html.menu-open body { overflow: hidden; }
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.flex, .grid { min-width: 0; }
