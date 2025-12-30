@@ -877,92 +877,337 @@
       </div>
     </main>
    
-    <!-- Footer -->
-    <footer class="bg-[color:var(--brand)] text-white">
-      <div class="mx-auto max-w-[1440px] px-6 py-12 grid gap-10 lg:grid-cols-4">
+    <!-- Footer (moderninho, a11y-friendly, sem repetir “Contatos”) -->
+<footer class="bg-[color:var(--brand)] text-white relative overflow-hidden">
+  <!-- textura/shape sutil -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20">
+    <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-2xl"></div>
+    <div class="absolute -bottom-28 -left-24 h-80 w-80 rounded-full bg-white/10 blur-2xl"></div>
+  </div>
 
-        <!-- Marca + descrição -->
-        <div class="lg:col-span-2">
-          <a href="/" class="flex">
-            <img
-              src="assets/logo-branca-mpf.png"
-              alt="Ministério Público Federal"
-              class="w-full max-w-[120px] h-auto"
-            />
+  <div class="relative mx-auto max-w-[1440px] px-6 py-14">
+    <!-- Topo: marca + pitch + chips + redes -->
+    <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+      <div class="max-w-2xl">
+        <a href="/" class="inline-flex items-center gap-3">
+          <img
+            src="assets/logo-branca-mpf.png"
+            alt="Ministério Público Federal"
+            class="w-full max-w-[132px] h-auto"
+          />
+        </a>
+
+        <p class="mt-4 text-sm text-white/85 leading-relaxed">
+          Portal institucional do Ministério Público Federal, com acesso a informações,
+          notícias e serviços ao cidadão.
+        </p>
+
+        <!-- Chips (sem “Contatos” pra não duplicar) -->
+        <div class="mt-6 flex flex-wrap gap-5" aria-label="Atalhos principais">
+          <a href="#"
+             class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15
+                    hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
+            <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span>
+            Serviços
           </a>
-          
+          <a href="#"
+             class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15
+                    hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
+            <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span>
+            Notícias
+          </a>
+          <a href="#"
+             class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15
+                    hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
+            <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span>
+            Transparência
+          </a>
+        </div>
+      </div>
 
-          <p class="mt-4 text-sm text-white/80 leading-relaxed max-w-prose">
-            Portal institucional do Ministério Público Federal, com acesso a informações,
-            notícias e serviços ao cidadão.
-          </p>
+      <!-- Redes sociais (ícones-link simples, com área clicável boa) -->
+      <div class="lg:pt-1">
+        <p class="text-xs uppercase tracking-wide text-white/70 mb-4">
+          MPF nas redes sociais
+        </p>
+        <ul class="flex flex-wrap items-center gap-5" aria-label="Redes sociais do MPF">
+          <li>
+            <a href="#" aria-label="WhatsApp"
+               class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <img src="assets/whatsapp.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Facebook"
+               class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <img src="assets/facebook.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Flickr"
+               class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <img src="assets/flickr.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="X"
+               class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <img src="assets/x.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="YouTube"
+               class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <img src="assets/youtube.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram"
+               class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <img src="assets/instagram.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn"
+               class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <img src="assets/linkedin.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-          <!-- Redes sociais -->
-          <div class="mt-6">
-            <p class="text-sm font-semibold mb-3">MPF nas redes sociais</p>
-            <ul class="flex items-center gap-3">
-              <li><a href="#" aria-label="WhatsApp"><img src="assets/whatsapp.svg" alt="" class="h-6 w-6 opacity-90 hover:opacity-100" /></a></li>
-              <li><a href="#" aria-label="Facebook"><img src="assets/facebook.svg" alt="" class="h-6 w-6 opacity-90 hover:opacity-100" /></a></li>
-              <li><a href="#" aria-label="Flickr"><img src="assets/flickr.svg" alt="" class="h-6 w-6 opacity-90 hover:opacity-100" /></a></li>
-              <li><a href="#" aria-label="X"><img src="assets/x.svg" alt="" class="h-6 w-6 opacity-90 hover:opacity-100" /></a></li>
-              <li><a href="#" aria-label="YouTube"><img src="assets/youtube.svg" alt="" class="h-6 w-6 opacity-90 hover:opacity-100" /></a></li>
-              <li><a href="#" aria-label="Instagram"><img src="assets/instagram.svg" alt="" class="h-6 w-6 opacity-90 hover:opacity-100" /></a></li>
-              <li><a href="#" aria-label="LinkedIn"><img src="assets/linkedin.svg" alt="" class="h-6 w-6 opacity-90 hover:opacity-100" /></a></li>
-            </ul>
+    <!-- Divisória -->
+    <div class="mt-10 h-px w-full bg-white/15"></div>
+
+    <!-- Grid principal -->
+    <div class="mt-10 grid gap-10 lg:grid-cols-12">
+      <!-- Contatos (único lugar de contatos) -->
+      <section aria-label="Contatos" class="lg:col-span-5">
+        <div class="rounded-md bg-white/10 ring-1 ring-white/15 p-6">
+          <div class="flex items-start justify-between gap-5">
+            <div>
+              <p class="text-xs uppercase tracking-wide text-white/70">Contatos</p>
+              <h3 class="mt-1 text-base font-semibold">Procuradoria-Geral da República</h3>
+            </div>
+
+            <span class="inline-flex items-center rounded-md bg-white/10 px-3 py-2 text-xs text-white/80 ring-1 ring-white/15">
+              Atendimento 10h–18h
+            </span>
+          </div>
+
+          <div class="mt-6 grid gap-5 text-sm text-white/85">
+            <div class="flex gap-4">
+              <span class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15" aria-hidden="true">
+                <!-- pin -->
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11z"></path>
+                  <path d="M12 10a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path>
+                </svg>
+              </span>
+              <p class="leading-relaxed">
+                SAF Sul Quadra 4 Conjunto C<br />
+                Brasília/DF – CEP 70050-900
+              </p>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15" aria-hidden="true">
+                <!-- phone -->
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.09 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.59 2.5a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 4 4l1.58-1.16a2 2 0 0 1 2.11-.45c.8.27 1.64.47 2.5.59A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <p>
+                Tel.:
+                <a href="tel:+556131055100"
+                   class="ml-1 underline underline-offset-4 decoration-white/25 hover:decoration-white
+                          focus:outline-none focus:ring-2 focus:ring-white/40 rounded-md">
+                  (61) 3105-5100
+                </a>
+              </p>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15" aria-hidden="true">
+                <!-- clock -->
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10z"></path>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+              </span>
+              <p class="leading-relaxed">
+                Atendimento de segunda a sexta<br />
+                das 10h às 18h
+              </p>
+            </div>
+          </div>
+
+          <!-- CTAs (gap >= 20px) -->
+          <div class="mt-7 grid gap-5" aria-label="Canais de contato">
+            <a href="#"
+               class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15
+                      hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <span class="text-sm text-white/90">
+                Lista de contatos das salas de atendimento ao cidadão
+              </span>
+              <span class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </span>
+            </a>
+
+            <a href="#"
+               class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15
+                      hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <span class="text-sm text-white/90">Atendimento à Imprensa</span>
+              <span class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </span>
+            </a>
+
+            <a href="#"
+               class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15
+                      hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
+              <span class="text-sm text-white/90">Informações das Unidades do MPF</span>
+              <span class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white" aria-hidden="true">
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </span>
+            </a>
           </div>
         </div>
+      </section>
 
-        <!-- Serviços -->
-        <nav aria-label="Serviços" class="text-sm">
-          <p class="font-semibold mb-3">Serviços</p>
-          <ul class="grid gap-2 text-white/80">
-            <li><a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/30 rounded">Protocolo</a></li>
-            <li><a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/30 rounded">Denúncias</a></li>
-            <li><a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/30 rounded">Consultas</a></li>
-            <li><a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/30 rounded">Perguntas frequentes</a></li>
-          </ul>
-        </nav>
+      <!-- Links + Áreas de atuação -->
+      <div class="lg:col-span-7">
+        <div class="grid gap-10 sm:grid-cols-2">
+          <nav aria-label="Serviços">
+            <p class="text-xs uppercase tracking-wide text-white/70 mb-4">Serviços</p>
+            <ul class="grid gap-5 text-sm text-white/85">
+              <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Protocolo</a></li>
+              <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Denúncias</a></li>
+              <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Consultas</a></li>
+              <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Perguntas frequentes</a></li>
+            </ul>
+          </nav>
 
-        <!-- Institucional -->
-        <nav aria-label="Institucional" class="text-sm">
-          <p class="font-semibold mb-3">Institucional</p>
-          <ul class="grid gap-2 text-white/80">
-            <li><a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/30 rounded">O MPF</a></li>
-            <li><a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/30 rounded">Unidades</a></li>
-            <li><a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/30 rounded">Atuação Temática</a></li>
-            <li><a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/30 rounded">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Barra inferior -->
-      <div class="border-t border-white/20">
-        <div
-          class="mx-auto max-w-[1440px] px-6 py-4
-                flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between
-                text-xs text-white/70"
-        >
-          <p>© <span id="year">2025</span> Ministério Público Federal</p>
-
-          <nav
-            aria-label="Links legais"
-            class="flex flex-wrap items-center gap-2"
-          >
-            <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
-              Portal institucional
-            </a>
-            <span aria-hidden="true">|</span>
-            <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
-              Política de Privacidade
-            </a>
-            <span aria-hidden="true">|</span>
-            <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
-              Termos de Uso
-            </a>
+          <nav aria-label="Institucional">
+            <p class="text-xs uppercase tracking-wide text-white/70 mb-4">Institucional</p>
+            <ul class="grid gap-5 text-sm text-white/85">
+              <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">O MPF</a></li>
+              <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Unidades</a></li>
+              <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Atuação Temática</a></li>
+              <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Notícias</a></li>
+            </ul>
           </nav>
         </div>
+
+        <!-- Áreas de atuação (ajustes pedidos: remove contador/CTA; " | " só aqui; menos espaçamento) -->
+        <section aria-label="Áreas de atuação" class="mt-10">
+          <h3 class="text-xs uppercase tracking-wide text-white/70 mb-4">Áreas de atuação</h3>
+
+          <ul class="mt-4 grid gap-3 sm:grid-cols-2 text-sm">
+            <li>
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">
+                  Direitos sociais e fiscalização de atos administrativos em geral
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Criminal</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Consumidor e ordem econômica</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Meio ambiente e patrimônio cultural</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Combate à corrupção</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Populações indígenas e comunidades tradicionais</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">
+                  Controle externo da atividade policial e sistema prisional
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Direitos do Cidadão</span>
+              </a>
+            </li>
+
+            <li class="sm:col-span-2">
+              <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Cooperação jurídica internacional</span>
+              </a>
+            </li>
+          </ul>
+        </section>
       </div>
-    </footer>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="mt-12 border-t border-white/15 pt-6">
+      <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between text-xs text-white/70">
+        <p>© <span id="year">2025</span> Ministério Público Federal</p>
+
+        <!-- ajustes pedidos: inserir separadores | entre os links legais -->
+        <nav aria-label="Links legais" class="flex flex-wrap items-center gap-2">
+          <a href="#" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+            Portal institucional
+          </a>
+          <span class="text-white/40" aria-hidden="true">|</span>
+          <a href="#" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+            Política de Privacidade
+          </a>
+          <span class="text-white/40" aria-hidden="true">|</span>
+          <a href="#" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+            Termos de Uso
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
 
   </div>
 
