@@ -33,680 +33,758 @@
     class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-gray-900 focus:shadow focus:outline-none"
   >
     Pular para o conteúdo
-  </a>
+  </a>  
 
  <!-- HEADER (2 barras) -->
-<header class="bg-white border-b border-black/10 shadow">
-  <!-- TOPBAR (institucional) -->
-  <div class="mpf-topbar">
-    <div class="mx-auto px-4 py-1.5 flex items-center justify-end max-w-[1440px]">
-      <a href="#" class="text-xs text-white/95 leading-relaxed">Ministério Público Federal | Rede Institucional</a>
+  <header id="site-header" data-sticky class="bg-white border-b border-black/10 shadow">
+    <!-- TOPBAR (institucional) -->
+    <div class="mpf-topbar">
+      <div class="mx-auto px-4 py-1.5 flex items-center justify-end max-w-[1440px]">
+        <a href="#" class="text-xs text-white/95 leading-relaxed">Ministério Público Federal | Rede Institucional</a>
+      </div>
     </div>
-  </div>
 
-  <!-- BARRA SUPERIOR -->
-  <div class="border-b border-gray-100">
-    <div class="mx-auto max-w-[1440px] px-4 py-3">
-      <!-- GRID 3 COLUNAS: esquerda / centro / direita -->
-      <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] items-center gap-4">
-        <!-- (1) LOGO (esquerda) -->
-        <div class="flex items-center justify-between gap-4">
-          <a href="#" class="mpf-brand flex items-center gap-3 min-w-0" aria-label="Ir para a página inicial">
-            <!-- Ícone / logo (SVG) reduz no mobile em vez de esconder -->
-            <span class="mpf-brand__circle shrink-0" aria-hidden="true">
-              <svg
-                viewBox="0 0 573 186"
-                class="h-auto w-10 sm:w-12 lg:w-[64px]"
-                xmlns="http://www.w3.org/2000/svg"
-                role="img"
-                aria-label="MPF"
-              >
-                <path d="M235.73 185.29H185.16L174 105.22C173.22 99.57 172.5 93.29 171.86 86.37C171.21 79.46 169.8 71.91 169.28 63.72C168.07 71.57 165.69 81.35 162.14 93.07C161.36 95.52 160.8 97.33 160.45 98.51L134.62 185.28H100.92L75.09 98.51C74.74 97.33 74.22 95.52 73.53 93.07C69.9 81.35 67.52 71.61 66.39 63.84C65.87 70.84 64.74 77.78 64.05 84.65C63.36 91.53 62.53 98.37 61.58 105.21L50.42 185.28H0L33.69 0.0800018L83.87 0L111.61 95.59C111.78 96.26 112.13 97.36 112.65 98.88C115.33 107.4 117.02 114.69 117.71 120.76C118.05 117.47 118.71 113.83 119.66 109.82C120.61 105.81 121.91 100.99 123.55 95.33L151.57 0.0699921H202.22L235.72 185.27L235.73 185.29Z" fill="white"/>
-                <path d="M319.99 185.29H269.35V0.0898438H325.98C348.79 0.0898438 364.8 1.09985 374.02 3.12985C383.23 5.14985 391.05 8.61984 397.47 13.5098C405.01 19.1698 410.76 26.2298 414.72 34.7098C418.68 43.1898 420.65 52.6199 420.65 62.9899C420.65 74.0399 418.7 83.7699 414.79 92.1599C410.88 100.55 405.11 107.45 397.47 112.85C391.69 116.9 384.9 119.81 377.08 121.58C369.26 123.35 356.74 124.23 339.51 124.23H319.98V185.29H319.99ZM319.99 83.5398H330.6C343.98 83.5398 353.33 81.8698 358.64 78.5298C363.94 75.1998 366.59 69.5098 366.59 61.4798C366.59 53.4498 363.98 48.1799 358.78 44.8799C353.57 41.5899 344.36 39.9398 331.16 39.9398H320V83.5298L319.99 83.5398Z" fill="white"/>
-                <path d="M454.63 185.29V0.0898438H572.28V40.6299H505.1V72.8499H567.3V112.54H505.1V185.29H454.63Z" fill="white"/>
-              </svg>
-            </span>
-
-             <span class="min-w-0">
-              <span class="block font-semibold leading-tight text-[color:var(--brand)]
-                          text-base sm:text-lg lg:text-xl truncate">
-                Ministério Público Federal
+    <!-- BARRA SUPERIOR -->
+    <div class="border-b border-gray-100">
+      <div class="mx-auto max-w-[1440px] px-4 py-3">
+        <!-- GRID 3 COLUNAS: esquerda / centro / direita -->
+        <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] items-center gap-4">
+          <!-- (1) LOGO (esquerda) -->
+          <div class="flex items-center justify-between gap-4">
+            <a href="#" class="mpf-brand flex items-center gap-3 min-w-0" aria-label="Ir para a página inicial">
+              <!-- Ícone / logo (SVG) reduz no mobile em vez de esconder -->
+              <span class="mpf-brand__circle shrink-0" aria-hidden="true">
+                <svg
+                  viewBox="0 0 573 186"
+                  class="h-auto w-10 sm:w-12 lg:w-[64px]"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M235.73 185.29H185.16L174 105.22C173.22 99.57 172.5 93.29 171.86 86.37C171.21 79.46 169.8 71.91 169.28 63.72C168.07 71.57 165.69 81.35 162.14 93.07C161.36 95.52 160.8 97.33 160.45 98.51L134.62 185.28H100.92L75.09 98.51C74.74 97.33 74.22 95.52 73.53 93.07C69.9 81.35 67.52 71.61 66.39 63.84C65.87 70.84 64.74 77.78 64.05 84.65C63.36 91.53 62.53 98.37 61.58 105.21L50.42 185.28H0L33.69 0.0800018L83.87 0L111.61 95.59C111.78 96.26 112.13 97.36 112.65 98.88C115.33 107.4 117.02 114.69 117.71 120.76C118.05 117.47 118.71 113.83 119.66 109.82C120.61 105.81 121.91 100.99 123.55 95.33L151.57 0.0699921H202.22L235.72 185.27L235.73 185.29Z" fill="white"/>
+                  <path d="M319.99 185.29H269.35V0.0898438H325.98C348.79 0.0898438 364.8 1.09985 374.02 3.12985C383.23 5.14985 391.05 8.61984 397.47 13.5098C405.01 19.1698 410.76 26.2298 414.72 34.7098C418.68 43.1898 420.65 52.6199 420.65 62.9899C420.65 74.0399 418.7 83.7699 414.79 92.1599C410.88 100.55 405.11 107.45 397.47 112.85C391.69 116.9 384.9 119.81 377.08 121.58C369.26 123.35 356.74 124.23 339.51 124.23H319.98V185.29H319.99ZM319.99 83.5398H330.6C343.98 83.5398 353.33 81.8698 358.64 78.5298C363.94 75.1998 366.59 69.5098 366.59 61.4798C366.59 53.4498 363.98 48.1799 358.78 44.8799C353.57 41.5899 344.36 39.9398 331.16 39.9398H320V83.5298L319.99 83.5398Z" fill="white"/>
+                  <path d="M454.63 185.29V0.0898438H572.28V40.6299H505.1V72.8499H567.3V112.54H505.1V185.29H454.63Z" fill="white"/>
+                </svg>
               </span>
-              
-              <span class="hidden sm:block text-gray-700 leading-tight truncate text-xs sm:text-sm">
-                Portal Institucional
+
+              <span class="min-w-0">
+                <span class="block font-semibold leading-tight text-[color:var(--brand)] text-base sm:text-lg lg:text-xl truncate mpf-brand__name" >
+                  Ministério Público Federal
+                </span>
+
+                <span class="hidden sm:block text-gray-700 leading-tight truncate text-xs sm:text-sm mpf-brand__tagline">
+                  Portal Institucional
+                </span>
               </span>
-            </span>
-          </a>
+            </a>
 
-          <!-- Mobile: botão menu (fica do lado da logo no mobile) -->
-          <button
-            type="button"
-            data-menu-button
-            class="lg:hidden relative z-[70] inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50
-                  focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            aria-controls="mobile-menu"
-            aria-expanded="false"
-            aria-label="Abrir menu"
-          >
-            <span class="sr-only">Abrir menu</span>
-            <span class="mpf-burger" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-        </div>
-
-        <!-- Desktop: (2) links institucionais (CENTRO) -->
-        <nav aria-label="Links institucionais" class="hidden lg:flex justify-center">
-          <ul class="flex items-center text-sm text-gray-700 divide-x divide-gray-300/70">
-            <li class="pr-3">
-              <a href="./paginas-internas/interna.html"
-                 class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
-                Acesso à Informação
-              </a>
-            </li>
-            <li class="px-3">
-              <a href="./paginas-internas/interna.html"
-                 class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
-                Transparência
-              </a>
-            </li>
-            <li class="pl-3">
-              <a href="./paginas-internas/interna.html"
-                 class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
-                Contatos
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- Desktop: (3) acessibilidade (DIREITA) -->
-        <div class="hidden lg:flex items-center justify-end gap-2 text-sm" aria-label="Ferramentas de acessibilidade">
-          <a href="./paginas-internas/interna.html"
-             class="text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
-            Acessibilidade
-          </a>
-
-          <span aria-hidden="true" class="mx-1 h-4 w-px bg-gray-300/70"></span>
-
-          <!-- Contraste -->
-          <button
-            type="button"
-            data-contrast-toggle
-            role="switch"
-            aria-checked="false"
-            class="rounded-md border border-gray-200 px-3 py-1 text-gray-800 hover:bg-gray-50
-                  focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-          >
-            Contraste
-          </button>
-
-          <!-- Fonte A- / A / A+ -->
-          <div class="flex items-center gap-1" aria-label="Tamanho do texto">
-            <button type="button" data-font="decrease"
-              class="rounded-md border border-gray-200 px-2 py-1 text-gray-800 hover:bg-gray-50
+            <!-- Mobile: botão menu -->
+            <button
+              type="button"
+              data-menu-button
+              class="lg:hidden relative z-[70] inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50
                     focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-              aria-label="Diminuir tamanho do texto">
-              A-
-            </button>
-            <button type="button" data-font="reset"
-              class="rounded-md border border-gray-200 px-2 py-1 text-gray-800 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-              aria-label="Restaurar tamanho do texto">
-              A
-            </button>
-            <button type="button" data-font="increase"
-              class="rounded-md border border-gray-200 px-2 py-1 text-gray-800 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-              aria-label="Aumentar tamanho do texto">
-              A+
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+            >
+              <span class="sr-only">Abrir menu</span>
+              <span class="mpf-burger" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </span>
             </button>
           </div>
 
-          <!-- Libras -->
-          <a href="#vlibras"
-            class="rounded-md border border-gray-200 px-3 py-1 text-gray-800 hover:bg-gray-50
-                  focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            aria-label="Acessar recurso de Libras">
-            Libras
-          </a>
+          <!-- Desktop: links institucionais -->
+          <nav aria-label="Links institucionais" class="hidden lg:flex justify-center">
+            <ul class="flex items-center text-sm text-gray-700 divide-x divide-gray-300/70">
+              <li class="pr-3">
+                <a href="./paginas-internas/interna.html"
+                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
+                  Acesso à Informação
+                </a>
+              </li>
+              <li class="px-3">
+                <a href="./paginas-internas/interna.html"
+                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
+                  Transparência
+                </a>
+              </li>
+              <li class="pl-3">
+                <a href="./paginas-internas/interna.html"
+                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
+                  Contatos
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-          <!-- Mapa do site -->
-          <a href="./paginas-internas/interna.html"
-            class="rounded-md border border-gray-200 px-3 py-1 text-gray-800 hover:bg-gray-50
-                  focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-            Mapa do site
-          </a>
+          <!-- Acessibilidade: desktop grande -->
+          <div class="a11y-desktop items-center justify-end gap-2 text-sm">
+            <a href="./paginas-internas/interna.html"
+              class="text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
+              Acessibilidade
+            </a>
+
+            <span aria-hidden="true" class="mx-1 h-4 w-px bg-gray-300/70"></span>
+
+            <button type="button" data-contrast-toggle role="switch" aria-checked="false" aria-label="Ativar alto contraste"
+              title="Alto contraste"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 1 0 9.8 9.8Z"/>
+              </svg>
+            </button>
+
+            <button type="button" data-font="decrease" aria-label="Diminuir tamanho do texto" title="Diminuir tamanho do texto"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+              <span aria-hidden="true" class="font-semibold">A−</span>
+            </button>
+
+            <button type="button" data-font="reset" aria-label="Restaurar tamanho do texto" title="Restaurar tamanho do texto"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+              <span aria-hidden="true" class="font-semibold">A</span>
+            </button>
+
+            <button type="button" data-font="increase" aria-label="Aumentar tamanho do texto" title="Aumentar tamanho do texto"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+              <span aria-hidden="true" class="font-semibold">A+</span>
+            </button>
+
+            <a href="#vlibras" aria-label="Acessar recurso de Libras" title="Libras"
+              class="inline-flex h-9 items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 text-gray-800
+                    hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                <path d="M8 11V5a2 2 0 1 1 4 0v6"/>
+                <path d="M12 11V6a2 2 0 1 1 4 0v7"/>
+                <path d="M6 12v-1a2 2 0 1 1 4 0v6"/>
+                <path d="M16 14V9a2 2 0 1 1 4 0v8c0 3-2 5-5 5H11c-2 0-4-1-5-3l-1-2"/>
+              </svg>
+              <span class="text-xs font-medium">Libras</span>
+            </a>
+
+            <a href="./paginas-internas/interna.html" aria-label="Mapa do site" title="Mapa do site"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3Z"/>
+                <path d="M9 3v15"/>
+                <path d="M15 6v15"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Acessibilidade: dropdown abaixo de lg -->
+          <div class="a11y-mobile relative flex justify-end" data-dd-root>
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
+                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              data-dd-button="dd-a11y"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-controls="dd-a11y"
+            >
+              Acessibilidade <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+            </button>
+
+            <div
+              id="dd-a11y"
+              data-dd-menu
+              role="menu"
+              hidden
+              class="absolute right-0 top-full mt-2 w-72 rounded-md border border-gray-200 bg-white shadow-lg p-2 z-[80]"
+            >
+              <button role="menuitem" type="button" data-contrast-toggle aria-label="Ativar alto contraste"
+                class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+                Alto contraste
+              </button>
+
+              <div class="grid grid-cols-3 gap-2 px-1 py-2">
+                <button type="button" data-font="decrease" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Diminuir texto">
+                  A−
+                </button>
+                <button type="button" data-font="reset" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Restaurar texto">
+                  A
+                </button>
+                <button type="button" data-font="increase" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50
+                        focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Aumentar texto">
+                  A+
+                </button>
+              </div>
+
+              <a role="menuitem" href="#vlibras"
+                class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+                Libras
+              </a>
+
+              <a role="menuitem" href="./paginas-internas/interna.html"
+                class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+                Mapa do site
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- BARRA INFERIOR (menu principal + busca) -->
-  <div class="bg-[color:var(--mpf-blue)]/[0.07] border-t border-[color:var(--mpf-blue)]/20">
-    <div class="mx-auto max-w-[1440px] px-4">
-      <div class="flex items-center justify-between gap-4">
-        <!-- Menu principal (desktop) -->
-        <nav aria-label="Navegação principal" class="hidden lg:block">
-          <ul class="flex items-stretch flex-nowrap">
-            <!-- O MPF (submenu 2 níveis) -->
-            <li class="relative" data-dd-root>
-              <button
-                type="button"
-                class="mpf-nav-item"
-                data-dd-button="dd-ompF"
-                aria-haspopup="menu"
-                aria-expanded="false"
-                aria-controls="dd-ompF"
-              >
-                O MPF <span aria-hidden="true" class="ml-1">▾</span>
-              </button>
+    <!-- BARRA INFERIOR (menu principal + busca) -->
+    <div class="mpf-bottombar bg-[color:var(--mpf-blue)]/[0.07] border-t border-[color:var(--mpf-blue)]/20">
+      <div class="mx-auto max-w-[1440px] px-4">
+        <div class="flex items-center justify-between gap-4">
+          <!-- Menu principal (desktop) -->
+          <nav aria-label="Navegação principal" class="hidden lg:block">
+            <ul class="flex items-stretch flex-nowrap">
+              <!-- O MPF -->
+              <li class="relative" data-dd-root>
+                <button
+                  type="button"
+                  class="mpf-nav-item gap-2"
+                  data-dd-button="dd-ompF"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="dd-ompF"
+                >
+                  O MPF
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
 
-              <div
-                id="dd-ompF"
-                data-dd-menu
-                role="menu"
-                hidden
-                class="absolute left-0 top-full mt-1 w-72 rounded-md border border-gray-300 bg-white shadow-lg p-2"
-              >
-                <a role="menuitem" href="./paginas-internas/interna.html"
-                  class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Institucional
-                </a>
+                <div
+                  id="dd-ompF"
+                  data-dd-menu
+                  role="menu"
+                  hidden
+                  class="absolute left-0 top-full mt-1 w-72 rounded-md border border-gray-300 bg-white shadow-lg p-2"
+                >
+                  <a role="menuitem" href="./paginas-internas/interna.html"
+                    class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Institucional
+                  </a>
 
-                <a role="menuitem" href="./paginas-internas/interna.html"
-                  class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Unidades
-                </a>
+                  <a role="menuitem" href="./paginas-internas/interna.html"
+                    class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Unidades
+                  </a>
 
-                <!-- 2º nível -->
-                <div class="relative" data-dd-subroot>
-                  <button
-                    type="button"
-                    class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
-                    data-dd-subbutton="dd-ompF-sobre"
-                    aria-haspopup="menu"
-                    aria-expanded="false"
-                    aria-controls="dd-ompF-sobre"
-                  >
-                    Sobre <span aria-hidden="true">▸</span>
-                  </button>
+                  <!-- NÍVEL 2: accordion (no lugar do flyout lateral) -->
+                  <div class="mt-1 rounded-md">
+                    <button
+                      type="button"
+                      class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
+                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
+                      data-acc-button="dd-ompF-sobre"
+                      aria-expanded="false"
+                      aria-controls="dd-ompF-sobre"
+                    >
+                      Sobre <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                    </button>
 
-                  <div
-                    id="dd-ompF-sobre"
-                    data-dd-submenu
-                    role="menu"
-                    hidden
-                    class="absolute left-full top-0 ml-2 w-72 rounded-md border border-gray-300 bg-white shadow-lg p-2"
-                  >
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      História e missão
-                    </a>
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Estrutura organizacional
-                    </a>
+                    <div id="dd-ompF-sobre" data-acc-panel hidden
+                      class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1"
+                    >
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        História e missão
+                      </a>
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Estrutura organizacional
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- Atuação (submenu 2 níveis) -->
-            <li class="relative" data-dd-root>
-              <button
-                type="button"
-                class="mpf-nav-item"
-                data-dd-button="dd-atuacao"
-                aria-haspopup="menu"
-                aria-expanded="false"
-                aria-controls="dd-atuacao"
-              >
-                Atuação <span aria-hidden="true" class="ml-1">▾</span>
-              </button>
+              <!-- Atuação -->
+              <li class="relative" data-dd-root>
+                <button
+                  type="button"
+                  class="mpf-nav-item gap-2"
+                  data-dd-button="dd-atuacao"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="dd-atuacao"
+                >
+                  Atuação
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
 
-              <div
-                id="dd-atuacao"
-                data-dd-menu
-                role="menu"
-                hidden
-                class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
-              >
-                <a role="menuitem" href="./paginas-internas/interna.html"
-                  class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Atuação temática
-                </a>
+                <div
+                  id="dd-atuacao"
+                  data-dd-menu
+                  role="menu"
+                  hidden
+                  class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
+                >
+                  <a role="menuitem" href="./paginas-internas/interna.html"
+                    class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Atuação temática
+                  </a>
 
-                <div class="relative" data-dd-subroot>
-                  <button
-                    type="button"
-                    class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
-                    data-dd-subbutton="dd-atuacao-areas"
-                    aria-haspopup="menu"
-                    aria-expanded="false"
-                    aria-controls="dd-atuacao-areas"
-                  >
-                    Áreas de atuação <span aria-hidden="true">▸</span>
-                  </button>
+                  <!-- NÍVEL 2: accordion -->
+                  <div class="mt-1 rounded-md">
+                    <button
+                      type="button"
+                      class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
+                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
+                      data-acc-button="dd-atuacao-areas"
+                      aria-expanded="false"
+                      aria-controls="dd-atuacao-areas"
+                    >
+                      Áreas de atuação <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                    </button>
 
-                  <div
-                    id="dd-atuacao-areas"
-                    data-dd-submenu
-                    role="menu"
-                    hidden
-                    class="absolute left-full top-0 ml-2 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
-                  >
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Meio ambiente
-                    </a>
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Combate à corrupção
-                    </a>
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Direitos do cidadão
-                    </a>
+                    <div id="dd-atuacao-areas" data-acc-panel hidden
+                      class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1"
+                    >
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Meio ambiente
+                      </a>
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Combate à corrupção
+                      </a>
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Direitos do cidadão
+                      </a>
+                    </div>
                   </div>
+
+                  <a role="menuitem" href="./paginas-internas/interna.html"
+                    class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Grandes casos
+                  </a>
                 </div>
+              </li>
 
-                <a role="menuitem" href="./paginas-internas/interna.html"
-                  class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Grandes casos
-                </a>
-              </div>
-            </li>
+              <!-- Serviços -->
+              <li class="relative" data-dd-root>
+                <button
+                  type="button"
+                  class="mpf-nav-item gap-2"
+                  data-dd-button="dd-servicos"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="dd-servicos"
+                >
+                  Serviços
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
 
-            <!-- Serviços (submenu 2 níveis) -->
-            <li class="relative" data-dd-root>
-              <button
-                type="button"
-                class="mpf-nav-item"
-                data-dd-button="dd-servicos"
-                aria-haspopup="menu"
-                aria-expanded="false"
-                aria-controls="dd-servicos"
-              >
-                Serviços <span aria-hidden="true" class="ml-1">▾</span>
-              </button>
+                <div
+                  id="dd-servicos"
+                  data-dd-menu
+                  role="menu"
+                  hidden
+                  class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
+                >
+                  <a role="menuitem" href="./paginas-internas/servicos.html"
+                    class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Visão geral de serviços
+                  </a>
 
-              <div
-                id="dd-servicos"
-                data-dd-menu
-                role="menu"
-                hidden
-                class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
-              >
-                <a role="menuitem" href="./paginas-internas/servicos.html"
-                  class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Visão geral de serviços
-                </a>
+                  <!-- NÍVEL 2: accordion -->
+                  <div class="mt-1 rounded-md">
+                    <button
+                      type="button"
+                      class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
+                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
+                      data-acc-button="dd-servicos-cidadao"
+                      aria-expanded="false"
+                      aria-controls="dd-servicos-cidadao"
+                    >
+                      Para o cidadão <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                    </button>
 
-                <div class="relative" data-dd-subroot>
-                  <button
-                    type="button"
-                    class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
-                    data-dd-subbutton="dd-servicos-cidadao"
-                    aria-haspopup="menu"
-                    aria-expanded="false"
-                    aria-controls="dd-servicos-cidadao"
-                  >
-                    Para o cidadão <span aria-hidden="true">▸</span>
-                  </button>
-
-                  <div
-                    id="dd-servicos-cidadao"
-                    data-dd-submenu
-                    role="menu"
-                    hidden
-                    class="absolute left-full top-0 ml-2 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
-                  >
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Denúncias
-                    </a>
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Protocolo
-                    </a>
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Certidões
-                    </a>
+                    <div id="dd-servicos-cidadao" data-acc-panel hidden
+                      class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1"
+                    >
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Denúncias
+                      </a>
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Protocolo
+                      </a>
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Certidões
+                      </a>
+                    </div>
                   </div>
+
+                  <a role="menuitem" href="./paginas-internas/interna.html"
+                    class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Acesso à informação
+                  </a>
                 </div>
+              </li>
 
-                <a role="menuitem" href="./paginas-internas/interna.html"
-                  class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Acesso à informação
-                </a>
-              </div>
-            </li>
+              <!-- Comunicação -->
+              <li class="relative" data-dd-root>
+                <button
+                  type="button"
+                  class="mpf-nav-item gap-2"
+                  data-dd-button="dd-comunicacao"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  aria-controls="dd-comunicacao"
+                >
+                  Comunicação
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
 
-            <!-- Comunicação (submenu 2 níveis) -->
-            <li class="relative" data-dd-root>
-              <button
-                type="button"
-                class="mpf-nav-item"
-                data-dd-button="dd-comunicacao"
-                aria-haspopup="menu"
-                aria-expanded="false"
-                aria-controls="dd-comunicacao"
-              >
-                Comunicação <span aria-hidden="true" class="ml-1">▾</span>
-              </button>
+                <div
+                  id="dd-comunicacao"
+                  data-dd-menu
+                  role="menu"
+                  hidden
+                  class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
+                >
+                  <a role="menuitem" href="./paginas-internas/noticias.html"
+                    class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Notícias
+                  </a>
 
-              <div
-                id="dd-comunicacao"
-                data-dd-menu
-                role="menu"
-                hidden
-                class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
-              >
-                <a role="menuitem" href="./paginas-internas/noticias.html"
-                  class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Notícias
-                </a>
+                  <!-- NÍVEL 2: accordion -->
+                  <div class="mt-1 rounded-md">
+                    <button
+                      type="button"
+                      class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
+                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
+                      data-acc-button="dd-comunicacao-canais"
+                      aria-expanded="false"
+                      aria-controls="dd-comunicacao-canais"
+                    >
+                      Canais <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                    </button>
 
-                <div class="relative" data-dd-subroot>
-                  <button
-                    type="button"
-                    class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
-                    data-dd-subbutton="dd-comunicacao-canais"
-                    aria-haspopup="menu"
-                    aria-expanded="false"
-                    aria-controls="dd-comunicacao-canais"
-                  >
-                    Canais <span aria-hidden="true">▸</span>
-                  </button>
-
-                  <div
-                    id="dd-comunicacao-canais"
-                    data-dd-submenu
-                    role="menu"
-                    hidden
-                    class="absolute left-full top-0 ml-2 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2"
-                  >
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Imprensa
-                    </a>
-                    <a role="menuitem" href="./paginas-internas/interna.html"
-                      class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                      Redes sociais
-                    </a>
+                    <div id="dd-comunicacao-canais" data-acc-panel hidden
+                      class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1"
+                    >
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Imprensa
+                      </a>
+                      <a role="menuitem" href="./paginas-internas/interna.html"
+                        class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                        Redes sociais
+                      </a>
+                    </div>
                   </div>
+
+                  <a role="menuitem" href="./paginas-internas/interna.html"
+                    class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Campanhas
+                  </a>
                 </div>
+              </li>
+            </ul>
+          </nav>
 
-                <a role="menuitem" href="./paginas-internas/interna.html"
-                  class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Campanhas
-                </a>
-              </div>
-            </li>
-          </ul>
-        </nav>
+          <!-- Busca (desktop) -->
+          <form class="hidden md:flex items-center gap-2 ml-auto" role="search" aria-label="Buscar no site">
+            <label class="sr-only" for="site-search">Buscar</label>
+            <input id="site-search" name="q" type="search" placeholder="Buscar…"
+              class="w-72 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none
+                    focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" />
+            <button type="submit"
+              class="rounded-md bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95
+                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+              Buscar
+            </button>
+          </form>
 
-        <!-- Busca (desktop) -->
-        <form class="hidden md:flex items-center gap-2 ml-auto" role="search" aria-label="Buscar no site">
-          <label class="sr-only" for="site-search">Buscar</label>
-          <input id="site-search" name="q" type="search" placeholder="Buscar…"
-            class="w-72 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none
+          <!-- Mobile hint -->
+          <div class="md:hidden text-sm text-gray-600 py-3">
+            Use o menu para acessar páginas e busca.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE OVERLAY -->
+    <div data-menu-overlay class="fixed inset-0 z-50 bg-black/40" hidden></div>
+
+    <!-- MOBILE PANEL -->
+    <nav
+      id="mobile-menu"
+      data-menu-panel
+      class="fixed right-0 top-0 z-[60] h-full w-[88%] max-w-sm bg-white shadow-xl border-l border-gray-200 overflow-y-auto overscroll-contain"
+      hidden
+      tabindex="-1"
+      aria-label="Menu mobile"
+    >
+      <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+        <p class="font-semibold text-gray-900">Menu</p>
+      </div>
+
+      <div class="p-4 grid gap-6 pb-10">
+        <!-- Busca mobile -->
+        <form role="search" aria-label="Buscar no site (mobile)">
+          <label class="sr-only" for="site-search-mobile">Buscar</label>
+          <input id="site-search-mobile" name="q" type="search" placeholder="Buscar…"
+            class="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none
                   focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" />
           <button type="submit"
-            class="rounded-md bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95
+            class="mt-2 w-full rounded-md bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95
                   focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
             Buscar
           </button>
         </form>
 
-        <!-- Mobile hint -->
-        <div class="md:hidden text-sm text-gray-600 py-3">
-          Use o menu para acessar páginas e busca.
-        </div>
+        <!-- Links institucionais (mobile) -->
+        <section aria-label="Links institucionais" class="grid gap-2 text-sm">
+          <p class="font-semibold text-gray-900">Links institucionais</p>
+          <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            href="./paginas-internas/interna.html">Acesso à Informação</a>
+          <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            href="./paginas-internas/interna.html">Transparência</a>
+          <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            href="./paginas-internas/interna.html">Contatos</a>
+        </section>
+
+        <!-- Ferramentas -->
+        <section aria-label="Ferramentas de acessibilidade" class="grid gap-2 text-sm">
+          <a href="./paginas-internas/interna.html" class="font-semibold text-gray-900">Acessibilidade</a>
+
+          <button type="button" data-contrast-toggle role="switch" aria-checked="false"
+            class="w-full rounded-md border border-gray-200 px-4 py-3 text-left hover:bg-gray-50
+                  focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+            Alto contraste
+          </button>
+
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" data-font="decrease"
+              class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              aria-label="Diminuir tamanho do texto">A-</button>
+            <button type="button" data-font="reset"
+              class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              aria-label="Restaurar tamanho do texto">A</button>
+            <button type="button" data-font="increase"
+              class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              aria-label="Aumentar tamanho do texto">A+</button>
+          </div>
+
+          <a href="#vlibras"
+            class="w-full rounded-md border border-gray-200 px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+            Libras
+          </a>
+
+          <a href="#"
+            class="w-full rounded-md border border-gray-200 px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+            Mapa do site
+          </a>
+        </section>
+
+        <!-- Navegação principal (mobile) com 2 níveis -->
+        <section aria-label="Navegação principal" class="grid gap-2 text-sm">
+          <p class="font-semibold text-gray-900">Páginas</p>
+
+          <!-- O MPF -->
+          <div class="rounded-md border border-gray-200 overflow-hidden">
+            <button type="button"
+              class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              data-acc-button="m-ompF"
+              aria-expanded="false"
+              aria-controls="m-ompF"
+            >
+              <span class="font-semibold text-gray-900">O MPF</span>
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+            </button>
+            <div id="m-ompF" data-acc-panel hidden class="p-2 grid gap-1">
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Institucional</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Unidades</a>
+
+              <!-- 2º nível -->
+              <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
+                <button type="button"
+                  class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+                  data-acc-button="m-ompF-sobre"
+                  aria-expanded="false"
+                  aria-controls="m-ompF-sobre"
+                >
+                  <span class="text-gray-900">Sobre</span>
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div id="m-ompF-sobre" data-acc-panel hidden class="p-2 grid gap-1">
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">História e missão</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Estrutura organizacional</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Atuação -->
+          <div class="rounded-md border border-gray-200 overflow-hidden">
+            <button type="button"
+              class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              data-acc-button="m-atuacao"
+              aria-expanded="false"
+              aria-controls="m-atuacao"
+            >
+              <span class="font-semibold text-gray-900">Atuação</span>
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+            </button>
+            <div id="m-atuacao" data-acc-panel hidden class="p-2 grid gap-1">
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Atuação temática</a>
+
+              <!-- 2º nível -->
+              <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
+                <button type="button"
+                  class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+                  data-acc-button="m-atuacao-areas"
+                  aria-expanded="false"
+                  aria-controls="m-atuacao-areas"
+                >
+                  <span class="text-gray-900">Áreas de atuação</span>
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div id="m-atuacao-areas" data-acc-panel hidden class="p-2 grid gap-1">
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Meio ambiente</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Combate à corrupção</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Direitos do cidadão</a>
+                </div>
+              </div>
+
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Grandes casos</a>
+            </div>
+          </div>
+
+          <!-- Serviços -->
+          <div class="rounded-md border border-gray-200 overflow-hidden">
+            <button type="button"
+              class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              data-acc-button="m-servicos"
+              aria-expanded="false"
+              aria-controls="m-servicos"
+            >
+              <span class="font-semibold text-gray-900">Serviços</span>
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+            </button>
+            <div id="m-servicos" data-acc-panel hidden class="p-2 grid gap-1">
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/servicos.html">Visão geral de serviços</a>
+
+              <!-- 2º nível -->
+              <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
+                <button type="button"
+                  class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+                  data-acc-button="m-servicos-cidadao"
+                  aria-expanded="false"
+                  aria-controls="m-servicos-cidadao"
+                >
+                  <span class="text-gray-900">Para o cidadão</span>
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div id="m-servicos-cidadao" data-acc-panel hidden class="p-2 grid gap-1">
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Denúncias</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Protocolo</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Certidões</a>
+                </div>
+              </div>
+
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Acesso à informação</a>
+            </div>
+          </div>
+
+          <!-- Comunicação -->
+          <div class="rounded-md border border-gray-200 overflow-hidden">
+            <button type="button"
+              class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              data-acc-button="m-comunicacao"
+              aria-expanded="false"
+              aria-controls="m-comunicacao"
+            >
+              <span class="font-semibold text-gray-900">Comunicação</span>
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+            </button>
+            <div id="m-comunicacao" data-acc-panel hidden class="p-2 grid gap-1">
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/noticias.html">Notícias</a>
+
+              <!-- 2º nível -->
+              <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
+                <button type="button"
+                  class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+                  data-acc-button="m-comunicacao-canais"
+                  aria-expanded="false"
+                  aria-controls="m-comunicacao-canais"
+                >
+                  <span class="text-gray-900">Canais</span>
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                </button>
+                <div id="m-comunicacao-canais" data-acc-panel hidden class="p-2 grid gap-1">
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Imprensa</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Redes sociais</a>
+                </div>
+              </div>
+
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Campanhas</a>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
-  </div>
-
-  <!-- MOBILE OVERLAY -->
-  <div data-menu-overlay class="fixed inset-0 z-50 bg-black/40" hidden></div>
-
-  <!-- MOBILE PANEL -->
-  <nav
-    id="mobile-menu"
-    data-menu-panel
-    class="fixed right-0 top-0 z-[60] h-full w-[88%] max-w-sm bg-white shadow-xl border-l border-gray-200 overflow-y-auto overscroll-contain"
-    hidden
-    tabindex="-1"
-    aria-label="Menu mobile"
-  >
-    <div class="p-4 border-b border-gray-200 flex items-center justify-between">
-      <p class="font-semibold text-gray-900">Menu</p>
-
-      <button type="button"
-        data-menu-close
-        class="rounded-md border border-gray-200 px-3 py-2 text-sm font-medium hover:bg-gray-50
-               focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-        aria-label="Fechar menu">
-        Fechar
-      </button>
-    </div>
-
-    <div class="p-4 grid gap-6 pb-10">
-      <!-- Busca mobile -->
-      <form role="search" aria-label="Buscar no site (mobile)">
-        <label class="sr-only" for="site-search-mobile">Buscar</label>
-        <input id="site-search-mobile" name="q" type="search" placeholder="Buscar…"
-          class="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none
-                focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" />
-        <button type="submit"
-          class="mt-2 w-full rounded-md bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95
-                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-          Buscar
-        </button>
-      </form>
-
-      <!-- Links institucionais (mobile) -->
-      <section aria-label="Links institucionais" class="grid gap-2 text-sm">
-        <p class="font-semibold text-gray-900">Links institucionais</p>
-        <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-           href="./paginas-internas/interna.html">Acesso à Informação</a>
-        <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-           href="./paginas-internas/interna.html">Transparência</a>
-        <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-           href="./paginas-internas/interna.html">Contatos</a>
-      </section>
-
-      <!-- Ferramentas -->
-      <section aria-label="Ferramentas de acessibilidade" class="grid gap-2 text-sm">
-        <a href="./paginas-internas/interna.html" class="font-semibold text-gray-900">Acessibilidade</a>
-
-        <button type="button" data-contrast-toggle role="switch" aria-checked="false"
-          class="w-full rounded-md border border-gray-200 px-4 py-3 text-left hover:bg-gray-50
-                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-          Alto contraste
-        </button>
-
-        <div class="grid grid-cols-3 gap-2">
-          <button type="button" data-font="decrease"
-            class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            aria-label="Diminuir tamanho do texto">A-</button>
-          <button type="button" data-font="reset"
-            class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            aria-label="Restaurar tamanho do texto">A</button>
-          <button type="button" data-font="increase"
-            class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            aria-label="Aumentar tamanho do texto">A+</button>
-        </div>
-
-        <a href="#vlibras"
-          class="w-full rounded-md border border-gray-200 px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-          Libras
-        </a>
-
-        <a href="#"
-          class="w-full rounded-md border border-gray-200 px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-          Mapa do site
-        </a>
-      </section>
-
-      <!-- Navegação principal (mobile) com 2 níveis -->
-      <section aria-label="Navegação principal" class="grid gap-2 text-sm">
-        <p class="font-semibold text-gray-900">Páginas</p>
-
-        <!-- O MPF -->
-        <div class="rounded-md border border-gray-200 overflow-hidden">
-          <button type="button"
-            class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            data-acc-button="m-ompF"
-            aria-expanded="false"
-            aria-controls="m-ompF"
-          >
-            <span class="font-semibold text-gray-900">O MPF</span>
-            <span aria-hidden="true">▾</span>
-          </button>
-          <div id="m-ompF" data-acc-panel hidden class="p-2 grid gap-1">
-            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Institucional</a>
-            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Unidades</a>
-
-            <!-- 2º nível -->
-            <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
-              <button type="button"
-                class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-                data-acc-button="m-ompF-sobre"
-                aria-expanded="false"
-                aria-controls="m-ompF-sobre"
-              >
-                <span class="text-gray-900">Sobre</span>
-                <span aria-hidden="true">▾</span>
-              </button>
-              <div id="m-ompF-sobre" data-acc-panel hidden class="p-2 grid gap-1">
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">História e missão</a>
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Estrutura organizacional</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Atuação -->
-        <div class="rounded-md border border-gray-200 overflow-hidden">
-          <button type="button"
-            class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            data-acc-button="m-atuacao"
-            aria-expanded="false"
-            aria-controls="m-atuacao"
-          >
-            <span class="font-semibold text-gray-900">Atuação</span>
-            <span aria-hidden="true">▾</span>
-          </button>
-          <div id="m-atuacao" data-acc-panel hidden class="p-2 grid gap-1">
-            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Atuação temática</a>
-
-            <!-- 2º nível -->
-            <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
-              <button type="button"
-                class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-                data-acc-button="m-atuacao-areas"
-                aria-expanded="false"
-                aria-controls="m-atuacao-areas"
-              >
-                <span class="text-gray-900">Áreas de atuação</span>
-                <span aria-hidden="true">▾</span>
-              </button>
-              <div id="m-atuacao-areas" data-acc-panel hidden class="p-2 grid gap-1">
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Meio ambiente</a>
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Combate à corrupção</a>
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Direitos do cidadão</a>
-              </div>
-            </div>
-
-            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Grandes casos</a>
-          </div>
-        </div>
-
-        <!-- Serviços -->
-        <div class="rounded-md border border-gray-200 overflow-hidden">
-          <button type="button"
-            class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            data-acc-button="m-servicos"
-            aria-expanded="false"
-            aria-controls="m-servicos"
-          >
-            <span class="font-semibold text-gray-900">Serviços</span>
-            <span aria-hidden="true">▾</span>
-          </button>
-          <div id="m-servicos" data-acc-panel hidden class="p-2 grid gap-1">
-            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/servicos.html">Visão geral de serviços</a>
-
-            <!-- 2º nível -->
-            <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
-              <button type="button"
-                class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-                data-acc-button="m-servicos-cidadao"
-                aria-expanded="false"
-                aria-controls="m-servicos-cidadao"
-              >
-                <span class="text-gray-900">Para o cidadão</span>
-                <span aria-hidden="true">▾</span>
-              </button>
-              <div id="m-servicos-cidadao" data-acc-panel hidden class="p-2 grid gap-1">
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Denúncias</a>
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Protocolo</a>
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Certidões</a>
-              </div>
-            </div>
-
-            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Acesso à informação</a>
-          </div>
-        </div>
-
-        <!-- Comunicação -->
-        <div class="rounded-md border border-gray-200 overflow-hidden">
-          <button type="button"
-            class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-            data-acc-button="m-comunicacao"
-            aria-expanded="false"
-            aria-controls="m-comunicacao"
-          >
-            <span class="font-semibold text-gray-900">Comunicação</span>
-            <span aria-hidden="true">▾</span>
-          </button>
-          <div id="m-comunicacao" data-acc-panel hidden class="p-2 grid gap-1">
-            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/noticias.html">Notícias</a>
-
-            <!-- 2º nível -->
-            <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
-              <button type="button"
-                class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-                data-acc-button="m-comunicacao-canais"
-                aria-expanded="false"
-                aria-controls="m-comunicacao-canais"
-              >
-                <span class="text-gray-900">Canais</span>
-                <span aria-hidden="true">▾</span>
-              </button>
-              <div id="m-comunicacao-canais" data-acc-panel hidden class="p-2 grid gap-1">
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Imprensa</a>
-                <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Redes sociais</a>
-              </div>
-            </div>
-
-            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Campanhas</a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </nav>
-</header>
-
-
+    </nav>
+  </header>
 
   <!-- Page -->
   <div class="mpf-tailwind">
