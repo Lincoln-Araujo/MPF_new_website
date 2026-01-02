@@ -106,7 +106,7 @@
 
       if (scrollToCategory && category) {
         const anchor = document.getElementById(`cat-${category}`);
-        if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
 
