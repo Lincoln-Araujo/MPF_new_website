@@ -409,20 +409,23 @@ a.group:active{ transform: translateY(0); }
 /* =========================================================
    SWIPER (paginação)
 ========================================================= */
-.mpf-swiper-pagination{
+.mpf-swiper-pagination,
+.mpf-swiper-aside-pagination {
   display:flex;
   justify-content:flex-end;
   gap:6px;
 }
 
-.mpf-swiper-pagination .swiper-pagination-bullet{
+.mpf-swiper-pagination .swiper-pagination-bullet,
+.mpf-swiper-aside-pagination .swiper-pagination-bullet {
   width:8px;
   height:8px;
   opacity:.25;
   background: var(--gray-900);
 }
 
-.mpf-swiper-pagination .swiper-pagination-bullet-active{
+.mpf-swiper-pagination .swiper-pagination-bullet-active,
+.mpf-swiper-aside-pagination .swiper-pagination-bullet-active  {
   opacity:.9;
   background: var(--brand);
 }

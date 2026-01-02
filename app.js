@@ -513,7 +513,7 @@
   let stickyTimer = null;
   let lastScrollY = window.scrollY || 0;
 
-  const STICKY_DELAY = 350; // ⏱️ como você pediu
+  const STICKY_DELAY = 500; // ⏱️ como você pediu
   const EXIT_BUFFER_MULTIPLIER = 2; // 2x altura do header
 
   const getHeights = () => {
