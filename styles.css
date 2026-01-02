@@ -541,39 +541,54 @@ button[aria-expanded="false"] svg{
   transform: rotate(0deg);
 }
 
-.news-results {
+/* Notícias
+   - Alterna visual via #news-results.is-list / #news-results.is-cards
+   - Compatível com o main atual (sem .news-media/.news-body no HTML)
+*/
+
+/* Base */
+/* A imagem SEMPRE respeita o "molde" */
+.news-item .news-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #e5e7eb; /* fallback */
+}
+
+.news-item .news-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* LISTA: thumbnail com altura controlada (não vira um monstro) */
+.news-results.is-list .news-media {
+  aspect-ratio: 16 / 9;
+}
+
+/* LISTA: layout 2 colunas a partir do sm */
+.news-results.is-list .news-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (min-width: 640px) {
+  .news-results.is-list .news-item {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+/* CARDS: no máximo 3 por linha no desktop, sem esticar */
+.news-results.is-cards {
   display: grid;
   gap: 16px;
 }
 
 @media (min-width: 1024px) {
-  .news-results.is-list .news-item {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    align-items: stretch;
-  }
-
-  .news-results.is-list .news-media {
-    height: 100%;
-    min-height: 140px;
-  }
-
   .news-results.is-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .news-results.is-cards .news-item {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .news-results.is-cards .news-media {
-    aspect-ratio: 16 / 9;
-  }
-}
-
-@media (max-width: 1023px) {
-  .news-results.is-cards {
-    /* mobile continua lista */
+    grid-template-columns: repeat(3, minmax(260px, 360px));
+    justify-content: start;
   }
 }
