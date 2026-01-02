@@ -158,10 +158,8 @@ img, svg, video, canvas{
 .mpf-brand__circle ,
 #site-header.is-sticky.is-leaving .mpf-brand__circle {
   width: calc(var(--logo-size) + 16px);
-  height: calc(var(--logo-size) + 16px);
+  height: auto;
   border-radius:999px;
-  background: var(--mpf-blue);
-  border:1px solid rgba(0,0,0,.12);
 
   display:flex;
   align-items:center;
@@ -541,4 +539,41 @@ button[aria-expanded="true"] svg{
 /* estado fechado */
 button[aria-expanded="false"] svg{
   transform: rotate(0deg);
+}
+
+.news-results {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .news-results.is-list .news-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: stretch;
+  }
+
+  .news-results.is-list .news-media {
+    height: 100%;
+    min-height: 140px;
+  }
+
+  .news-results.is-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .news-results.is-cards .news-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .news-results.is-cards .news-media {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 1023px) {
+  .news-results.is-cards {
+    /* mobile continua lista */
+  }
 }

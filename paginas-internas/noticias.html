@@ -6,100 +6,195 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <title>MPF — Notícias</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>:root{--brand:#150063;}</style>
+    <link rel="stylesheet" href="../styles.css">
   </head>
 
   <body class="bg-gray-50 text-gray-900">
 
-    <main id="main-content" class="mx-auto max-w-7xl px-4 py-8">
-      <!-- Cabeçalho da página -->
-      <div class="mb-8 rounded-2xl border border-gray-200 bg-white p-6 sm:p-8">
-        <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Notícias</p>
-        <h1 class="mt-2 text-2xl sm:text-3xl font-semibold leading-tight">Todas as notícias</h1>
-        <p class="mt-2 text-sm text-gray-600 max-w-prose">Acompanhe comunicados e atualizações institucionais.</p>
+    <main id="main-content" class="w-full">
+  <div class="mx-auto max-w-[1440px] px-4 py-8">
 
-        <!-- Filtros (placeholder) -->
-        <div class="mt-6 grid gap-3 sm:grid-cols-3">
-          <label class="text-sm">
-            <span class="block text-gray-700 font-medium">Buscar</span>
-            <input type="search" placeholder="Palavra-chave…" class="mt-1 w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" />
-          </label>
-          <label class="text-sm">
-            <span class="block text-gray-700 font-medium">Categoria</span>
-            <select class="mt-1 w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-              <option>Todas</option>
-              <option>Comunicação</option>
-              <option>Atuação</option>
-              <option>Serviços</option>
-            </select>
-          </label>
-          <label class="text-sm">
-            <span class="block text-gray-700 font-medium">Ordenar</span>
-            <select class="mt-1 w-full rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-              <option>Mais recentes</option>
-              <option>Mais antigas</option>
-            </select>
-          </label>
+    <!-- HERO / CABEÇALHO (no estilo da capa) -->
+    <header class="rounded-md border border-gray-300 bg-white overflow-hidden">
+      <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-[color:var(--brand)]"></div>
+        <div class="absolute inset-0 opacity-15"
+             style="background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 55%),
+                    radial-gradient(circle at 80% 30%, rgba(255,255,255,.6), transparent 55%);"
+             aria-hidden="true"></div>
+
+        <div class="relative p-6 sm:p-7 text-white">
+          <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">Acompanhe</p>
+          <h1 class="mt-1 text-2xl sm:text-3xl font-semibold leading-tight">Notícias</h1>
+          <p class="mt-1 text-sm text-white/90 max-w-3xl">
+            Comunicados e atualizações institucionais do Ministério Público Federal.
+          </p>
         </div>
       </div>
 
-      <!-- Lista -->
-      <section aria-label="Lista de notícias" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- CARD (repete) -->
-        <article class="overflow-hidden rounded-2xl bg-white border border-gray-200 flex flex-col">
-          <div class="aspect-[16/9] overflow-hidden bg-gray-200">
-            <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80"
-              alt="Imagem ilustrativa da notícia" class="h-full w-full object-cover" loading="lazy" />
-          </div>
-          <div class="p-5 flex flex-col gap-2 flex-grow">
-            <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicação</p>
-            <h2 class="text-lg font-semibold leading-snug">
-              <a href="noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                Título da notícia (placeholder)
-              </a>
-            </h2>
-            <p class="text-sm text-gray-600 leading-relaxed line-clamp-3">
-              Resumo curto para contextualizar o conteúdo e ajudar na decisão de clique.
-            </p>
-            <div class="mt-auto pt-2 flex items-center justify-between text-xs text-gray-500">
-              <span>18/12/2025</span>
-              <span>Assessoria</span>
+      <!-- BUSCA + FILTROS -->
+      <div class="p-6 sm:p-7 border-t border-white/15 bg-white">
+        <form class="grid gap-3 lg:grid-cols-12" role="search" aria-label="Buscar notícias">
+          <!-- Busca -->
+          <div class="lg:col-span-6">
+            <label for="news-search" class="text-xs font-semibold text-gray-700">Buscar</label>
+            <div class="mt-1 relative">
+              <span aria-hidden="true" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">🔎</span>
+              <input id="news-search" type="search" placeholder="Palavra-chave…"
+                class="w-full rounded-md border border-gray-300 bg-white pl-10 pr-3 py-2.5 text-sm
+                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" />
             </div>
           </div>
-        </article>
 
-        <!-- Repita quantos precisar… -->
-        <article class="overflow-hidden rounded-2xl bg-white border border-gray-200 flex flex-col">
-          <div class="aspect-[16/9] overflow-hidden bg-gray-200">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
-              alt="Imagem ilustrativa da notícia" class="h-full w-full object-cover" loading="lazy" />
+          <!-- Categoria -->
+          <div class="lg:col-span-3">
+            <label for="news-category" class="text-xs font-semibold text-gray-700">Categoria</label>
+            <select id="news-category"
+              class="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
+                     focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+              <option value="">Todas</option>
+              <option value="comunicacao">Comunicação</option>
+              <option value="atuacao">Atuação</option>
+              <option value="institucional">Institucional</option>
+              <option value="servicos">Serviços</option>
+            </select>
           </div>
-          <div class="p-5 flex flex-col gap-2 flex-grow">
-            <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Atuação</p>
-            <h2 class="text-lg font-semibold leading-snug">
-              <a href="noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                Outra notícia (placeholder)
-              </a>
-            </h2>
-            <p class="text-sm text-gray-600 leading-relaxed line-clamp-3">
-              Resumo curto. Ideal manter consistência.
+
+          <!-- Ordenar -->
+          <div class="lg:col-span-3">
+            <label for="news-sort" class="text-xs font-semibold text-gray-700">Ordenar</label>
+            <select id="news-sort"
+              class="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
+                     focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+              <option value="recentes">Mais recentes</option>
+              <option value="antigas">Mais antigas</option>
+            </select>
+          </div>
+
+          <!-- Separador -->
+          <div class="lg:col-span-12 mt-2 border-t border-gray-200 pt-4"></div>
+
+          <!-- Barra de ações: contador + toggle (só desktop) -->
+          <div class="lg:col-span-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p class="text-xs text-gray-600">
+              Mostrando <span id="news-count" class="font-semibold">0</span> notícias
             </p>
-            <div class="mt-auto pt-2 flex items-center justify-between text-xs text-gray-500">
-              <span>18/12/2025</span>
-              <span>Assessoria</span>
+
+            <!-- Toggle (somente desktop) -->
+            <div class="hidden lg:flex items-center gap-2" aria-label="Modo de visualização">
+              <span class="text-xs font-semibold text-gray-700 mr-2">Visualização</span>
+
+              <button type="button" data-view="cards" aria-pressed="true"
+                class="news-view-btn rounded-md border border-gray-300 bg-gray-900 px-3 py-2 text-xs font-semibold text-white
+                       hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                Cards
+              </button>
+
+              <button type="button" data-view="list" aria-pressed="false"
+                class="news-view-btn rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900
+                       hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                Lista
+              </button>
             </div>
           </div>
-        </article>
-      </section>
+        </form>
+      </div>
+    </header>
 
-      <!-- Paginação (Plone 5 entra aqui) -->
-      <nav class="mt-10 flex items-center justify-center" aria-label="Paginação">
-        <div class="rounded-2xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700">
-          <!-- Placeholder: Plone renderiza aqui -->
-          <span class="font-medium text-gray-900">Paginação</span> • Anterior • 1 2 3 • Próximo
+    <!-- LISTA DE NOTÍCIAS -->
+    <section class="mt-6 rounded-md border border-gray-300 bg-white overflow-hidden">
+      <header class="p-6 border-b border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-900">Todas as notícias</h2>
+        <p class="mt-1 text-sm text-gray-600">Use os filtros acima para refinar a busca.</p>
+      </header>
+
+      <!-- Container que muda entre grid (cards) e lista -->
+      <div class="p-6">
+        <!-- Em mobile: SEMPRE lista -->
+        <!-- Em desktop: pode virar cards via classe "is-cards" -->
+        <div id="news-results" class="news-results is-list">
+
+          <!-- ITEM (mesmo markup serve pros 2 modos) -->
+          <article class="news-item group rounded-md border border-gray-200 overflow-hidden bg-white">
+            <div class="news-media bg-gray-200">
+              <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80"
+                   alt="Imagem ilustrativa da notícia"
+                   class="h-full w-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="news-body p-5">
+              <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicação</p>
+
+              <h3 class="mt-1 text-base sm:text-lg font-semibold leading-snug text-gray-900">
+                <a href="noticia.html"
+                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                  Título da notícia (placeholder)
+                </a>
+              </h3>
+
+              <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-3">
+                Resumo curto para contextualizar o conteúdo e ajudar na decisão de clique.
+              </p>
+
+              <div class="mt-3 flex items-center justify-between text-xs text-gray-500">
+                <span class="inline-flex items-center gap-2">
+                  <span aria-hidden="true">📅</span> 18/12/2025
+                </span>
+                <span>Assessoria</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ITEM 2 -->
+          <article class="news-item group rounded-md border border-gray-200 overflow-hidden bg-white">
+            <div class="news-media bg-gray-200">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
+                   alt="Imagem ilustrativa da notícia"
+                   class="h-full w-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="news-body p-5">
+              <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Atuação</p>
+
+              <h3 class="mt-1 text-base sm:text-lg font-semibold leading-snug text-gray-900">
+                <a href="noticia.html"
+                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                  Outra notícia (placeholder)
+                </a>
+              </h3>
+
+              <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-3">
+                Resumo curto. Ideal manter consistência.
+              </p>
+
+              <div class="mt-3 flex items-center justify-between text-xs text-gray-500">
+                <span class="inline-flex items-center gap-2">
+                  <span aria-hidden="true">📅</span> 18/12/2025
+                </span>
+                <span>Assessoria</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ... Plone renderiza o resto aqui ... -->
+
         </div>
-      </nav>
-    </main>
+      </div>
+    </section>
 
+    <!-- Paginação (Plone 5 entra aqui) -->
+    <nav class="mt-6 flex items-center justify-center" aria-label="Paginação">
+      <div class="rounded-md border border-gray-300 bg-white px-4 py-3 text-sm text-gray-700">
+        <span class="font-medium text-gray-900">Paginação</span> • Anterior • 1 2 3 • Próximo
+      </div>
+    </nav>
+  </div>
+
+  
+</main>
+
+
+    <script src="../newsResults.js"></script>
+    <script src="../app.js"></script>
   </body>
 </html>
