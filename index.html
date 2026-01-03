@@ -578,527 +578,541 @@
 
     <!-- Page -->
     <div class="mpf-tailwind">
-        <main id="main-content" class="w-full">
-            <div class="mx-auto max-w-[1440px] px-4 py-8">
+<main id="main-content" class="w-full">
+  <div class="mx-auto max-w-[1440px] px-3 py-5 sm:px-4 sm:py-8">
 
-                <!-- Aviso: Portal em transição -->
-                <section class="mb-6" aria-label="Aviso">
-                    <div class="rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 flex gap-3">
-                        <span aria-hidden="true" class="mt-0.5">ⓘ</span>
-                        <div class="min-w-0">
-                            <p class="font-semibold">Portal em transição</p>
-                            <p class="mt-0.5 text-amber-900/90">
-                                Este é um portal intermediário. Alguns conteúdos estão sendo migrados e estarão disponíveis em breve. Caso encontre algum link indisponível, você será direcionado(a) para uma página informativa.
-                            </p>
-                        </div>
+    <!-- Aviso: Portal em transição -->
+    <section class="mb-6" aria-label="Aviso">
+      <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-3 sm:px-4 text-sm text-amber-900 flex gap-3">
+        <span aria-hidden="true" class="mt-0.5">ⓘ</span>
+        <div class="min-w-0">
+          <p class="font-semibold">Portal em transição</p>
+          <p class="mt-0.5 text-amber-900/90">
+            Este é um portal intermediário. Alguns conteúdos estão sendo migrados e estarão disponíveis em breve. Caso encontre algum link indisponível, você será direcionado(a) para uma página informativa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner principal -->
+    <section class="mb-8" aria-labelledby="boas-vindas-titulo">
+      <div class="rounded-2xl bg-[url(assets/banner-hero.png)] text-white px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-14 shadow-sm">
+        <div class="max-w-3xl">
+          <h1 id="boas-vindas-titulo" class="text-3xl md:text-4xl font-semibold leading-tight">
+            Bem-vindo ao novo Portal do MPF
+          </h1>
+          <p class="mt-3 text-white/90 text-base md:text-lg">
+            Ajude a melhorar o novo site do MPF enviando sua opinião.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="paginas-internas/feedback.html"
+               class="inline-flex items-center justify-center rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-[color:var(--brand)]
+                      hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white/40">
+              Enviar feedback
+            </a>
+            <a href="./paginas-internas/noticias.html"
+               class="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-2.5 text-sm font-semibold text-white
+                      hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+              Ir para notícias
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços (70%) + Destaques (30%) -->
+    <section aria-labelledby="hub-servicos-titulo" class="grid gap-4 sm:gap-6 lg:grid-cols-12 lg:items-stretch">
+
+      <!-- COLUNA 70% — SERVIÇOS -->
+      <div class="lg:col-span-8">
+        <div class="h-full overflow-hidden rounded-md border border-gray-300 bg-white flex flex-col">
+
+          <!-- Cabeçalho com imagem + shade -->
+          <header class="relative overflow-hidden">
+            <a href="./paginas-internas/servicos.html" class="w-full relative">
+              <div class="relative h-[140px] sm:h-[150px] mpf-services-hero" aria-hidden="true"></div>
+
+              <div class="absolute inset-0 border-b" style="background: url(assets/banner-servicos.png);"></div>
+
+              <div class="absolute inset-0 p-4 sm:p-6 flex items-center">
+                <div class="text-white max-w-2xl">
+                  <p class="text-[11px] font-semibold uppercase tracking-wider opacity-90">Para o cidadão</p>
+                  <h2 id="hub-servicos-titulo" class="mt-1 text-2xl sm:text-2xl font-semibold leading-tight">Serviços</h2>
+                </div>
+              </div>
+            </a>
+          </header>
+
+          <!-- Grid -->
+          <div class="p-4 sm:p-6 lg:p-7 flex-1">
+            <ul class="grid gap-3 sm:grid-cols-2">
+              <li>
+                <a href="#"
+                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                      <span class="text-[color:var(--brand)] font-semibold">P</span>
                     </div>
-                </section>
-
-                <!-- Banner principal -->
-                <section class="mb-8" aria-labelledby="boas-vindas-titulo">
-                    <div class="rounded-2xl bg-[url(assets/banner-hero.png)] text-white px-6 py-10 md:px-10 md:py-14 shadow-sm">
-                        <div class="max-w-3xl">
-                            <h1 id="boas-vindas-titulo" class="text-3xl md:text-4xl font-semibold leading-tight">
-                Bem-vindo ao novo Portal do MPF
-              </h1>
-                            <p class="mt-3 text-white/90 text-base md:text-lg">
-                                Ajude a melhorar o novo site do MPF enviando sua opinião.
-                            </p>
-                            <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                                <a href="paginas-internas/feedback.html" class="inline-flex items-center justify-center rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-[color:var(--brand)]
-                          hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white/40">
-                  Enviar feedback
-                </a>
-                                <a href="./paginas-internas/noticias.html" class="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-2.5 text-sm font-semibold text-white
-                          hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
-                  Ir para notícias
-                </a>
-                            </div>
-                        </div>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Protocolo</h3>
+                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Envie documentos e acompanhe o andamento do pedido.</p>
                     </div>
-                </section>
-
-
-                <!-- Serviços (70%) + Destaques (30%) -->
-                <section aria-labelledby="hub-servicos-titulo" class="grid gap-6 lg:grid-cols-12 lg:items-stretch">
-
-                    <!-- COLUNA 70% — SERVIÇOS -->
-                    <div class="lg:col-span-8">
-                        <div class="h-full overflow-hidden rounded-md border border-gray-300 bg-white flex flex-col">
-
-                            <!-- Cabeçalho com imagem + shade (mais “faixa institucional”) -->
-                            <header class="relative overflow-hidden">
-                                <a href="./paginas-internas/servicos.html" class="w-full relative">
-                                    <div class="relative h-[140px] sm:h-[150px] mpf-services-hero" aria-hidden="true"></div>
-
-                                    <div class="absolute inset-0 border-b" style="background: url(assets/banner-servicos.png);">
-                                    </div>
-
-                                    <div class="absolute inset-0 p-5 sm:p-6 flex items-center">
-                                        <div class="text-white max-w-2xl">
-                                            <p class="text-[11px] font-semibold uppercase tracking-wider opacity-90">Para o cidadão</p>
-                                            <h2 id="hub-servicos-titulo" class="mt-1 text-2xl sm:text-2xl font-semibold leading-tight">Serviços</h2>
-                                        </div>
-                                    </div>
-                                </a>
-
-                            </header>
-
-                            <!-- Grid -->
-                            <div class="p-6 sm:p-7 flex-1">
-                                <ul class="grid gap-3 sm:grid-cols-2">
-                                    <li>
-                                        <a href="#" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                                            <div class="flex items-start gap-4">
-                                                <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                                                    <span class="text-[color:var(--brand)] font-semibold">P</span>
-                                                </div>
-                                                <div class="min-w-0">
-                                                    <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Protocolo</h3>
-                                                    <p class="mt-1 text-sm text-gray-700 leading-relaxed">Envie documentos e acompanhe o andamento do pedido.</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                                            <div class="flex items-start gap-4">
-                                                <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                                                    <span class="text-[color:var(--brand)] font-semibold">D</span>
-                                                </div>
-                                                <div class="min-w-0">
-                                                    <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Denúncia</h3>
-                                                    <p class="mt-1 text-sm text-gray-700 leading-relaxed">Registre informações e solicite providências ao MPF.</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                                            <div class="flex items-start gap-4">
-                                                <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                                                    <span class="text-[color:var(--brand)] font-semibold">🔎</span>
-                                                </div>
-                                                <div class="min-w-0">
-                                                    <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Pesquisa de processos</h3>
-                                                    <p class="mt-1 text-sm text-gray-700 leading-relaxed">Consulte processos e documentos públicos do MPF.</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                                            <div class="flex items-start gap-4">
-                                                <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                                                    <span class="text-[color:var(--brand)] font-semibold">🎓</span>
-                                                </div>
-                                                <div class="min-w-0">
-                                                    <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Concursos</h3>
-                                                    <p class="mt-1 text-sm text-gray-700 leading-relaxed">Informações sobre concurso e estágio.</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                                            <div class="flex items-start gap-4">
-                                                <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                                                    <span class="text-[color:var(--brand)] font-semibold">O</span>
-                                                </div>
-                                                <div class="min-w-0">
-                                                    <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Ouvidoria</h3>
-                                                    <p class="mt-1 text-sm text-gray-700 leading-relaxed">Envie reclamações, elogios, sugestões e pedidos.</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                                            <div class="flex items-start gap-4">
-                                                <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                                                    <span class="text-[color:var(--brand)] font-semibold">C</span>
-                                                </div>
-                                                <div class="min-w-0">
-                                                    <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Certidões</h3>
-                                                    <p class="mt-1 text-sm text-gray-700 leading-relaxed">Emita certidões e consultas relacionadas ao MPF.</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b pb-6">
-                                    <p class="text-xs text-gray-600">Não achou? Use a página completa de serviços.</p>
-                                    <a href="./paginas-internas/servicos.html" class="inline-flex items-center justify-center rounded-md bg-[color:var(--brand)] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Ver todos os serviços
+                  </div>
                 </a>
-                                </div>
+              </li>
 
-                                <!-- Últimas noticias -->
-                                <section id="ultimas-noticias" aria-labelledby="ultimas-noticias-titulo" class="mt-10 rounded-md border border-gray-300 bg-white p-6">
-                                    <div class="flex items-center justify-between gap-4">
-                                        <h2 id="ultimas-noticias-titulo" class="text-2xl font-semibold">Últimas Notícias</h2>
-                                        <a href="./paginas-internas/noticias.html" class="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] hover:underline
-                                    focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                    Ver todas <span aria-hidden="true">→</span>
-                  </a>
-                                    </div>
-
-                                    <div class="mt-6 grid gap-6 lg:grid-cols-12">
-                                        <!-- Lista (maior) -->
-                                        <div class="lg:col-span-7 grid gap-4">
-                                            <article class="rounded-md border border-gray-200 p-5 hover:bg-gray-50 transition">
-                                                <div class="flex items-start justify-between gap-4">
-                                                    <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
-                                                        Notícias
-                                                    </p>
-                                                    <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                                                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
-                                                    </p>
-                                                </div>
-                                                <h3 class="mt-3 text-lg font-semibold leading-snug">
-                        <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                          MPF recomenda medidas para proteção de comunidades indígenas
-                        </a>
-                      </h3>
-                                                <p class="mt-2 text-sm text-gray-700 leading-relaxed">
-                                                    Texto curto para resumir leitura rápida.
-                                                </p>
-                                                <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Atuação</p>
-                                            </article>
-
-                                            <article class="rounded-md border border-gray-200 p-5 hover:bg-gray-50 transition">
-                                                <div class="flex items-start justify-between gap-4">
-                                                    <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
-                                                        Comunicado
-                                                    </p>
-                                                    <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                                                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
-                                                    </p>
-                                                </div>
-                                                <h3 class="mt-3 text-lg font-semibold leading-snug">
-                        <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                          Nova resolução sobre procedimentos administrativos
-                        </a>
-                      </h3>
-                                                <p class="mt-2 text-sm text-gray-700 leading-relaxed">
-                                                    Texto curto para resumir leitura rápida.
-                                                </p>
-                                                <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Assessoria</p>
-                                            </article>
-
-                                            <article class="rounded-md border border-gray-200 p-5 hover:bg-gray-50 transition">
-                                                <div class="flex items-start justify-between gap-4">
-                                                    <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
-                                                        Institucional
-                                                    </p>
-                                                    <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                                                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
-                                                    </p>
-                                                </div>
-                                                <h3 class="mt-3 text-lg font-semibold leading-snug">
-                        <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                          Balanço de atividades do MPF no terceiro trimestre
-                        </a>
-                      </h3>
-                                                <p class="mt-2 text-sm text-gray-700 leading-relaxed">
-                                                    Texto curto para resumir leitura rápida.
-                                                </p>
-                                                <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Institucional</p>
-                                            </article>
-                                        </div>
-
-                                        <!-- Cards com imagem (lado direito) -->
-                                        <div class="lg:col-span-5 grid gap-4">
-                                            <article class="relative overflow-hidden rounded-xl border border-gray-200">
-                                                <div class="aspect-[15/10] bg-gray-300">
-                                                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80" alt="" class="h-full w-full object-cover" loading="lazy" />
-                                                </div>
-                                                <div class="absolute inset-0 bg-black/35"></div>
-                                                <div class="absolute inset-0 p-5 flex flex-col justify-end">
-                                                    <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">
-                                                        Destaque
-                                                    </p>
-                                                    <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
-                          <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
-                            Operação combate fraudes em licitações públicas
-                          </a>
-                        </h3>
-                                                </div>
-                                            </article>
-
-                                            <article class="relative overflow-hidden rounded-xl border border-gray-200">
-                                                <div class="aspect-[16/10] bg-gray-300">
-                                                    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1400&q=80" alt="" class="h-full w-full object-cover" loading="lazy" />
-                                                </div>
-                                                <div class="absolute inset-0 bg-black/35"></div>
-                                                <div class="absolute inset-0 p-5 flex flex-col justify-end">
-                                                    <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">
-                                                        Inovação
-                                                    </p>
-                                                    <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
-                          <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
-                            MPF lança plataforma digital de atendimento
-                          </a>
-                        </h3>
-                                                </div>
-                                            </article>
-
-                                            <aside class="rounded-xl bg-[color:var(--brand)] p-6 text-white">
-                                                <h3 class="text-lg font-semibold">Acompanhe o MPF</h3>
-                                                <p class="mt-2 text-sm text-white/90">
-                                                    Fique por dentro das ações e novidades do Ministério Público Federal.
-                                                </p>
-                                                <a href="#" class="mt-5 inline-flex w-full items-center justify-center rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-[color:var(--brand)]
-                                hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white/40">
-                        Inscrever-se
-                      </a>
-                                            </aside>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section aria-label="Banner de serviço" class="mt-10 rounded-md border border-gray-300 overflow-hidden bg-white">
-                                    <div class="relative h-[140px] sm:h-[150px]">
-                                        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-                                        <div class="absolute inset-0 bg-black/60"></div>
-
-                                        <div class="relative h-full p-5 flex items-center justify-between gap-4">
-                                            <div class="text-white max-w-xl">
-                                                <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">
-                                                    Transparência
-                                                </p>
-                                                <h3 class="mt-1 text-2xl font-semibold leading-tight">
-                        Acesso à Informação
-                      </h3>
-                                                <p class="mt-1 text-sm text-white/90">
-                                                    Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
-                                                </p>
-                                            </div>
-
-                                            <a href="#" class="shrink-0 inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white/30">
-                      Solicitar informação
-                    </a>
-
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section aria-label="Banner institucional" class="mt-7">
-                                    <a href="#" class="relative block overflow-hidden rounded-xl border border-gray-200
-                        focus-visible:outline-none
-                        focus-visible:ring-2 focus-visible:ring-[color:var(--brand)]/30">
-                                        <div class="relative h-[160px] bg-gray-200">
-                                            <img src="assets/mpf_oficial_cover.jpeg" alt="MPF – Guardião do futuro, protetor de direitos" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-                                        </div>
-                                    </a>
-                                </section>
-
-                            </div>
-                        </div>
+              <li>
+                <a href="#"
+                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                      <span class="text-[color:var(--brand)] font-semibold">D</span>
                     </div>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Denúncia</h3>
+                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Registre informações e solicite providências ao MPF.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
 
-                    <!-- COLUNA 30% — DESTAQUES + BANNER -->
-                    <aside class="lg:col-span-4 flex flex-col gap-6">
+              <li>
+                <a href="#"
+                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                      <span class="text-[color:var(--brand)] font-semibold">🔎</span>
+                    </div>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Pesquisa de processos</h3>
+                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Consulte processos e documentos públicos do MPF.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
 
-                        <section aria-labelledby="destaques-titulo" class="flex-1 rounded-md border border-gray-300 bg-white overflow-hidden flex flex-col">
+              <li>
+                <a href="#"
+                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                      <span class="text-[color:var(--brand)] font-semibold">🎓</span>
+                    </div>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Concursos</h3>
+                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Informações sobre concurso e estágio.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
 
-                            <header class="p-6 border-b border-gray-200">
-                                <h2 id="destaques-titulo" class="text-lg font-semibold text-gray-900">Em destaque</h2>
-                                <p class="mt-1 text-sm text-gray-600">Atualizações institucionais selecionadas.</p>
-                            </header>
+              <li>
+                <a href="#"
+                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                      <span class="text-[color:var(--brand)] font-semibold">O</span>
+                    </div>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Ouvidoria</h3>
+                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Envie reclamações, elogios, sugestões e pedidos.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
 
-                            <div class="p-6 grid gap-4">
+              <li>
+                <a href="#"
+                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <div class="flex items-start gap-3 sm:gap-4">
+                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                      <span class="text-[color:var(--brand)] font-semibold">C</span>
+                    </div>
+                    <div class="min-w-0">
+                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Certidões</h3>
+                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Emita certidões e consultas relacionadas ao MPF.</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
 
-                                <article class="rounded-md border border-gray-300 overflow-hidden">
-                                    <div class="aspect-[16/10] overflow-hidden bg-gray-200">
-                                        <img src="https://serralheriamoreno.com.br/wp-content/uploads/2023/10/Torres-transmissao-energia-eletrica-1024x702.jpg" alt="Imagem do destaque" class="h-full w-full object-cover" loading="lazy" />
-                                    </div>
-                                    <div class="p-4">
-                                        <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Meio Ambiente</p>
-                                        <h3 class="mt-1 text-base font-semibold leading-snug">
-                    <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                      MPF obtém decisão para retirada de postes e estrutura elétrica de área ambiental invadida em Mirante da Serra (RO)
-                    </a>
-                  </h3>
-                                        <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-2">
-                                            Energisa e Compel têm 60 dias para interromper fornecimento de energia a invasores das reservas legais
-                                        </p>
-                                        <p class="mt-3 text-xs text-gray-500">23/12/2025 • Assessoria de Comunicação</p>
-                                    </div>
-                                </article>
-
-                                <article class="rounded-md border border-gray-300 p-4">
-                                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicado</p>
-                                    <h3 class="mt-1 text-base font-semibold leading-snug">
-                  <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                    MPF funciona em regime de plantão durante recesso forense
-                  </a>
-                </h3>
-                                    <p class="mt-2 text-sm text-gray-700 leading-relaxed">
-                                        De 20 de dezembro de 2025 a 6 de janeiro de 2026, atendimento será para casos urgentes
-                                    </p>
-                                    <p class="mt-3 text-xs text-gray-500">19/12/2025</p>
-                                </article>
-
-                                <article class="rounded-md border border-gray-300 p-4">
-                                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Geral</p>
-                                    <h3 class="mt-1 text-base font-semibold leading-snug">
-                  <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                    Atuação do MPF no Supremo cresce 10% em 2025
-                  </a>
-                </h3>
-                                    <p class="mt-2 text-sm text-gray-700 leading-relaxed">
-                                        Dados foram apresentados pelo procurador-geral da República, Paulo Gonet, na última sessão do ano judiciário do STF
-                                    </p>
-                                    <p class="mt-3 text-xs text-gray-500">1/12/2025</p>
-                                </article>
-
-                                <a href="./paginas-internas/noticia.html" class="mt-auto inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                Ver mais notícias
+            <div class="mt-5 sm:mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b pb-5 sm:pb-6">
+              <p class="text-xs text-gray-600">Não achou? Use a página completa de serviços.</p>
+              <a href="./paginas-internas/servicos.html"
+                 class="inline-flex items-center justify-center rounded-md bg-[color:var(--brand)] px-4 sm:px-5 py-2.5 text-sm font-semibold text-white hover:opacity-95
+                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                Ver todos os serviços
               </a>
-                            </div>
-
-                        </section>
-
-                        <!-- Carrossel (3 cards máx) -->
-                        <section aria-labelledby="carrossel-titulo" class="rounded-md border border-gray-200 bg-white overflow-hidden">
-
-                            <header class="p-6 border-b border-gray-200">
-                                <div class="flex items-start justify-between gap-3">
-                                    <div>
-                                        <h2 id="carrossel-titulo" class="text-lg font-semibold text-gray-900">
-                    Em foco
-                  </h2>
-                                        <p class="mt-1 text-sm text-gray-600">
-                                            Conteúdos selecionados.
-                                        </p>
-                                    </div>
-                                </div>
-                            </header>
-
-                            <div class="p-6">
-                                <div class="swiper mpf-swiper">
-                                    <div class="swiper-wrapper">
-
-                                        <!-- Slide 1 -->
-                                        <div class="swiper-slide">
-                                            <article class="group rounded-xl border border-gray-200 overflow-hidden">
-                                                <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
-                                                    <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80" alt="Imagem ilustrativa do conteúdo" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy" />
-                                                </div>
-                                                <div class="p-4">
-                                                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
-                                                        Transparência
-                                                    </p>
-                                                    <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
-                          <a href="#"
-                            class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                            Acesso à Informação: solicite dados e acompanhe pedidos
-                          </a>
-                        </h3>
-                                                </div>
-                                            </article>
-                                        </div>
-
-                                        <!-- Slide 2 -->
-                                        <div class="swiper-slide">
-                                            <article class="group rounded-2xl border border-gray-200 overflow-hidden">
-                                                <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
-                                                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80" alt="Imagem ilustrativa do conteúdo" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy"
-                                                    />
-                                                </div>
-                                                <div class="p-4">
-                                                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
-                                                        Serviços
-                                                    </p>
-                                                    <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
-                          <a href="#"
-                            class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                            Guia rápido: principais serviços ao cidadão
-                          </a>
-                        </h3>
-                                                </div>
-                                            </article>
-                                        </div>
-
-                                        <!-- Slide 3 -->
-                                        <div class="swiper-slide">
-                                            <article class="group rounded-2xl border border-gray-200 overflow-hidden">
-                                                <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
-                                                    <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80" alt="Imagem ilustrativa do conteúdo" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" loading="lazy"
-                                                    />
-                                                </div>
-                                                <div class="p-4">
-                                                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">
-                                                        Institucional
-                                                    </p>
-                                                    <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
-                          <a href="#"
-                            class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                            Conheça o MPF: atuação, unidades e canais oficiais
-                          </a>
-                        </h3>
-                                                </div>
-                                            </article>
-                                        </div>
-
-                                    </div>
-
-                                    <!-- Controles -->
-                                    <div class="mt-4 flex items-center justify-between gap-3">
-                                        <div class="flex items-center gap-2">
-                                            <button type="button" class="mpf-swiper-prev rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" aria-label="Voltar">
-                                                ←
-                                            </button>
-
-                                            <button type="button" class="mpf-swiper-next rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30" aria-label="Avançar">
-                                                →
-                                            </button>
-                                        </div>
-
-                                        <div class="mpf-swiper-pagination"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- Banner pequeno (altura correta / max 170px) -->
-                        <section aria-label="Banner" class="rounded-md border border-gray-300 bg-white overflow-hidden">
-                            <div class="relative h-full p-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                                <a href="./paginas-internas/interna.html" class="text-white max-w-xl">
-                                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-                                    <div class="absolute inset-0 bg-black/60"></div>
-
-                                    <div class="relative h-full p-5 flex items-center justify-between gap-4">
-                                        <div class="text-white max-w-xl">
-                                            <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">
-                                                Transparência
-                                            </p>
-                                            <h3 class="mt-1 text-2xl font-semibold leading-tight">
-                      Acesso à Informação
-                    </h3>
-                                            <p class="mt-1 text-sm text-white/90">
-                                                Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </section>
-
-                    </aside>
-                </section>
-
             </div>
-        </main>
+
+            <!-- Últimas noticias -->
+            <section id="ultimas-noticias" aria-labelledby="ultimas-noticias-titulo" class="mt-8 sm:mt-10 rounded-md border border-gray-300 bg-white p-4 sm:p-6">
+              <div class="flex items-center justify-between gap-4">
+                <h2 id="ultimas-noticias-titulo" class="text-xl sm:text-2xl font-semibold">Últimas Notícias</h2>
+
+                <!-- mobile: "+" | desktop: "Ver todas" + chevron-right -->
+                <a href="./paginas-internas/noticias.html"
+                   class="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] hover:underline
+                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                  <span class="sm:hidden font-bold text-lg leading-none" aria-hidden="true">+</span>
+                  <span class="hidden sm:inline">Ver todas</span>
+
+                  <svg aria-hidden="true"
+                       class="ml-1 hidden sm:inline-block h-3.5 w-3.5 opacity-70"
+                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+
+                  <span class="sr-only sm:hidden">Ver todas</span>
+                </a>
+              </div>
+
+              <div class="mt-5 sm:mt-6 grid gap-5 sm:gap-6 lg:grid-cols-12">
+                <!-- Lista (maior) -->
+                <div class="lg:col-span-7 grid gap-3 sm:gap-4">
+                  <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
+                    <div class="flex items-start justify-between gap-4">
+                      <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                        Notícias
+                      </p>
+                      <p class="text-xs text-gray-500 inline-flex items-center gap-2">
+                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
+                      </p>
+                    </div>
+                    <h3 class="mt-3 text-lg font-semibold leading-snug">
+                      <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                        MPF recomenda medidas para proteção de comunidades indígenas
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
+                    <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Atuação</p>
+                  </article>
+
+                  <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
+                    <div class="flex items-start justify-between gap-4">
+                      <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                        Comunicado
+                      </p>
+                      <p class="text-xs text-gray-500 inline-flex items-center gap-2">
+                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
+                      </p>
+                    </div>
+                    <h3 class="mt-3 text-lg font-semibold leading-snug">
+                      <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                        Nova resolução sobre procedimentos administrativos
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
+                    <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Assessoria</p>
+                  </article>
+
+                  <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
+                    <div class="flex items-start justify-between gap-4">
+                      <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                        Institucional
+                      </p>
+                      <p class="text-xs text-gray-500 inline-flex items-center gap-2">
+                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
+                      </p>
+                    </div>
+                    <h3 class="mt-3 text-lg font-semibold leading-snug">
+                      <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                        Balanço de atividades do MPF no terceiro trimestre
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
+                    <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Institucional</p>
+                  </article>
+                </div>
+
+                <!-- Cards com imagem (lado direito) -->
+                <div class="lg:col-span-5 grid gap-3 sm:gap-4">
+                  <article class="relative overflow-hidden rounded-xl border border-gray-200">
+                    <div class="aspect-[15/10] bg-gray-300">
+                      <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80" alt="" class="h-full w-full object-cover" loading="lazy" />
+                    </div>
+                    <div class="absolute inset-0 bg-black/35"></div>
+                    <div class="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end">
+                      <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">Destaque</p>
+                      <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
+                        <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
+                          Operação combate fraudes em licitações públicas
+                        </a>
+                      </h3>
+                    </div>
+                  </article>
+
+                  <article class="relative overflow-hidden rounded-xl border border-gray-200">
+                    <div class="aspect-[16/10] bg-gray-300">
+                      <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1400&q=80" alt="" class="h-full w-full object-cover" loading="lazy" />
+                    </div>
+                    <div class="absolute inset-0 bg-black/35"></div>
+                    <div class="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end">
+                      <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">Inovação</p>
+                      <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
+                        <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
+                          MPF lança plataforma digital de atendimento
+                        </a>
+                      </h3>
+                    </div>
+                  </article>
+
+                  <aside class="rounded-xl bg-[color:var(--brand)] p-4 sm:p-6 text-white">
+                    <h3 class="text-lg font-semibold">Acompanhe o MPF</h3>
+                    <p class="mt-2 text-sm text-white/90">
+                      Fique por dentro das ações e novidades do Ministério Público Federal.
+                    </p>
+                    <a href="#"
+                       class="mt-5 inline-flex w-full items-center justify-center rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-[color:var(--brand)]
+                              hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white/40">
+                      Inscrever-se
+                    </a>
+                  </aside>
+                </div>
+              </div>
+            </section>
+
+            <section aria-label="Banner de serviço" class="mt-8 sm:mt-10 rounded-md border border-gray-300 overflow-hidden bg-white">
+              <div class="relative h-[140px] sm:h-[150px]">
+                <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <div class="absolute inset-0 bg-black/60"></div>
+
+                <div class="relative h-full p-4 sm:p-5 flex items-center justify-between gap-4">
+                  <div class="text-white max-w-xl">
+                    <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">Transparência</p>
+                    <h3 class="mt-1 text-2xl font-semibold leading-tight">Acesso à Informação</h3>
+                    <p class="mt-1 text-sm text-white/90">
+                      Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
+                    </p>
+                  </div>
+
+                  <a href="#"
+                     class="shrink-0 inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900
+                            hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white/30">
+                    Solicitar informação
+                  </a>
+                </div>
+              </div>
+            </section>
+
+            <section aria-label="Banner institucional" class="mt-6 sm:mt-7">
+              <a href="#"
+                 class="relative block overflow-hidden rounded-xl border border-gray-200
+                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand)]/30">
+                <div class="relative h-[160px] bg-gray-200">
+                  <img src="assets/mpf_oficial_cover.jpeg" alt="MPF – Guardião do futuro, protetor de direitos" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                </div>
+              </a>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUNA 30% — DESTAQUES + BANNER -->
+      <aside class="lg:col-span-4 flex flex-col gap-4 sm:gap-6">
+
+        <section aria-labelledby="destaques-titulo" class="flex-1 rounded-md border border-gray-300 bg-white overflow-hidden flex flex-col">
+          <header class="p-4 sm:p-6 border-b border-gray-200">
+            <h2 id="destaques-titulo" class="text-lg font-semibold text-gray-900">Em destaque</h2>
+            <p class="mt-1 text-sm text-gray-600">Atualizações institucionais selecionadas.</p>
+          </header>
+
+          <div class="p-4 sm:p-6 grid gap-3 sm:gap-4">
+            <article class="rounded-md border border-gray-300 overflow-hidden">
+              <div class="aspect-[16/10] overflow-hidden bg-gray-200">
+                <img src="https://serralheriamoreno.com.br/wp-content/uploads/2023/10/Torres-transmissao-energia-eletrica-1024x702.jpg" alt="Imagem do destaque" class="h-full w-full object-cover" loading="lazy" />
+              </div>
+              <div class="p-3 sm:p-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Meio Ambiente</p>
+                <h3 class="mt-1 text-base font-semibold leading-snug">
+                  <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                    MPF obtém decisão para retirada de postes e estrutura elétrica de área ambiental invadida em Mirante da Serra (RO)
+                  </a>
+                </h3>
+                <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-2">
+                  Energisa e Compel têm 60 dias para interromper fornecimento de energia a invasores das reservas legais
+                </p>
+                <p class="mt-3 text-xs text-gray-500">23/12/2025 • Assessoria de Comunicação</p>
+              </div>
+            </article>
+
+            <article class="rounded-md border border-gray-300 p-3 sm:p-4">
+              <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicado</p>
+              <h3 class="mt-1 text-base font-semibold leading-snug">
+                <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                  MPF funciona em regime de plantão durante recesso forense
+                </a>
+              </h3>
+              <p class="mt-2 text-sm text-gray-700 leading-relaxed">
+                De 20 de dezembro de 2025 a 6 de janeiro de 2026, atendimento será para casos urgentes
+              </p>
+              <p class="mt-3 text-xs text-gray-500">19/12/2025</p>
+            </article>
+
+            <article class="rounded-md border border-gray-300 p-3 sm:p-4">
+              <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Geral</p>
+              <h3 class="mt-1 text-base font-semibold leading-snug">
+                <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                  Atuação do MPF no Supremo cresce 10% em 2025
+                </a>
+              </h3>
+              <p class="mt-2 text-sm text-gray-700 leading-relaxed">
+                Dados foram apresentados pelo procurador-geral da República, Paulo Gonet, na última sessão do ano judiciário do STF
+              </p>
+              <p class="mt-3 text-xs text-gray-500">1/12/2025</p>
+            </article>
+
+            <!-- (link no final do container: fica como estava) -->
+            <a href="./paginas-internas/noticia.html"
+               class="mt-auto inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900
+                      hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+              Ver mais notícias
+            </a>
+          </div>
+        </section>
+
+        <!-- Carrossel -->
+        <section aria-labelledby="carrossel-titulo" class="rounded-md border border-gray-200 bg-white overflow-hidden">
+          <header class="p-4 sm:p-6 border-b border-gray-200">
+            <div class="flex items-start justify-between gap-3">
+              <div>
+                <h2 id="carrossel-titulo" class="text-lg font-semibold text-gray-900">Em foco</h2>
+                <p class="mt-1 text-sm text-gray-600">Conteúdos selecionados.</p>
+              </div>
+            </div>
+          </header>
+
+          <div class="p-4 sm:p-6">
+            <div class="swiper mpf-swiper">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <article class="group rounded-xl border border-gray-200 overflow-hidden">
+                    <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80"
+                           alt="Imagem ilustrativa do conteúdo"
+                           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                           loading="lazy" />
+                    </div>
+                    <div class="p-3 sm:p-4">
+                      <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Transparência</p>
+                      <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
+                        <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                          Acesso à Informação: solicite dados e acompanhe pedidos
+                        </a>
+                      </h3>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="swiper-slide">
+                  <article class="group rounded-2xl border border-gray-200 overflow-hidden">
+                    <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
+                           alt="Imagem ilustrativa do conteúdo"
+                           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                           loading="lazy" />
+                    </div>
+                    <div class="p-3 sm:p-4">
+                      <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Serviços</p>
+                      <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
+                        <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                          Guia rápido: principais serviços ao cidadão
+                        </a>
+                      </h3>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="swiper-slide">
+                  <article class="group rounded-2xl border border-gray-200 overflow-hidden">
+                    <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80"
+                           alt="Imagem ilustrativa do conteúdo"
+                           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                           loading="lazy" />
+                    </div>
+                    <div class="p-3 sm:p-4">
+                      <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Institucional</p>
+                      <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
+                        <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                          Conheça o MPF: atuação, unidades e canais oficiais
+                        </a>
+                      </h3>
+                    </div>
+                  </article>
+                </div>
+
+              </div>
+
+              <!-- Controles -->
+              <div class="mt-4 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <button type="button"
+                          class="mpf-swiper-prev rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                                 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                          aria-label="Voltar">
+                    <svg aria-hidden="true" class="inline-block h-8 w-8 opacity-80"
+                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                  </button>
+
+                  <button type="button"
+                          class="mpf-swiper-next rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                                 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                          aria-label="Avançar">
+                    <svg aria-hidden="true" class="inline-block h-8 w-8 opacity-80"
+                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="mpf-swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Banner pequeno -->
+        <section aria-label="Banner" class="rounded-md border border-gray-300 bg-white overflow-hidden">
+          <div class="relative h-full p-4 sm:p-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <a href="./paginas-internas/interna.html" class="text-white max-w-xl">
+              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+              <div class="absolute inset-0 bg-black/60"></div>
+
+              <div class="relative h-full p-4 sm:p-5 flex items-center justify-between gap-4">
+                <div class="text-white max-w-xl">
+                  <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">Transparência</p>
+                  <h3 class="mt-1 text-2xl font-semibold leading-tight">Acesso à Informação</h3>
+                  <p class="mt-1 text-sm text-white/90">
+                    Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </section>
+
+      </aside>
+    </section>
+
+  </div>
+</main>
+
+
 
         <!-- Footer (moderninho, a11y-friendly, sem repetir “Contatos”) -->
         <footer class="bg-[color:var(--brand)] text-white relative overflow-hidden">
