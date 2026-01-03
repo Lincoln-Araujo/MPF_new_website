@@ -195,21 +195,7 @@ img, svg, video, canvas{
   transition: transform var(--t-med) var(--ease-out), opacity var(--t-med) var(--ease-out);
 }
 
-/* Estado aberto */
-html.menu-open .mpf-burger span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-html.menu-open .mpf-burger span:nth-child(2){ opacity:0; }
-html.menu-open .mpf-burger span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
-
 [data-menu-button]{ position:relative; z-index:90; }
-
-/* quando aberto: fixa o botão no canto */
-html.menu-open [data-menu-button]{
-  position:fixed;
-  top:12px;
-  right:16px;
-  z-index:9999;
-  background:#fff;
-}
 
 /* Painel */
 [data-menu-panel]{
@@ -221,6 +207,7 @@ html.menu-open [data-menu-button]{
 html.menu-open [data-menu-panel]{
   transform: translateX(0);
   opacity:1;
+  
 }
 
 /* Overlay */
@@ -508,7 +495,6 @@ html.is-scrolling #site-header .mpf-topbar{
 
 /* quando o menu mobile abrir, não deixa o transform do sticky afetar fixed */
 html.menu-open #site-header{
-  transform: none !important;
   opacity: 1 !important;
 }
 
@@ -592,3 +578,4 @@ button[aria-expanded="false"] svg{
     justify-content: start;
   }
 }
+

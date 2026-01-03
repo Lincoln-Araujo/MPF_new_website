@@ -60,12 +60,13 @@
   })();
 
   /* =========================================================
-     2) Menu mobile (a11y + animação + burger)
+     2) Menu mobile (a11y + animação) + FIX sticky (portal p/ body)
   ========================================================= */
   const mobileMenu = (() => {
     const btn = $("[data-menu-button]");
     const panel = $("[data-menu-panel]");
     const overlay = $("[data-menu-overlay]");
+    const closeBtn = $("[data-menu-close]");
     if (!btn || !panel || !overlay) return null;
 
     const root = document.documentElement;
@@ -79,6 +80,32 @@
     const getFocusable = () => $$(focusableSelector, panel);
     const isOpen = () => btn.getAttribute("aria-expanded") === "true";
 
+    // --- FIX sticky: mover overlay/panel pro body ao abrir (evita stacking/transform do header)
+    const originalParents = {
+      panelParent: panel.parentElement,
+      overlayParent: overlay.parentElement,
+      panelNext: panel.nextSibling,
+      overlayNext: overlay.nextSibling,
+    };
+
+    const portalToBody = () => {
+      if (panel.parentElement !== document.body) document.body.appendChild(panel);
+      if (overlay.parentElement !== document.body) document.body.appendChild(overlay);
+    };
+
+    const restoreParents = () => {
+      const { panelParent, overlayParent, panelNext, overlayNext } = originalParents;
+
+      if (panelParent) {
+        if (panelNext) panelParent.insertBefore(panel, panelNext);
+        else panelParent.appendChild(panel);
+      }
+      if (overlayParent) {
+        if (overlayNext) overlayParent.insertBefore(overlay, overlayNext);
+        else overlayParent.appendChild(overlay);
+      }
+    };
+
     const open = () => {
       if (isOpen()) return;
 
@@ -88,6 +115,9 @@
 
       lastFocus = document.activeElement;
 
+      // ✅ portaliza primeiro (evita sticky/transform “sumir”)
+      portalToBody();
+
       panel.hidden = false;
       overlay.hidden = false;
 
@@ -96,12 +126,13 @@
       panel.offsetHeight;
 
       btn.setAttribute("aria-expanded", "true");
-      btn.setAttribute("aria-label", "Fechar menu");
+      btn.setAttribute("aria-label", "Menu aberto");
       root.classList.add("menu-open");
       document.body.style.overflow = "hidden";
 
       const focusables = getFocusable();
-      (focusables[0] || panel).focus();
+      const target = closeBtn || focusables[0] || panel;
+      target.focus();
     };
 
     const close = async () => {
@@ -116,6 +147,9 @@
 
       panel.hidden = true;
       overlay.hidden = true;
+
+      // ✅ devolve pro lugar original (mantém DOM do header organizado)
+      restoreParents();
 
       if (lastFocus && isFn(lastFocus.focus)) lastFocus.focus();
     };
@@ -142,6 +176,7 @@
 
     btn.addEventListener("click", toggle);
     overlay.addEventListener("click", close);
+    if (closeBtn) closeBtn.addEventListener("click", close);
 
     addDocKeydown((e) => {
       if (e.key === "Escape" && isOpen()) close();
@@ -213,7 +248,9 @@
     });
   })();
 
-  /* 4.5) Accordion genérico (mobile e desktop nível 2) */
+  /* =========================================================
+     4.5) Accordion genérico (mobile e desktop nível 2)
+  ========================================================= */
   (() => {
     const init = () => {
       const buttons = $$("[data-acc-button]");
@@ -225,24 +262,16 @@
       };
 
       const getScope = (btn) =>
-      // ✅ se está dentro de um painel de accordion (2º nível),
-      // o scope deve ser esse painel (pra não fechar o pai)
-      btn.closest("[data-acc-panel]") ||
-      // ✅ se está num dropdown (desktop), controla só dentro do dropdown
-      btn.closest("[data-dd-menu]") ||
-      // ✅ se está no menu mobile (1º nível), controla dentro do menu
-      btn.closest("[data-menu-panel]") ||
-      // fallback
-      btn.parentElement;
-
+        btn.closest("[data-acc-panel]") ||
+        btn.closest("[data-dd-menu]") ||
+        btn.closest("[data-menu-panel]") ||
+        btn.parentElement;
 
       const closeBtn = (btn) => {
-      const panel = getPanel(btn);
-      btn.setAttribute("aria-expanded", "false");
-      if (panel) {
-        panel.hidden = true;
-      }
-    };
+        const panel = getPanel(btn);
+        btn.setAttribute("aria-expanded", "false");
+        if (panel) panel.hidden = true;
+      };
 
       const openBtn = (btn) => {
         const panel = getPanel(btn);
@@ -307,7 +336,6 @@
       moreBtn.setAttribute("aria-expanded", "true");
     };
 
-    // expõe p/ outros módulos
     window.__mpfCloseMoreMenu = close;
 
     moreBtn.addEventListener("click", (e) => {
@@ -423,7 +451,6 @@
       return btn?.getAttribute("aria-expanded") === "true";
     };
 
-    // mantém aberto: root clicado + ancestrais [data-dd-root]
     const getKeepSet = (root) => {
       const keep = new Set();
       let el = root;
@@ -441,7 +468,6 @@
       });
     };
 
-    // expõe p/ outros módulos
     window.__mpfCloseAllDropdowns = () => closeAllExcept(null);
 
     roots.forEach((root) => {
@@ -451,39 +477,29 @@
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
 
-        // ao abrir dropdown, fecha "Mais"
         if (isFn(window.__mpfCloseMoreMenu)) window.__mpfCloseMoreMenu();
 
         const willOpen = !isOpen(root);
         const keepSet = getKeepSet(root);
 
-        // fecha tudo que NÃO está na cadeia
         closeAllExcept(keepSet);
 
-        // toggle do atual
         if (willOpen) openRoot(root);
         else closeRoot(root);
       });
     });
 
-      // === PATCH: impedir clique interno de fechar dropdown ===
+    // impedir clique interno de fechar dropdown (sem bloquear links)
     roots.forEach((root) => {
       const menu = root.querySelector(":scope > [data-dd-menu]");
       if (!menu) return;
 
       menu.addEventListener("click", (e) => {
-        // links navegam normalmente
         if (e.target.closest("a[href]")) return;
-
-        // botões de accordion cuidam do próprio estado
         if (e.target.closest("[data-acc-button]")) return;
-
-        // cliques internos genéricos não fecham dropdown
         e.stopPropagation();
       });
-
     });
-
 
     addDocClick(() => closeAllExcept(null));
 
@@ -491,143 +507,110 @@
       if (e.key === "Escape") closeAllExcept(null);
     });
   })();
-  
+
   /* =========================================================
-   7) STICKY HEADER — entrada suave / saída rápida (UX-first)
-========================================================= */
-(() => {
-  const header = document.querySelector("#site-header[data-sticky]");
-  if (!header) return;
+     7) STICKY HEADER — entrada suave / saída rápida (UX-first)
+  ========================================================= */
+  (() => {
+    const header = document.querySelector("#site-header[data-sticky]");
+    if (!header) return;
 
-  const topbar = header.querySelector(".mpf-topbar");
+    const topbar = header.querySelector(".mpf-topbar");
 
-  // cria spacer para evitar “buraco”
-  let spacer = document.querySelector("#header-spacer");
-  if (!spacer) {
-    spacer = document.createElement("div");
-    spacer.id = "header-spacer";
-    header.insertAdjacentElement("afterend", spacer);
-  }
+    // cria spacer para evitar “buraco”
+    let spacer = document.querySelector("#header-spacer");
+    if (!spacer) {
+      spacer = document.createElement("div");
+      spacer.id = "header-spacer";
+      header.insertAdjacentElement("afterend", spacer);
+    }
 
-  let isSticky = false;
-  let stickyTimer = null;
-  let lastScrollY = window.scrollY || 0;
+    let isSticky = false;
+    let stickyTimer = null;
+    let lastScrollY = window.scrollY || 0;
 
-  const STICKY_DELAY = 500; // ⏱️ como você pediu
-  const EXIT_BUFFER_MULTIPLIER = 2; // 2x altura do header
+    const STICKY_DELAY = 500;
+    const EXIT_BUFFER_MULTIPLIER = 2;
 
-  const getHeights = () => {
-    const full = header.offsetHeight;
-    const topbarH = topbar ? topbar.offsetHeight : 0;
-    const stickyH = Math.max(0, full - topbarH);
-    return { full, stickyH };
-  };
-
-  /* =========================
-     Ativar sticky (ENTRADA SUAVE)
-  ========================= */
-  const enableSticky = () => {
-    if (isSticky) return;
-    isSticky = true;
-
-    const { stickyH } = getHeights();
-    spacer.style.height = `${stickyH}px`;
-
-    header.classList.remove("is-leaving");
-    header.classList.add("is-sticky");
-
-    // força reflow para garantir transição suave
-    header.offsetHeight;
-    header.classList.add("is-sticky--shown");
-  };
-
-  /* =========================
-     Desativar sticky (SAÍDA RÁPIDA)
-  ========================= */
-  const disableSticky = () => {
-    if (!isSticky) return;
-    isSticky = false;
-
-    header.classList.add("is-leaving");
-    header.classList.remove("is-sticky--shown");
-
-    const onEnd = () => {
-      header.classList.remove("is-sticky");
-      header.classList.remove("is-leaving");
-      spacer.style.height = "0px";
-      header.removeEventListener("transitionend", onEnd);
+    const getHeights = () => {
+      const full = header.offsetHeight;
+      const topbarH = topbar ? topbar.offsetHeight : 0;
+      const stickyH = Math.max(0, full - topbarH);
+      return { full, stickyH };
     };
 
-    header.addEventListener("transitionend", onEnd);
-  };
+    const enableSticky = () => {
+      if (isSticky) return;
+      isSticky = true;
 
-  /* =========================
-     Timer control
-  ========================= */
-  const scheduleSticky = () => {
-    if (stickyTimer || isSticky) return;
-    stickyTimer = setTimeout(() => {
-      enableSticky();
+      const { stickyH } = getHeights();
+      spacer.style.height = `${stickyH}px`;
+
+      header.classList.remove("is-leaving");
+      header.classList.add("is-sticky");
+
+      header.offsetHeight;
+      header.classList.add("is-sticky--shown");
+    };
+
+    const disableSticky = () => {
+      if (!isSticky) return;
+      isSticky = false;
+
+      header.classList.add("is-leaving");
+      header.classList.remove("is-sticky--shown");
+
+      const onEnd = () => {
+        header.classList.remove("is-sticky");
+        header.classList.remove("is-leaving");
+        spacer.style.height = "0px";
+        header.removeEventListener("transitionend", onEnd);
+      };
+
+      header.addEventListener("transitionend", onEnd);
+    };
+
+    const scheduleSticky = () => {
+      if (stickyTimer || isSticky) return;
+      stickyTimer = setTimeout(() => {
+        enableSticky();
+        stickyTimer = null;
+      }, STICKY_DELAY);
+    };
+
+    const cancelStickyTimer = () => {
+      if (!stickyTimer) return;
+      clearTimeout(stickyTimer);
       stickyTimer = null;
-    }, STICKY_DELAY);
-  };
+    };
 
-  const cancelStickyTimer = () => {
-    if (!stickyTimer) return;
-    clearTimeout(stickyTimer);
-    stickyTimer = null;
-  };
+    const onScroll = () => {
+      const y = window.scrollY || 0;
+      const goingUp = y < lastScrollY;
+      lastScrollY = y;
 
-  /* =========================
-     Scroll handler
-  ========================= */
-  const onScroll = () => {
-    const y = window.scrollY || 0;
-    const goingUp = y < lastScrollY;
-    lastScrollY = y;
+      const { full } = getHeights();
 
-    const { full } = getHeights();
+      if (y > 2) document.documentElement.classList.add("is-scrolling");
+      else document.documentElement.classList.remove("is-scrolling");
 
-    /* 1️⃣ topbar some imediatamente */
-    if (y > 2) {
-      document.documentElement.classList.add("is-scrolling");
-    } else {
-      document.documentElement.classList.remove("is-scrolling");
-    }
+      if (y > full && !goingUp) scheduleSticky();
+      else cancelStickyTimer();
 
-    /* 2️⃣ passou da altura → agenda entrada */
-    if (y > full && !goingUp) {
-      scheduleSticky();
-    } else {
-      cancelStickyTimer();
-    }
+      if (isSticky && goingUp && y < full * EXIT_BUFFER_MULTIPLIER) {
+        cancelStickyTimer();
+        disableSticky();
+      }
+    };
 
-    /* 3️⃣ retorno antecipado (antes do topo) */
-    if (
-      isSticky &&
-      goingUp &&
-      y < full * EXIT_BUFFER_MULTIPLIER
-    ) {
-      cancelStickyTimer();
-      disableSticky();
-    }
-  };
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-  /* =========================
-     Listeners
-  ========================= */
-  window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", () => {
+      if (!isSticky) return;
+      const { stickyH } = getHeights();
+      spacer.style.height = `${stickyH}px`;
+    });
 
-  window.addEventListener("resize", () => {
-    if (!isSticky) return;
-    const { stickyH } = getHeights();
-    spacer.style.height = `${stickyH}px`;
-  });
-
-  // inicial
-  onScroll();
-})();
-
-
-
+    onScroll();
+  })();
 })();
