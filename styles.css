@@ -527,55 +527,132 @@ button[aria-expanded="false"] svg{
   transform: rotate(0deg);
 }
 
-/* Notícias
-   - Alterna visual via #news-results.is-list / #news-results.is-cards
-   - Compatível com o main atual (sem .news-media/.news-body no HTML)
-*/
+/* =========================================================
+   NOTÍCIAS
+   - Alterna visual via .news-results.is-list / .news-results.is-cards
+   - Lista: flex (thumb + texto) com largura controlada
+   - Corrige “gap” visual abaixo da imagem (baseline / line-height / overflow)
+========================================================= */
 
-/* Base */
-/* A imagem SEMPRE respeita o "molde" */
-.news-item .news-media {
-  aspect-ratio: 16 / 9;
+/* ---------- BASE (vale para ambos os modos) ---------- */
+
+/* wrapper da mídia (se existir) */
+.news-item .news-media{
   overflow: hidden;
-  background: #e5e7eb; /* fallback */
+  background: #e5e7eb;
+  line-height: 0;         
 }
 
-.news-item .news-media img {
+/* imagem: nunca inline, nunca flex */
+.news-item .news-media img,
+.news-item img{
+  display: block;         /* ✅ remove baseline gap */
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  vertical-align: top;    /* segurança extra */
 }
 
-/* LISTA: thumbnail com altura controlada (não vira um monstro) */
-.news-results.is-list .news-media {
+/* se a mídia usa aspect-ratio, mantém o “molde” */
+.news-item .news-media{
   aspect-ratio: 16 / 9;
 }
 
-/* LISTA: layout 2 colunas a partir do sm */
-.news-results.is-list .news-item {
-  display: grid;
-  grid-template-columns: 1fr;
+/* ---------- MODO LISTA ---------- */
+
+.news-results.is-list{
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  align-items: start;
 }
 
-@media (min-width: 640px) {
-  .news-results.is-list .news-item {
-    grid-template-columns: 220px 1fr;
+/* mobile: 1 coluna (imagem em cima) */
+.news-results.is-list .news-item{
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+/* garante que nada estoure horizontalmente */
+.news-results.is-list .news-item > *{
+  min-width: 0;
+}
+
+/* a partir do sm: 2 colunas (thumb + texto) */
+@media (min-width: 640px){
+  .news-results.is-list .news-item{
+    flex-direction: row;
+  }
+
+  /* thumb com largura “travada” (percentual + limites) */
+  .news-results.is-list .news-media{
+    flex: 0 0 clamp(180px, 34%, 260px); /* ✅ não vira metade da linha */
+  }
+
+  /* caso a imagem NÃO esteja dentro de .news-media
+     (fallback: tenta pegar a “primeira imagem” do item)
+     — se isso atrapalhar algo no seu app, me fala que a gente remove */
+  .news-results.is-list .news-item > img:first-of-type{
+    flex: 0 0 clamp(180px, 34%, 260px);
+    height: auto;
+  }
+
+  /* conteúdo textual ocupa o resto */
+  .news-results.is-list .news-body,
+  .news-results.is-list .news-content,
+  .news-results.is-list .news-text,
+  .news-results.is-list .news-item > :not(.news-media):not(img){
+    flex: 1 1 auto;
+    min-width: 0;
   }
 }
 
-/* CARDS: no máximo 3 por linha no desktop, sem esticar */
-.news-results.is-cards {
+/* reforço anti-gap específico do modo lista */
+.news-results.is-list .news-media{
+  line-height: 0;
+}
+
+/* ---------- MODO CARDS ---------- */
+
+.news-results.is-cards{
   display: grid;
   gap: 16px;
 }
 
-@media (min-width: 1024px) {
-  .news-results.is-cards {
+@media (min-width: 1024px){
+  .news-results.is-cards{
     grid-template-columns: repeat(3, minmax(260px, 360px));
     justify-content: start;
   }
 }
 
+/* wrapper do select */
+.mpf-select {
+  position: relative;
+}
+
+/* o select */
+.mpf-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  padding-right: 2.5rem; /* espaço pra seta */
+}
+
+/* a seta (SVG) */
+.mpf-select::after {
+  content: "";
+  position: absolute;
+  right: 0.75rem;            /* <- “descola” da borda */
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0.7;
+
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+}

@@ -562,11 +562,11 @@
         </nav>
     </header>
 
-    <main id="main-content" class="w-full">
-  <div class="mx-auto max-w-[1440px] px-4 py-8">
+<main id="main-content" class="w-full">
+  <div class="mx-auto max-w-[1440px] px-4 py-6 sm:py-8">
 
     <!-- AVISOS (slot) -->
-    <section class="mb-6" aria-label="Avisos">
+    <section class="mb-4 sm:mb-6" aria-label="Avisos">
       <div class="rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 flex gap-3">
         <span aria-hidden="true" class="mt-0.5">ⓘ</span>
         <div class="min-w-0">
@@ -578,25 +578,29 @@
       </div>
     </section>
 
-    <!-- HERO (reaproveitando o header de serviços da home) -->
+    <!-- HERO -->
     <header class="rounded-md border border-gray-300 bg-white overflow-hidden">
       <div class="w-full relative bg-white">
-          <div class="relative h-[170px] sm:h-[200px] mpf-services-hero" aria-hidden="true"></div>
+        <div class="relative h-[170px] sm:h-[200px] mpf-services-hero" aria-hidden="true"></div>
 
-          <div class="absolute inset-0 border-b" style="background: url(../assets/banner-servicos.png); background-size: cover">
-          </div>
+        <div
+          class="absolute inset-0 border-b"
+          style="background: url(../assets/hero-servicos.png); background-size: cover"
+          aria-hidden="true"
+        ></div>
 
-          <div class="absolute inset-0 p-5 sm:p-6 flex items-center">
-              <div class="text-white max-w-2xl">
-                  <p class="text-[11px] font-semibold uppercase tracking-wider opacity-90">Para o cidadão</p>
-                  <h2 id="hub-servicos-titulo" class="mt-1 text-2xl sm:text-2xl font-semibold leading-tight">Serviços</h2>
-              </div>
+        <div class="absolute inset-0 p-4 sm:p-6 flex items-center">
+          <div class="text-white max-w-2xl">
+            <p class="text-[11px] font-semibold uppercase tracking-wider opacity-90">Para o cidadão</p>
+            <h2 id="hub-servicos-titulo" class="mt-1 text-2xl sm:text-2xl font-semibold leading-tight">Serviços</h2>
           </div>
         </div>
+      </div>
 
       <!-- BUSCA + FILTROS -->
-      <div class="p-6 sm:p-7 border-t border-gray-200">
+      <div class="p-4 sm:p-6 md:p-7 border-t border-gray-200">
         <form class="grid gap-3 lg:grid-cols-12" role="search" aria-label="Buscar serviços">
+
           <!-- Busca -->
           <div class="lg:col-span-12">
             <label for="service-search" class="sr-only">Buscar serviço</label>
@@ -623,31 +627,35 @@
           <div class="lg:col-span-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <label for="service-level" class="text-xs font-semibold text-gray-700">Nível gov.br</label>
-              <select
-                id="service-level"
-                name="level"
-                class="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
-                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-              >
-                <option value="">Todos</option>
-                <option value="bronze">Bronze</option>
-                <option value="prata">Prata</option>
-                <option value="ouro">Ouro</option>
-              </select>
+              <div class="mpf-select mt-1 text-gray-700">
+                <select
+                  id="service-level"
+                  name="level"
+                  class="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                >
+                  <option value="">Todos</option>
+                  <option value="bronze">Bronze</option>
+                  <option value="prata">Prata</option>
+                  <option value="ouro">Ouro</option>
+                </select>
+              </div>
             </div>
 
             <div>
               <label for="service-scope" class="text-xs font-semibold text-gray-700">Tipo</label>
-              <select
-                id="service-scope"
-                name="scope"
-                class="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
-                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-              >
-                <option value="">Todos</option>
-                <option value="cidadao">Para o cidadão</option>
-                <option value="institucional">Institucional</option>
-              </select>
+              <div class="mpf-select mt-1 text-gray-700">
+                <select
+                  id="service-scope"
+                  name="scope"
+                  class="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                >
+                  <option value="">Todos</option>
+                  <option value="cidadao">Para o cidadão</option>
+                  <option value="institucional">Institucional</option>
+                </select>
+              </div>
             </div>
 
             <div class="sm:col-span-2 lg:col-span-2 flex items-end gap-2">
@@ -705,13 +713,13 @@
     </header>
 
     <!-- CONTEÚDO (categorias + serviços) -->
-    <section class="mt-6 grid gap-6 lg:grid-cols-12 lg:items-start" aria-label="Catálogo de serviços">
+    <section class="mt-4 sm:mt-6 grid gap-6 lg:grid-cols-12 lg:items-start" aria-label="Catálogo de serviços">
 
       <aside class="order-2 lg:order-1 lg:col-span-4 flex flex-col gap-6">
 
         <!-- CATEGORIAS -->
         <section class="rounded-md border border-gray-300 bg-white overflow-hidden">
-          <header class="p-6 border-b border-gray-200">
+          <header class="p-4 sm:p-6 border-b border-gray-200">
             <h2 class="text-lg font-semibold text-gray-900">Categorias</h2>
             <p class="mt-1 text-sm text-gray-600">Navegue por tema para encontrar mais rápido.</p>
           </header>
@@ -720,68 +728,97 @@
             <ul class="grid gap-2">
               <li>
                 <a href="#cat-atendimento" data-category-link="atendimento"
-                  class="block rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Atendimento e canais
+                  class="group flex items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <span>Atendimento e canais</span>
+                  <svg aria-hidden="true" class="inline-block h-4 w-4 opacity-80"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
                 </a>
               </li>
               <li>
                 <a href="#cat-denuncias" data-category-link="denuncias"
-                  class="block rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Denúncias e pedidos
+                  class="group flex items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <span>Denúncias e pedidos</span>
+                  <svg aria-hidden="true" class="inline-block h-4 w-4 opacity-80"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
                 </a>
               </li>
               <li>
                 <a href="#cat-consultas" data-category-link="consultas"
-                  class="block rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Consultas e documentos
+                  class="group flex items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <span>Consultas e documentos</span>
+                  <svg aria-hidden="true" class="inline-block h-4 w-4 opacity-80"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
                 </a>
               </li>
               <li>
                 <a href="#cat-certidoes" data-category-link="certidoes"
-                  class="block rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Certidões
+                  class="group flex items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <span>Certidões</span>
+                  <svg aria-hidden="true" class="inline-block h-4 w-4 opacity-80"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
                 </a>
               </li>
               <li>
                 <a href="#cat-lgpd" data-category-link="lgpd"
-                  class="block rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Dados pessoais (LGPD)
+                  class="group flex items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <span>Dados pessoais (LGPD)</span>
+                  <svg aria-hidden="true" class="inline-block h-4 w-4 opacity-80"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
                 </a>
               </li>
               <li>
                 <a href="#cat-sistemas" data-category-link="sistemas"
-                  class="block rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  Segurança da informação
+                  class="group flex items-center justify-between gap-3 rounded-md px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  <span>Segurança da informação</span>
+                  <svg aria-hidden="true" class="inline-block h-4 w-4 opacity-80"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
                 </a>
               </li>
             </ul>
           </nav>
 
           <!-- CTAs úteis (Carta + SAC) -->
-          <div class="p-6 border-t border-gray-200">
+          <div class="p-4 sm:p-6 border-t border-gray-200">
             <div class="rounded-md bg-gray-50 border border-gray-200 p-4">
               <p class="text-sm font-semibold text-gray-900">Precisa de orientação?</p>
               <p class="mt-1 text-sm text-gray-700 leading-relaxed">
                 Consulte a Carta de Serviços ou utilize o SAC para atendimento ao cidadão.
               </p>
 
-              <div class="mt-4 grid gap-2">
+              <div class="mt-4 grid gap-4">
                 <a href="https://www.mpf.mp.br/servicos/carta-de-servicos-ao-cidadao"
                   class="inline-flex items-center justify-center rounded-md bg-[color:var(--brand)] px-4 py-2.5 text-sm font-semibold text-white
-                          hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                         hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   Carta de Serviços ao Cidadão
                 </a>
 
-                <!-- Troque o href pelo link oficial do SAC quando você tiver -->
                 <a href="#"
                   class="inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900
-                          hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                         hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   Acessar o SAC
                 </a>
               </div>
@@ -789,14 +826,14 @@
           </div>
         </section>
 
-        <!-- CARROSSEL (Em foco) — versão única pra não conflitar com a home -->
+        <!-- CARROSSEL (Em foco) -->
         <section aria-labelledby="carrossel-aside-titulo" class="rounded-md border border-gray-200 bg-white overflow-hidden">
-          <header class="p-6 border-b border-gray-200">
+          <header class="p-4 sm:p-6 border-b border-gray-200">
             <h2 id="carrossel-aside-titulo" class="text-lg font-semibold text-gray-900">Em foco</h2>
             <p class="mt-1 text-sm text-gray-600">Conteúdos selecionados para orientar seu acesso.</p>
           </header>
 
-          <div class="p-6">
+          <div class="p-4 sm:p-6">
             <div class="swiper mpf-swiper-aside">
               <div class="swiper-wrapper">
                 <!-- Slide 1 -->
@@ -865,16 +902,24 @@
                 <div class="flex items-center gap-2">
                   <button type="button"
                     class="mpf-swiper-aside-prev rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                           focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
                     aria-label="Voltar">
-                    ←
+                    <svg aria-hidden="true" class="inline-block h-8 w-8 opacity-80"
+                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M15 18l-6-6 6-6" />
+                    </svg>
                   </button>
 
                   <button type="button"
                     class="mpf-swiper-aside-next rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                           focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
                     aria-label="Avançar">
-                    →
+                    <svg aria-hidden="true" class="inline-block h-8 w-8 opacity-80"
+                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                         stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
                   </button>
                 </div>
 
@@ -884,26 +929,26 @@
           </div>
         </section>
 
-        <!-- NOTÍCIA EM DESTAQUE (imagem de fundo + texto por cima) -->
+        <!-- NOTÍCIA EM DESTAQUE -->
         <section aria-label="Notícia em destaque" class="rounded-md border border-gray-300 bg-white overflow-hidden">
           <article class="relative overflow-hidden">
             <div class="aspect-[16/10] bg-gray-200">
               <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=80"
-                  alt=""
-                  class="h-full w-full object-cover"
-                  loading="lazy" />
+                   alt=""
+                   class="h-full w-full object-cover"
+                   loading="lazy" />
             </div>
 
             <div class="absolute inset-0 bg-black/45" aria-hidden="true"></div>
 
-            <div class="absolute inset-0 p-5 flex flex-col justify-end">
+            <div class="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end">
               <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">
                 Destaque
               </p>
 
               <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
                 <a href="./paginas-internas/noticia.html"
-                  class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
+                   class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
                   MPF lança plataforma digital de atendimento ao cidadão
                 </a>
               </h3>
@@ -913,11 +958,10 @@
 
       </aside>
 
-
       <!-- Lista de serviços -->
       <div class="order-1 lg:order-2 lg:col-span-8">
         <div class="rounded-md border border-gray-300 bg-white overflow-hidden">
-          <header class="p-6 border-b border-gray-200">
+          <header class="p-4 sm:p-6 border-b border-gray-200">
             <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <h2 class="text-lg font-semibold text-gray-900">Serviços</h2>
@@ -930,7 +974,7 @@
             </div>
           </header>
 
-          <div class="p-6">
+          <div class="p-4 sm:p-6">
             <ul class="grid gap-3 sm:grid-cols-2">
 
               <!-- 1) Protocolo (gov) -->
@@ -942,10 +986,10 @@
                   data-scope="cidadao"
                   data-external="true"
                   data-featured="true">
-                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">P</span>
                       </div>
@@ -962,7 +1006,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -976,10 +1020,10 @@
                   data-scope="cidadao"
                   data-external="true"
                   data-featured="true">
-                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">D</span>
                       </div>
@@ -996,7 +1040,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -1009,10 +1053,10 @@
                   data-scope="cidadao"
                   data-external="false"
                   data-featured="true">
-                <a href="./peticao-e-assinaturas.html" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="./peticao-e-assinaturas.html" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">✍</span>
                       </div>
@@ -1026,7 +1070,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -1040,10 +1084,10 @@
                   data-scope="cidadao"
                   data-external="false"
                   data-featured="true">
-                <a href="./pesquisa-processos.html" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="./pesquisa-processos.html" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">🔎</span>
                       </div>
@@ -1057,7 +1101,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -1070,10 +1114,10 @@
                   data-scope="cidadao"
                   data-external="true"
                   data-featured="false">
-                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">O</span>
                       </div>
@@ -1090,7 +1134,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -1104,10 +1148,10 @@
                   data-scope="cidadao"
                   data-external="true"
                   data-featured="true">
-                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">🧾</span>
                       </div>
@@ -1124,7 +1168,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -1137,10 +1181,10 @@
                   data-scope="cidadao"
                   data-external="false"
                   data-featured="false">
-                <a href="./atendimento-virtual.html" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="./atendimento-virtual.html" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">🎥</span>
                       </div>
@@ -1154,7 +1198,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -1168,10 +1212,10 @@
                   data-scope="cidadao"
                   data-external="true"
                   data-featured="false">
-                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="https://www.gov.br/" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                   <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">🔐</span>
                       </div>
@@ -1188,7 +1232,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -1202,10 +1246,10 @@
                   data-scope="institucional"
                   data-external="false"
                   data-featured="false">
-                <a href="./seguranca-da-informacao.html" class="group block h-full rounded-md border border-gray-300 bg-white p-5 hover:bg-gray-50
+                <a href="./seguranca-da-informacao.html" class="group block h-full rounded-md border border-gray-300 bg-white p-3 sm:p-5 hover:bg-gray-50
                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  <div class="flex items-start justify-between gap-4">
-                    <div class="flex items-start gap-4 min-w-0">
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="flex items-start gap-3 min-w-0">
                       <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
                         <span class="text-[color:var(--brand)] font-semibold">🛡</span>
                       </div>
@@ -1219,7 +1263,7 @@
                         </div>
                       </div>
                     </div>
-                    <span class="shrink-0 text-gray-400 group-hover:text-gray-600" aria-hidden="true">→</span>
+                    
                   </div>
                 </a>
               </li>
@@ -1237,18 +1281,17 @@
 
         <!-- COMO ACESSAR (vídeo + tutorial) -->
         <section class="mt-6 rounded-md border border-gray-300 bg-white overflow-hidden" aria-label="Como criar conta gov.br">
-          <header class="p-6 border-b border-gray-200">
+          <header class="p-4 sm:p-6 border-b border-gray-200">
             <h2 class="text-lg font-semibold text-gray-900">Como acessar serviços com conta gov.br</h2>
             <p class="mt-1 text-sm text-gray-600">
               Alguns serviços exigem autenticação. Veja o vídeo e o passo a passo.
             </p>
           </header>
 
-          <div class="p-6 grid gap-6 lg:grid-cols-12">
-            <!-- Vídeo (placeholder) -->
+          <div class="p-4 sm:p-6 grid gap-6 lg:grid-cols-12">
+            <!-- Vídeo -->
             <div class="lg:col-span-7">
               <div class="rounded-md border border-gray-200 overflow-hidden bg-gray-100">
-                <!-- Troque o src pelo embed real -->
                 <div class="aspect-video">
                   <iframe
                     class="h-full w-full"
@@ -1270,8 +1313,7 @@
                   Acesse o tutorial escrito com orientações para criar e validar sua conta.
                 </p>
 
-                <div class="mt-4 grid gap-2">
-                  <!-- Troque pelo link oficial do tutorial -->
+                <div class="mt-4 grid gap-4">
                   <a href="https://www.gov.br/" class="inline-flex items-center justify-center rounded-md bg-[color:var(--brand)] px-4 py-2.5 text-sm font-semibold text-white
                              hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
                     Abrir tutorial escrito
@@ -1291,6 +1333,8 @@
     </section>
   </div>
 </main>
+
+
 
   <!-- Footer --><!-- Footer (moderninho, a11y-friendly, sem repetir “Contatos”) -->
         <footer class="bg-[color:var(--brand)] text-white relative overflow-hidden">

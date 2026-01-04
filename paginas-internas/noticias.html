@@ -555,7 +555,7 @@
     </header>
 
 <main id="main-content" class="w-full">
-  <div class="mx-auto max-w-[1440px] px-4 py-8">
+  <div class="mx-auto max-w-[1440px] px-4 py-6 sm:py-8">
 
     <!-- HERO -->
     <header class="rounded-md border border-gray-300 bg-white overflow-hidden">
@@ -569,7 +569,7 @@
           aria-hidden="true"
         ></div>
 
-        <div class="relative p-6 sm:p-7 text-white">
+        <div class="relative p-4 sm:p-6 md:p-7 text-white">
           <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">
             Sala de imprensa
           </p>
@@ -583,7 +583,7 @@
       </div>
 
       <!-- BUSCA / FILTROS PRINCIPAIS -->
-      <div class="p-6 sm:p-7 border-t border-white/15 bg-white">
+      <div class="p-4 sm:p-6 md:p-7 border-t border-white/15 bg-white">
         <form class="grid gap-3 lg:grid-cols-12" role="search" aria-label="Buscar notícias">
 
           <!-- Busca -->
@@ -604,30 +604,38 @@
           <!-- Categoria -->
           <div class="lg:col-span-3">
             <label for="news-category" class="text-xs font-semibold text-gray-700">Categoria</label>
-            <select
-              id="news-category"
-              class="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
-                     focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-            >
-              <option value="">Todas</option>
-              <option value="comunicacao">Comunicação</option>
-              <option value="atuacao">Atuação</option>
-              <option value="institucional">Institucional</option>
-              <option value="servicos">Serviços</option>
-            </select>
+
+            <!-- ✅ wrapper p/ setinha do select não colar -->
+            <div class="mpf-select mt-1 text-gray-700">
+              <select
+                id="news-category"
+                class="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
+                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+              >
+                <option value="">Todas</option>
+                <option value="comunicacao">Comunicação</option>
+                <option value="atuacao">Atuação</option>
+                <option value="institucional">Institucional</option>
+                <option value="servicos">Serviços</option>
+              </select>
+            </div>
           </div>
 
           <!-- Ordenar -->
           <div class="lg:col-span-3">
             <label for="news-sort" class="text-xs font-semibold text-gray-700">Ordenar</label>
-            <select
-              id="news-sort"
-              class="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
-                     focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-            >
-              <option value="recentes">Mais recentes</option>
-              <option value="antigas">Mais antigas</option>
-            </select>
+
+            <!-- ✅ wrapper p/ setinha do select não colar -->
+            <div class="mpf-select mt-1 text-gray-700">
+              <select
+                id="news-sort"
+                class="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
+                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+              >
+                <option value="recentes">Mais recentes</option>
+                <option value="antigas">Mais antigas</option>
+              </select>
+            </div>
           </div>
 
           <!-- Separador -->
@@ -658,7 +666,7 @@
                 data-view="list"
                 aria-pressed="false"
                 class="news-view-btn rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900
-                       hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                       hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
               >
                 Lista
               </button>
@@ -669,36 +677,58 @@
     </header>
 
     <!-- MOBILE: dropdown para UF/Órgão -->
-    <section class="mt-6 lg:hidden rounded-md border border-gray-300 bg-white overflow-hidden">
-      <details>
+    <section class="mt-4 sm:mt-6 lg:hidden rounded-md border border-gray-300 bg-white overflow-hidden">
+      <details class="group">
         <summary class="cursor-pointer list-none p-4 flex items-center justify-between gap-3">
           <div>
             <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Origem</p>
             <h2 class="text-base font-semibold text-gray-900">UF / Órgão</h2>
           </div>
-          <span aria-hidden="true" class="text-gray-600">▾</span>
+
+          <!-- ✅ setinha padronizada -->
+          <svg
+            aria-hidden="true"
+            class="h-4 w-4 text-gray-600 transition-transform duration-300 group-open:rotate-180"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
         </summary>
 
         <div class="border-t border-gray-200 p-4 grid gap-4">
           <div>
             <label for="groupByMobile" class="text-xs font-semibold text-gray-700">Agrupar por</label>
-            <select
-              id="groupByMobile"
-              class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
-                     focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-            >
-              <option value="uf">UF (Estados)</option>
-              <option value="orgao">Órgão</option>
-            </select>
+
+            <!-- ✅ wrapper p/ setinha do select não colar -->
+            <div class="mpf-select mt-2 text-gray-700">
+              <select
+                id="groupByMobile"
+                class="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
+                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+              >
+                <option value="uf">UF (Estados)</option>
+                <option value="orgao">Órgão</option>
+              </select>
+            </div>
           </div>
 
           <div>
             <label for="itemMobile" class="text-xs font-semibold text-gray-700">Selecionar</label>
-            <select
-              id="itemMobile"
-              class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
-                     focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-            ></select>
+
+            <!-- ✅ wrapper p/ setinha do select não colar -->
+            <div class="mpf-select mt-2 text-gray-700">
+              <select
+                id="itemMobile"
+                class="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
+                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+              ></select>
+            </div>
           </div>
 
           <button
@@ -714,12 +744,12 @@
     </section>
 
     <!-- GRID PRINCIPAL -->
-    <section class="mt-6 grid gap-6 lg:grid-cols-12 lg:items-start">
+    <section class="mt-4 sm:mt-6 grid gap-6 lg:grid-cols-12 lg:items-start">
 
       <!-- RESULTADOS -->
       <div class="lg:col-span-8">
         <section class="rounded-md border border-gray-300 bg-white overflow-hidden">
-          <header class="p-6 border-b border-gray-200">
+          <header class="p-4 sm:p-6 border-b border-gray-200">
             <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 class="text-lg font-semibold text-gray-900">Resultados</h2>
@@ -737,7 +767,7 @@
             </div>
           </header>
 
-          <div class="p-6">
+          <div class="p-4 sm:p-6">
             <div id="news-results" class="news-results is-cards">
 
               <!-- EXEMPLOS (Plone vai renderizar os demais) -->
@@ -892,12 +922,12 @@
       <aside class="hidden lg:block lg:col-span-4">
         <div class="lg:sticky lg:top-6">
           <section class="rounded-md border border-gray-300 bg-white overflow-hidden">
-            <header class="p-6 border-b border-gray-200">
+            <header class="p-4 sm:p-6 border-b border-gray-200">
               <h2 class="text-lg font-semibold text-gray-900">Filtro por origem</h2>
               <p class="mt-1 text-sm text-gray-600">Escolha UF ou órgão publicador.</p>
             </header>
 
-            <div class="p-6 border-b border-gray-200 grid gap-4">
+            <div class="p-4 sm:p-6 border-b border-gray-200 grid gap-4">
               <!-- UF / Órgão (mesma largura) -->
               <div>
                 <p class="text-xs font-semibold text-gray-700">Agrupar por</p>
@@ -915,7 +945,7 @@
                   <button
                     type="button"
                     class="groupby-btn rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900
-                           hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                           hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
                     data-groupby="orgao"
                     aria-pressed="false"
                   >
@@ -961,6 +991,7 @@
 
   </div>
 </main>
+
 
 
 
