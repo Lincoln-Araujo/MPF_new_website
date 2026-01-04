@@ -33,1268 +33,1524 @@
     Pular para o conteúdo
   </a>
 
-    <!-- HEADER (2 barras) -->
-    <header id="site-header" data-sticky class="bg-white border-b border-black/10 shadow">
-        <!-- TOPBAR (institucional) -->
-        <div class="mpf-topbar">
-            <div class="mx-auto px-4 py-1.5 flex items-center justify-end max-w-[1440px]">
-                <a href="#" class="text-xs text-white/95 leading-relaxed">Ministério Público Federal | Rede Institucional</a>
-            </div>
-        </div>
+  <!-- HEADER (2 barras) -->
+  <header id="site-header" data-sticky class="bg-white border-b border-black/10 shadow">
+    <!-- TOPBAR (institucional) -->
+    <div class="mpf-topbar">
+      <div class="mx-auto px-4 py-1.5 flex items-center justify-end max-w-[1440px]">
+        <a href="#" class="text-xs text-white/95 leading-relaxed">Ministério Público Federal | Rede Institucional</a>
+      </div>
+    </div>
 
-        <!-- BARRA SUPERIOR -->
-        <div class="border-b border-gray-100">
-            <div class="mx-auto max-w-[1440px] px-4 py-3">
-                <!-- GRID 3 COLUNAS: esquerda / centro / direita -->
-                <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] items-center gap-4">
-                    <!-- (1) LOGO (esquerda) -->
-                    <div class="flex items-center justify-between gap-4">
-                        <a href="#" class="mpf-brand flex items-center gap-3 min-w-0" aria-label="Ir para a página inicial">
-                            <!-- Ícone / logo (SVG) reduz no mobile em vez de esconder -->
-                            <span class="mpf-brand__circle shrink-0" aria-hidden="true">
-                                <svg
-                                viewBox="0 0 573 186"
-                                class="h-auto w-10 sm:w-12 lg:w-[64px]"
-                                xmlns="http://www.w3.org/2000/svg"
-                                >
-                                <path d="M235.73 185.29H185.16L174 105.22C173.22 99.57 172.5 93.29 171.86 86.37C171.21 79.46 169.8 71.91 169.28 63.72C168.07 71.57 165.69 81.35 162.14 93.07C161.36 95.52 160.8 97.33 160.45 98.51L134.62 185.28H100.92L75.09 98.51C74.74 97.33 74.22 95.52 73.53 93.07C69.9 81.35 67.52 71.61 66.39 63.84C65.87 70.84 64.74 77.78 64.05 84.65C63.36 91.53 62.53 98.37 61.58 105.21L50.42 185.28H0L33.69 0.0800018L83.87 0L111.61 95.59C111.78 96.26 112.13 97.36 112.65 98.88C115.33 107.4 117.02 114.69 117.71 120.76C118.05 117.47 118.71 113.83 119.66 109.82C120.61 105.81 121.91 100.99 123.55 95.33L151.57 0.0699921H202.22L235.72 185.27L235.73 185.29Z" fill="var(--brand)"/>
-                                <path d="M319.99 185.29H269.35V0.0898438H325.98C348.79 0.0898438 364.8 1.09985 374.02 3.12985C383.23 5.14985 391.05 8.61984 397.47 13.5098C405.01 19.1698 410.76 26.2298 414.72 34.7098C418.68 43.1898 420.65 52.6199 420.65 62.9899C420.65 74.0399 418.7 83.7699 414.79 92.1599C410.88 100.55 405.11 107.45 397.47 112.85C391.69 116.9 384.9 119.81 377.08 121.58C369.26 123.35 356.74 124.23 339.51 124.23H319.98V185.29H319.99ZM319.99 83.5398H330.6C343.98 83.5398 353.33 81.8698 358.64 78.5298C363.94 75.1998 366.59 69.5098 366.59 61.4798C366.59 53.4498 363.98 48.1799 358.78 44.8799C353.57 41.5899 344.36 39.9398 331.16 39.9398H320V83.5298L319.99 83.5398Z" fill="var(--brand)"/>
-                                <path d="M454.63 185.29V0.0898438H572.28V40.6299H505.1V72.8499H567.3V112.54H505.1V185.29H454.63Z" fill="var(--brand)"/>
-                                </svg>
-                            </span>
+    <!-- BARRA SUPERIOR -->
+    <div class="border-b border-gray-100">
+      <div class="mx-auto max-w-[1440px] px-4 py-3">
+        <!-- GRID 3 COLUNAS: esquerda / centro / direita -->
+        <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr_auto] items-center gap-4">
+          <!-- (1) LOGO (esquerda) -->
+          <div class="flex items-center justify-between gap-4">
+            <a href="#" class="mpf-brand flex items-center gap-3 min-w-0" aria-label="Ir para a página inicial">
+              <!-- Ícone / logo (SVG) reduz no mobile em vez de esconder -->
+              <span class="mpf-brand__circle shrink-0" aria-hidden="true">
+                <svg
+                  viewBox="0 0 573 186"
+                  class="h-auto w-10 sm:w-12 lg:w-[64px]"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M235.73 185.29H185.16L174 105.22C173.22 99.57 172.5 93.29 171.86 86.37C171.21 79.46 169.8 71.91 169.28 63.72C168.07 71.57 165.69 81.35 162.14 93.07C161.36 95.52 160.8 97.33 160.45 98.51L134.62 185.28H100.92L75.09 98.51C74.74 97.33 74.22 95.52 73.53 93.07C69.9 81.35 67.52 71.61 66.39 63.84C65.87 70.84 64.74 77.78 64.05 84.65C63.36 91.53 62.53 98.37 61.58 105.21L50.42 185.28H0L33.69 0.0800018L83.87 0L111.61 95.59C111.78 96.26 112.13 97.36 112.65 98.88C115.33 107.4 117.02 114.69 117.71 120.76C118.05 117.47 118.71 113.83 119.66 109.82C120.61 105.81 121.91 100.99 123.55 95.33L151.57 0.0699921H202.22L235.72 185.27L235.73 185.29Z" fill="var(--brand)"/>
+                  <path d="M319.99 185.29H269.35V0.0898438H325.98C348.79 0.0898438 364.8 1.09985 374.02 3.12985C383.23 5.14985 391.05 8.61984 397.47 13.5098C405.01 19.1698 410.76 26.2298 414.72 34.7098C418.68 43.1898 420.65 52.6199 420.65 62.9899C420.65 74.0399 418.7 83.7699 414.79 92.1599C410.88 100.55 405.11 107.45 397.47 112.85C391.69 116.9 384.9 119.81 377.08 121.58C369.26 123.35 356.74 124.23 339.51 124.23H319.98V185.29H319.99ZM319.99 83.5398H330.6C343.98 83.5398 353.33 81.8698 358.64 78.5298C363.94 75.1998 366.59 69.5098 366.59 61.4798C366.59 53.4498 363.98 48.1799 358.78 44.8799C353.57 41.5899 344.36 39.9398 331.16 39.9398H320V83.5298L319.99 83.5398Z" fill="var(--brand)"/>
+                  <path d="M454.63 185.29V0.0898438H572.28V40.6299H505.1V72.8499H567.3V112.54H505.1V185.29H454.63Z" fill="var(--brand)"/>
+                </svg>
+              </span>
 
-                            <span class="min-w-0">
-                                <span class="block font-semibold leading-tight text-[color:var(--brand)] text-base sm:text-lg lg:text-xl truncate mpf-brand__name" >
-                                Ministério Público Federal
-                                </span>
+              <span class="min-w-0">
+                <span class="block font-semibold leading-tight text-[color:var(--brand)] text-base sm:text-lg lg:text-xl truncate mpf-brand__name">
+                  Ministério Público Federal
+                </span>
 
-                                            <span class="hidden sm:block text-gray-700 leading-tight truncate text-xs sm:text-sm mpf-brand__tagline">
-                                Portal Institucional
-                                </span>
-                            </span>
-                        </a>
+                <span class="hidden sm:block text-gray-700 leading-tight truncate text-xs sm:text-sm mpf-brand__tagline">
+                  Portal Institucional
+                </span>
+              </span>
+            </a>
 
-                        <!-- Mobile: botão menu -->
-                        <button type="button" data-menu-button class="lg:hidden relative z-[70] inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu">
-                            <span class="sr-only">Abrir menu</span>
-                            <span class="mpf-burger" aria-hidden="true">
+            <!-- Mobile: botão menu -->
+            <button
+              type="button"
+              data-menu-button
+              class="lg:hidden relative z-[70] inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50
+                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              aria-label="Abrir menu"
+            >
+              <span class="sr-only">Abrir menu</span>
+              <span class="mpf-burger" aria-hidden="true">
                 <span></span><span></span><span></span>
-                            </span>
-                        </button>
-                    </div>
+              </span>
+            </button>
+          </div>
 
-                    <!-- Desktop: links institucionais -->
-                    <nav aria-label="Links institucionais" class="hidden lg:flex justify-center">
-                        <ul class="flex items-center text-sm text-gray-700 divide-x divide-gray-300/70">
-                            <li class="pr-3">
-                                <a href="./paginas-internas/interna.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
+          <!-- Desktop: links institucionais -->
+          <nav aria-label="Links institucionais" class="hidden lg:flex justify-center">
+            <ul class="flex items-center text-sm text-gray-700 divide-x divide-gray-300/70">
+              <li class="pr-3">
+                <a href="./paginas-internas/interna.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
                   Acesso à Informação
                 </a>
-                            </li>
-                            <li class="px-3">
-                                <a href="./paginas-internas/interna.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
+              </li>
+              <li class="px-3">
+                <a href="./paginas-internas/interna.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
                   Transparência
                 </a>
-                            </li>
-                            <li class="pl-3">
-                                <a href="./paginas-internas/interna.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
+              </li>
+              <li class="pl-3">
+                <a href="./paginas-internas/interna.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
                   Contatos
-                </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Acessibilidade: desktop grande -->
-                    <div class="a11y-desktop items-center justify-end gap-2 text-sm">
-                        <a href="./paginas-internas/interna.html" class="text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
-              Acessibilidade
-            </a>
-
-                        <span aria-hidden="true" class="mx-1 h-4 w-px bg-gray-300/70"></span>
-
-                        <button type="button" data-contrast-toggle role="switch" aria-checked="false" aria-label="Ativar alto contraste" title="Alto contraste" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 1 0 9.8 9.8Z" />
-                            </svg>
-                        </button>
-
-                        <button type="button" data-font="decrease" aria-label="Diminuir tamanho do texto" title="Diminuir tamanho do texto" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                            <span aria-hidden="true" class="font-semibold">A−</span>
-                        </button>
-
-                        <button type="button" data-font="reset" aria-label="Restaurar tamanho do texto" title="Restaurar tamanho do texto" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                            <span aria-hidden="true" class="font-semibold">A</span>
-                        </button>
-
-                        <button type="button" data-font="increase" aria-label="Aumentar tamanho do texto" title="Aumentar tamanho do texto" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                            <span aria-hidden="true" class="font-semibold">A+</span>
-                        </button>
-
-                        <a href="#vlibras" aria-label="Acessar recurso de Libras" title="Libras" class="inline-flex h-9 items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 text-gray-800
-                    hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
-                                <path d="M8 11V5a2 2 0 1 1 4 0v6" />
-                                <path d="M12 11V6a2 2 0 1 1 4 0v7" />
-                                <path d="M6 12v-1a2 2 0 1 1 4 0v6" />
-                                <path d="M16 14V9a2 2 0 1 1 4 0v8c0 3-2 5-5 5H11c-2 0-4-1-5-3l-1-2" />
-                            </svg>
-                            <span class="text-xs font-medium">Libras</span>
-                        </a>
-
-                        <a href="./paginas-internas/interna.html" aria-label="Mapa do site" title="Mapa do site" class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3Z" />
-                                <path d="M9 3v15" />
-                                <path d="M15 6v15" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <!-- Acessibilidade: dropdown abaixo de lg -->
-                    <div class="a11y-mobile relative flex justify-end" data-dd-root>
-                        <button type="button" class="inline-flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-dd-button="dd-a11y" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-a11y">
-                            Acessibilidade
-                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-
-                        <div id="dd-a11y" data-dd-menu role="menu" hidden class="absolute right-0 top-full mt-2 w-72 rounded-md border border-gray-200 bg-white shadow-lg p-2 z-[80]">
-                            <button role="menuitem" type="button" data-contrast-toggle aria-label="Ativar alto contraste" class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                                Alto contraste
-                            </button>
-
-                            <div class="grid grid-cols-3 gap-2 px-1 py-2">
-                                <button type="button" data-font="decrease" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50
-                        focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Diminuir texto">
-                                    A−
-                                </button>
-                                <button type="button" data-font="reset" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50
-                        focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Restaurar texto">
-                                    A
-                                </button>
-                                <button type="button" data-font="increase" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50
-                        focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Aumentar texto">
-                                    A+
-                                </button>
-                            </div>
-
-                            <a role="menuitem" href="#vlibras" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                Libras
-              </a>
-
-                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                Mapa do site
-              </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- BARRA INFERIOR (menu principal + busca) -->
-        <div class="mpf-bottombar bg-[color:var(--mpf-blue)]/[0.07] border-t border-[color:var(--mpf-blue)]/20">
-            <div class="mx-auto max-w-[1440px] px-4">
-                <div class="flex items-center justify-between gap-4">
-                    <!-- Menu principal (desktop) -->
-                    <nav aria-label="Navegação principal" class="hidden lg:block">
-                        <ul class="flex items-stretch flex-nowrap">
-                            <!-- O MPF -->
-                            <li class="relative" data-dd-root>
-                                <button type="button" class="mpf-nav-item gap-2" data-dd-button="dd-ompF" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-ompF">
-                                    O MPF
-                                    <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
-
-                                <div id="dd-ompF" data-dd-menu role="menu" hidden class="absolute left-0 top-full mt-1 w-72 rounded-md border border-gray-300 bg-white shadow-lg p-2">
-                                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                    Institucional
-                  </a>
-
-                                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                    Unidades
-                  </a>
-
-                                    <!-- NÍVEL 2: accordion (no lugar do flyout lateral) -->
-                                    <div class="mt-1 rounded-md">
-                                        <button type="button" class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between" data-acc-button="dd-ompF-sobre" aria-expanded="false" aria-controls="dd-ompF-sobre">
-                                            Sobre
-                                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                                <path d="M6 9l6 6 6-6" />
-                                            </svg>
-                                        </button>
-
-                                        <div id="dd-ompF-sobre" data-acc-panel hidden class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1">
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        História e missão
-                      </a>
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Estrutura organizacional
-                      </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- Atuação -->
-                            <li class="relative" data-dd-root>
-                                <button type="button" class="mpf-nav-item gap-2" data-dd-button="dd-atuacao" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-atuacao">
-                                    Atuação
-                                    <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
-
-                                <div id="dd-atuacao" data-dd-menu role="menu" hidden class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2">
-                                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                    Atuação temática
-                  </a>
-
-                                    <!-- NÍVEL 2: accordion -->
-                                    <div class="mt-1 rounded-md">
-                                        <button type="button" class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between" data-acc-button="dd-atuacao-areas" aria-expanded="false" aria-controls="dd-atuacao-areas">
-                                            Áreas de atuação
-                                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                                <path d="M6 9l6 6 6-6" />
-                                            </svg>
-                                        </button>
-
-                                        <div id="dd-atuacao-areas" data-acc-panel hidden class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1">
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Meio ambiente
-                      </a>
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Combate à corrupção
-                      </a>
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Direitos do cidadão
-                      </a>
-                                        </div>
-                                    </div>
-
-                                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                    Grandes casos
-                  </a>
-                                </div>
-                            </li>
-
-                            <!-- Serviços -->
-                            <li class="relative" data-dd-root>
-                                <button type="button" class="mpf-nav-item gap-2" data-dd-button="dd-servicos" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-servicos">
-                                    Serviços
-                                    <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
-
-                                <div id="dd-servicos" data-dd-menu role="menu" hidden class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2">
-                                    <a role="menuitem" href="./paginas-internas/servicos.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                    Visão geral de serviços
-                  </a>
-
-                                    <!-- NÍVEL 2: accordion -->
-                                    <div class="mt-1 rounded-md">
-                                        <button type="button" class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between" data-acc-button="dd-servicos-cidadao" aria-expanded="false" aria-controls="dd-servicos-cidadao">
-                                            Para o cidadão
-                                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                                <path d="M6 9l6 6 6-6" />
-                                            </svg>
-                                        </button>
-
-                                        <div id="dd-servicos-cidadao" data-acc-panel hidden class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1">
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Denúncias
-                      </a>
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Protocolo
-                      </a>
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Certidões
-                      </a>
-                                        </div>
-                                    </div>
-
-                                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                    Acesso à informação
-                  </a>
-                                </div>
-                            </li>
-
-                            <!-- Comunicação -->
-                            <li class="relative" data-dd-root>
-                                <button type="button" class="mpf-nav-item gap-2" data-dd-button="dd-comunicacao" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-comunicacao">
-                                    Comunicação
-                                    <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
-
-                                <div id="dd-comunicacao" data-dd-menu role="menu" hidden class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2">
-                                    <a role="menuitem" href="./paginas-internas/noticias.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                    Notícias
-                  </a>
-
-                                    <!-- NÍVEL 2: accordion -->
-                                    <div class="mt-1 rounded-md">
-                                        <button type="button" class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between" data-acc-button="dd-comunicacao-canais" aria-expanded="false" aria-controls="dd-comunicacao-canais">
-                                            Canais
-                                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                                <path d="M6 9l6 6 6-6" />
-                                            </svg>
-                                        </button>
-
-                                        <div id="dd-comunicacao-canais" data-acc-panel hidden class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1">
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Imprensa
-                      </a>
-                                            <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                        Redes sociais
-                      </a>
-                                        </div>
-                                    </div>
-
-                                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                    Campanhas
-                  </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <!-- Busca (desktop) -->
-                    <form class="hidden md:flex items-center gap-2 ml-auto" role="search" aria-label="Buscar no site">
-                        <label class="sr-only" for="site-search">Buscar</label>
-                        <input id="site-search" name="q" type="search" placeholder="Buscar…" class="w-72 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none
-                    focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" />
-                        <button type="submit" class="rounded-md bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95
-                    focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                            Buscar
-                        </button>
-                    </form>
-
-                    <!-- Mobile hint -->
-                    <div class="md:hidden text-sm text-gray-600 py-3">
-                        Use o menu para acessar páginas e busca.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- MOBILE OVERLAY -->
-        <div data-menu-overlay class="fixed inset-0 z-50 bg-black/40" hidden></div>
-
-        <!-- MOBILE PANEL -->
-        <nav id="mobile-menu" data-menu-panel class="fixed right-0 top-0 z-[60] h-full w-[88%] max-w-sm bg-white shadow-xl border-l border-gray-200 overflow-y-auto overscroll-contain" hidden tabindex="-1" aria-label="Menu mobile">
-            <div class="p-4 border-b border-gray-200 flex items-center justify-between">
-                <p class="font-semibold text-gray-900">Menu</p>
-
-                <button type="button" data-menu-close
-                class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                        focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
-                aria-label="Fechar menu">
-                Fechar
-                </button>
-            </div>
-            </div>
-
-            <div class="p-4 grid gap-6 pb-10">
-                <!-- Busca mobile -->
-                <form role="search" aria-label="Buscar no site (mobile)">
-                    <label class="sr-only" for="site-search-mobile">Buscar</label>
-                    <input id="site-search-mobile" name="q" type="search" placeholder="Buscar…" class="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none
-                  focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" />
-                    <button type="submit" class="mt-2 w-full rounded-md bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95
-                  focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                        Buscar
-                    </button>
-                </form>
-
-                <!-- Links institucionais (mobile) -->
-                <section aria-label="Links institucionais" class="grid gap-2 text-sm">
-                    <p class="font-semibold text-gray-900">Links institucionais</p>
-                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Acesso à Informação</a>
-                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Transparência</a>
-                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Contatos</a>
-                </section>
-
-                <!-- Ferramentas -->
-                <section aria-label="Ferramentas de acessibilidade" class="grid gap-2 text-sm">
-                    <a href="./paginas-internas/interna.html" class="font-semibold text-gray-900">Acessibilidade</a>
-
-                    <button type="button" data-contrast-toggle role="switch" aria-checked="false" class="w-full rounded-md border border-gray-200 px-4 py-3 text-left hover:bg-gray-50
-                  focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-                        Alto contraste
-                    </button>
-
-                    <div class="grid grid-cols-3 gap-2">
-                        <button type="button" data-font="decrease" class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Diminuir tamanho do texto">A-</button>
-                        <button type="button" data-font="reset" class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Restaurar tamanho do texto">A</button>
-                        <button type="button" data-font="increase" class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Aumentar tamanho do texto">A+</button>
-                    </div>
-
-                    <a href="#vlibras" class="w-full rounded-md border border-gray-200 px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-            Libras
-          </a>
-
-                    <a href="#" class="w-full rounded-md border border-gray-200 px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
-            Mapa do site
-          </a>
-                </section>
-
-                <!-- Navegação principal (mobile) com 2 níveis -->
-                <section aria-label="Navegação principal" class="grid gap-2 text-sm">
-                    <p class="font-semibold text-gray-900">Páginas</p>
-
-                    <!-- O MPF -->
-                    <div class="rounded-md border border-gray-200 overflow-hidden">
-                        <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-ompF" aria-expanded="false" aria-controls="m-ompF">
-                            <span class="font-semibold text-gray-900">O MPF</span>
-                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div id="m-ompF" data-acc-panel hidden class="p-2 grid gap-1">
-                            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Institucional</a>
-                            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Unidades</a>
-
-                            <!-- 2º nível -->
-                            <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
-                                <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-ompF-sobre" aria-expanded="false" aria-controls="m-ompF-sobre">
-                                    <span class="text-gray-900">Sobre</span>
-                                    <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
-                                <div id="m-ompF-sobre" data-acc-panel hidden class="p-2 grid gap-1">
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">História e missão</a>
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Estrutura organizacional</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Atuação -->
-                    <div class="rounded-md border border-gray-200 overflow-hidden">
-                        <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-atuacao" aria-expanded="false" aria-controls="m-atuacao">
-                            <span class="font-semibold text-gray-900">Atuação</span>
-                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div id="m-atuacao" data-acc-panel hidden class="p-2 grid gap-1">
-                            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Atuação temática</a>
-
-                            <!-- 2º nível -->
-                            <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
-                                <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-atuacao-areas" aria-expanded="false" aria-controls="m-atuacao-areas">
-                                    <span class="text-gray-900">Áreas de atuação</span>
-                                    <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
-                                <div id="m-atuacao-areas" data-acc-panel hidden class="p-2 grid gap-1">
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Meio ambiente</a>
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Combate à corrupção</a>
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Direitos do cidadão</a>
-                                </div>
-                            </div>
-
-                            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Grandes casos</a>
-                        </div>
-                    </div>
-
-                    <!-- Serviços -->
-                    <div class="rounded-md border border-gray-200 overflow-hidden">
-                        <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-servicos" aria-expanded="false" aria-controls="m-servicos">
-                            <span class="font-semibold text-gray-900">Serviços</span>
-                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div id="m-servicos" data-acc-panel hidden class="p-2 grid gap-1">
-                            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/servicos.html">Visão geral de serviços</a>
-
-                            <!-- 2º nível -->
-                            <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
-                                <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-servicos-cidadao" aria-expanded="false" aria-controls="m-servicos-cidadao">
-                                    <span class="text-gray-900">Para o cidadão</span>
-                                    <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
-                                <div id="m-servicos-cidadao" data-acc-panel hidden class="p-2 grid gap-1">
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Denúncias</a>
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Protocolo</a>
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Certidões</a>
-                                </div>
-                            </div>
-
-                            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Acesso à informação</a>
-                        </div>
-                    </div>
-
-                    <!-- Comunicação -->
-                    <div class="rounded-md border border-gray-200 overflow-hidden">
-                        <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-comunicacao" aria-expanded="false" aria-controls="m-comunicacao">
-                            <span class="font-semibold text-gray-900">Comunicação</span>
-                            <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M6 9l6 6 6-6" />
-                            </svg>
-                        </button>
-                        <div id="m-comunicacao" data-acc-panel hidden class="p-2 grid gap-1">
-                            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/noticias.html">Notícias</a>
-
-                            <!-- 2º nível -->
-                            <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
-                                <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-comunicacao-canais" aria-expanded="false" aria-controls="m-comunicacao-canais">
-                                    <span class="text-gray-900">Canais</span>
-                                    <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M6 9l6 6 6-6" />
-                                    </svg>
-                                </button>
-                                <div id="m-comunicacao-canais" data-acc-panel hidden class="p-2 grid gap-1">
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Imprensa</a>
-                                    <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Redes sociais</a>
-                                </div>
-                            </div>
-
-                            <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Campanhas</a>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Page -->
-    <div class="mpf-tailwind">
-<main id="main-content" class="w-full">
-  <div class="mx-auto max-w-[1440px] px-3 py-5 sm:px-4 sm:py-8">
-
-    <!-- Aviso: Portal em transição -->
-    <section class="mb-4 sm:mb-6" aria-label="Aviso">
-      <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-3 sm:px-4 text-sm text-amber-900 flex gap-3">
-        <span aria-hidden="true" class="mt-0.5">ⓘ</span>
-        <div class="min-w-0">
-          <p class="font-semibold">Portal em transição</p>
-          <p class="mt-0.5 text-amber-900/90">
-            Este é um portal intermediário. Alguns conteúdos estão sendo migrados e estarão disponíveis em breve. Caso encontre algum link indisponível, você será direcionado(a) para uma página informativa.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Banner principal -->
-    <section class="mb-4 sm:mb-6" aria-labelledby="boas-vindas-titulo">
-      <div class="rounded-2xl bg-[url(assets/banner-hero.png)] text-white px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-14 shadow-sm">
-        <div class="max-w-3xl">
-          <h1 id="boas-vindas-titulo" class="text-3xl md:text-4xl font-semibold leading-tight">
-            Bem-vindo ao novo Portal do MPF
-          </h1>
-          <p class="mt-3 text-white/90 text-base md:text-lg">
-            Ajude a melhorar o novo site do MPF enviando sua opinião.
-          </p>
-          <div class="mt-6 flex flex-col sm:flex-row gap-4">
-            <a href="paginas-internas/feedback.html"
-               class="inline-flex items-center justify-center rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-[color:var(--brand)]
-                      hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white/40">
-              Enviar feedback
-            </a>
-            <a href="./paginas-internas/noticias.html"
-               class="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-2.5 text-sm font-semibold text-white
-                      hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
-              Ir para notícias
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Serviços (70%) + Destaques (30%) -->
-    <section aria-labelledby="hub-servicos-titulo" class="grid gap-4 sm:gap-6 lg:grid-cols-12 lg:items-stretch">
-
-      <!-- COLUNA 70% — SERVIÇOS -->
-      <div class="lg:col-span-8">
-        <div class="h-full overflow-hidden rounded-md border border-gray-300 bg-white flex flex-col">
-
-          <!-- Cabeçalho com imagem + shade -->
-          <header class="relative overflow-hidden">
-            <a href="./paginas-internas/servicos.html" class="w-full relative">
-              <div class="relative h-[140px] sm:h-[150px] mpf-services-hero" aria-hidden="true"></div>
-
-              <div class="absolute inset-0 border-b" style="background: url(assets/banner-servicos.png);"></div>
-
-              <div class="absolute inset-0 p-4 sm:p-6 flex items-center">
-                <div class="text-white max-w-2xl">
-                  <p class="text-[11px] font-semibold uppercase tracking-wider opacity-90">Para o cidadão</p>
-                  <h2 id="hub-servicos-titulo" class="mt-1 text-2xl sm:text-2xl font-semibold leading-tight">Serviços</h2>
-                </div>
-              </div>
-            </a>
-          </header>
-
-          <!-- Grid -->
-          <div class="p-4 sm:p-6 lg:p-7 flex-1">
-            <ul class="grid gap-4 sm:grid-cols-2">
-              <li>
-                <a href="#"
-                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  <div class="flex items-start gap-3 sm:gap-4">
-                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                      <span class="text-[color:var(--brand)] font-semibold">P</span>
-                    </div>
-                    <div class="min-w-0">
-                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Protocolo</h3>
-                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Envie documentos e acompanhe o andamento do pedido.</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="#"
-                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  <div class="flex items-start gap-3 sm:gap-4">
-                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                      <span class="text-[color:var(--brand)] font-semibold">D</span>
-                    </div>
-                    <div class="min-w-0">
-                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Denúncia</h3>
-                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Registre informações e solicite providências ao MPF.</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="#"
-                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  <div class="flex items-start gap-3 sm:gap-4">
-                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                      <span class="text-[color:var(--brand)] font-semibold">🔎</span>
-                    </div>
-                    <div class="min-w-0">
-                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Pesquisa de processos</h3>
-                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Consulte processos e documentos públicos do MPF.</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="#"
-                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  <div class="flex items-start gap-3 sm:gap-4">
-                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                      <span class="text-[color:var(--brand)] font-semibold">🎓</span>
-                    </div>
-                    <div class="min-w-0">
-                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Concursos</h3>
-                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Informações sobre concurso e estágio.</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="#"
-                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  <div class="flex items-start gap-3 sm:gap-4">
-                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                      <span class="text-[color:var(--brand)] font-semibold">O</span>
-                    </div>
-                    <div class="min-w-0">
-                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Ouvidoria</h3>
-                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Envie reclamações, elogios, sugestões e pedidos.</p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="#"
-                   class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                  <div class="flex items-start gap-3 sm:gap-4">
-                    <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
-                      <span class="text-[color:var(--brand)] font-semibold">C</span>
-                    </div>
-                    <div class="min-w-0">
-                      <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Certidões</h3>
-                      <p class="mt-1 text-sm text-gray-700 leading-relaxed">Emita certidões e consultas relacionadas ao MPF.</p>
-                    </div>
-                  </div>
                 </a>
               </li>
             </ul>
+          </nav>
 
-            <div class="mt-5 sm:mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b pb-5 sm:pb-6">
-              <p class="text-xs text-gray-600">Não achou? Use a página completa de serviços.</p>
-              <a href="./paginas-internas/servicos.html"
-                 class="inline-flex items-center justify-center rounded-md bg-[color:var(--brand)] px-4 sm:px-5 py-2.5 text-sm font-semibold text-white hover:opacity-95
-                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-                Ver todos os serviços
+          <!-- Acessibilidade: desktop grande -->
+          <div class="a11y-desktop items-center justify-end gap-2 text-sm">
+            <a href="./paginas-internas/interna.html" class="text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30 rounded">
+              Acessibilidade
+            </a>
+
+            <span aria-hidden="true" class="mx-1 h-4 w-px bg-gray-300/70"></span>
+
+            <button
+              type="button"
+              data-contrast-toggle
+              role="switch"
+              aria-checked="false"
+              aria-label="Ativar alto contraste"
+              title="Alto contraste"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 1 0 9.8 9.8Z" />
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              data-font="decrease"
+              aria-label="Diminuir tamanho do texto"
+              title="Diminuir tamanho do texto"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            >
+              <span aria-hidden="true" class="font-semibold">A−</span>
+            </button>
+
+            <button
+              type="button"
+              data-font="reset"
+              aria-label="Restaurar tamanho do texto"
+              title="Restaurar tamanho do texto"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            >
+              <span aria-hidden="true" class="font-semibold">A</span>
+            </button>
+
+            <button
+              type="button"
+              data-font="increase"
+              aria-label="Aumentar tamanho do texto"
+              title="Aumentar tamanho do texto"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            >
+              <span aria-hidden="true" class="font-semibold">A+</span>
+            </button>
+
+            <a
+              href="#vlibras"
+              aria-label="Acessar recurso de Libras"
+              title="Libras"
+              class="inline-flex h-9 items-center gap-1.5 rounded-md border border-gray-200 bg-white px-2.5 text-gray-800
+                hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            >
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                <path d="M8 11V5a2 2 0 1 1 4 0v6" />
+                <path d="M12 11V6a2 2 0 1 1 4 0v7" />
+                <path d="M6 12v-1a2 2 0 1 1 4 0v6" />
+                <path d="M16 14V9a2 2 0 1 1 4 0v8c0 3-2 5-5 5H11c-2 0-4-1-5-3l-1-2" />
+              </svg>
+              <span class="text-xs font-medium">Libras</span>
+            </a>
+
+            <a
+              href="./paginas-internas/interna.html"
+              aria-label="Mapa do site"
+              title="Mapa do site"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-md border border-gray-200 bg-white text-gray-800 hover:bg-gray-50
+                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l-6 3V6l6-3 6 3 6-3v15l-6 3-6-3Z" />
+                <path d="M9 3v15" />
+                <path d="M15 6v15" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Acessibilidade: dropdown abaixo de lg -->
+          <div class="a11y-mobile relative flex justify-end" data-dd-root>
+            <button
+              type="button"
+              class="inline-flex items-center gap-2 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm text-gray-900 hover:bg-gray-50
+                focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+              data-dd-button="dd-a11y"
+              aria-haspopup="menu"
+              aria-expanded="false"
+              aria-controls="dd-a11y"
+            >
+              Acessibilidade
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            <div id="dd-a11y" data-dd-menu role="menu" hidden class="absolute right-0 top-full mt-2 w-72 rounded-md border border-gray-200 bg-white shadow-lg p-2 z-[80]">
+              <button role="menuitem" type="button" data-contrast-toggle aria-label="Ativar alto contraste" class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+                Alto contraste
+              </button>
+
+              <div class="grid grid-cols-3 gap-2 px-1 py-2">
+                <button type="button" data-font="decrease" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Diminuir texto">
+                  A−
+                </button>
+                <button type="button" data-font="reset" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Restaurar texto">
+                  A
+                </button>
+                <button type="button" data-font="increase" class="rounded-md border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Aumentar texto">
+                  A+
+                </button>
+              </div>
+
+              <a role="menuitem" href="#vlibras" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+                Libras
+              </a>
+
+              <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+                Mapa do site
               </a>
             </div>
-
-            <!-- Últimas noticias -->
-            <section id="ultimas-noticias" aria-labelledby="ultimas-noticias-titulo" class="mt-8 sm:mt-10 rounded-md border border-gray-300 bg-white p-4 sm:p-6">
-              <div class="flex items-center justify-between gap-4">
-                <h2 id="ultimas-noticias-titulo" class="text-xl sm:text-2xl font-semibold">Últimas Notícias</h2>
-
-                <!-- mobile: "+" | desktop: "Ver todas" + chevron-right -->
-                <a href="./paginas-internas/noticias.html"
-                   class="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] hover:underline
-                          focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                  <span class="sm:hidden font-bold text-lg leading-none" aria-hidden="true">+</span>
-                  <span class="hidden sm:inline">Ver todas</span>
-
-                  <svg aria-hidden="true"
-                       class="ml-1 hidden sm:inline-block h-3.5 w-3.5 opacity-70"
-                       xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                       stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-
-                  <span class="sr-only sm:hidden">Ver todas</span>
-                </a>
-              </div>
-
-              <div class="mt-5 sm:mt-6 grid gap-4 sm:gap-6 lg:grid-cols-12">
-                <!-- Lista (maior) -->
-                <div class="lg:col-span-7 grid gap-4 sm:gap-4">
-                  <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
-                    <div class="flex items-start justify-between gap-4">
-                      <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
-                        Notícias
-                      </p>
-                      <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
-                      </p>
-                    </div>
-                    <h3 class="mt-3 text-lg font-semibold leading-snug">
-                      <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                        MPF recomenda medidas para proteção de comunidades indígenas
-                      </a>
-                    </h3>
-                    <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
-                    <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Atuação</p>
-                  </article>
-
-                  <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
-                    <div class="flex items-start justify-between gap-4">
-                      <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
-                        Comunicado
-                      </p>
-                      <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
-                      </p>
-                    </div>
-                    <h3 class="mt-3 text-lg font-semibold leading-snug">
-                      <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                        Nova resolução sobre procedimentos administrativos
-                      </a>
-                    </h3>
-                    <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
-                    <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Assessoria</p>
-                  </article>
-
-                  <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
-                    <div class="flex items-start justify-between gap-4">
-                      <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
-                        Institucional
-                      </p>
-                      <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                        <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
-                      </p>
-                    </div>
-                    <h3 class="mt-3 text-lg font-semibold leading-snug">
-                      <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                        Balanço de atividades do MPF no terceiro trimestre
-                      </a>
-                    </h3>
-                    <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
-                    <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Institucional</p>
-                  </article>
-                </div>
-
-                <!-- Cards com imagem (lado direito) -->
-                <div class="lg:col-span-5 grid gap-4 sm:gap-4">
-                  <article class="relative overflow-hidden rounded-xl border border-gray-200">
-                    <div class="aspect-[15/10] bg-gray-300">
-                      <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80" alt="" class="h-full w-full object-cover" loading="lazy" />
-                    </div>
-                    <div class="absolute inset-0 bg-black/35"></div>
-                    <div class="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end">
-                      <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">Destaque</p>
-                      <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
-                        <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
-                          Operação combate fraudes em licitações públicas
-                        </a>
-                      </h3>
-                    </div>
-                  </article>
-
-                  <article class="relative overflow-hidden rounded-xl border border-gray-200">
-                    <div class="aspect-[16/10] bg-gray-300">
-                      <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1400&q=80" alt="" class="h-full w-full object-cover" loading="lazy" />
-                    </div>
-                    <div class="absolute inset-0 bg-black/35"></div>
-                    <div class="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end">
-                      <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">Inovação</p>
-                      <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
-                        <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
-                          MPF lança plataforma digital de atendimento
-                        </a>
-                      </h3>
-                    </div>
-                  </article>
-
-                  <aside class="rounded-xl bg-[color:var(--brand)] p-4 sm:p-6 text-white">
-                    <h3 class="text-lg font-semibold">Acompanhe o MPF</h3>
-                    <p class="mt-2 text-sm text-white/90">
-                      Fique por dentro das ações e novidades do Ministério Público Federal.
-                    </p>
-                    <a href="#"
-                       class="mt-5 inline-flex w-full items-center justify-center rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-[color:var(--brand)]
-                              hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white/40">
-                      Inscrever-se
-                    </a>
-                  </aside>
-                </div>
-              </div>
-            </section>
-
-            <section aria-label="Banner de serviço" class="mt-6 sm:mt-10 rounded-md border border-gray-300 overflow-hidden bg-white">
-              <div class="relative h-[140px] sm:h-[150px]">
-                <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-                <div class="absolute inset-0 bg-black/60"></div>
-
-                <div class="relative h-full p-4 sm:p-5 flex items-center justify-between gap-4">
-                  <div class="text-white max-w-xl">
-                    <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">Transparência</p>
-                    <h3 class="mt-1 text-2xl font-semibold leading-tight">Acesso à Informação</h3>
-                    <p class="mt-1 text-sm text-white/90">
-                      Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
-                    </p>
-                  </div>
-
-                  <a href="#"
-                     class="shrink-0 inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900
-                            hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white/30">
-                    Solicitar informação
-                  </a>
-                </div>
-              </div>
-            </section>
-
-            <section aria-label="Banner institucional" class="mt-6 sm:mt-7">
-              <a href="#"
-                 class="relative block overflow-hidden rounded-xl border border-gray-200
-                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand)]/30">
-                <div class="relative h-[160px] bg-gray-200">
-                  <img src="assets/mpf_oficial_cover.jpeg" alt="MPF – Guardião do futuro, protetor de direitos" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-                </div>
-              </a>
-            </section>
-
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- COLUNA 30% — DESTAQUES + BANNER -->
-      <aside class="lg:col-span-4 flex flex-col gap-4 sm:gap-6">
+    <!-- BARRA INFERIOR (menu principal + busca) -->
+    <div class="mpf-bottombar bg-[color:var(--mpf-blue)]/[0.07] border-t border-[color:var(--mpf-blue)]/20">
+      <div class="mx-auto max-w-[1440px] px-4">
+        <div class="flex items-center justify-between gap-4">
+          <!-- Menu principal (desktop) -->
+          <nav aria-label="Navegação principal" class="hidden lg:block">
+            <ul class="flex items-stretch flex-nowrap">
+              <!-- O MPF -->
+              <li class="relative" data-dd-root>
+                <button type="button" class="mpf-nav-item gap-2" data-dd-button="dd-ompF" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-ompF">
+                  O MPF
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
 
-        <section aria-labelledby="destaques-titulo" class="flex-1 rounded-md border border-gray-300 bg-white overflow-hidden flex flex-col">
-          <header class="p-4 sm:p-6 border-b border-gray-200">
-            <h2 id="destaques-titulo" class="text-lg font-semibold text-gray-900">Em destaque</h2>
-            <p class="mt-1 text-sm text-gray-600">Atualizações institucionais selecionadas.</p>
-          </header>
-
-          <div class="p-4 sm:p-6 grid gap-4 sm:gap-4">
-            <article class="rounded-md border border-gray-300 overflow-hidden">
-              <div class="aspect-[16/10] overflow-hidden bg-gray-200">
-                <img src="https://serralheriamoreno.com.br/wp-content/uploads/2023/10/Torres-transmissao-energia-eletrica-1024x702.jpg" alt="Imagem do destaque" class="h-full w-full object-cover" loading="lazy" />
-              </div>
-              <div class="p-3 sm:p-4">
-                <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Meio Ambiente</p>
-                <h3 class="mt-1 text-base font-semibold leading-snug">
-                  <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                    MPF obtém decisão para retirada de postes e estrutura elétrica de área ambiental invadida em Mirante da Serra (RO)
+                <div id="dd-ompF" data-dd-menu role="menu" hidden class="absolute left-0 top-full mt-1 w-80 rounded-md border border-gray-300 bg-white shadow-lg p-2">
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Sobre o MPF
                   </a>
-                </h3>
-                <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-2">
-                  Energisa e Compel têm 60 dias para interromper fornecimento de energia a invasores das reservas legais
-                </p>
-                <p class="mt-3 text-xs text-gray-500">23/12/2025 • Assessoria de Comunicação</p>
+
+                  <!-- NÍVEL 2: accordion -->
+                  <div class="mt-1 rounded-md">
+                    <button
+                      type="button"
+                      class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
+                      data-acc-button="dd-ompF-institucional"
+                      aria-expanded="false"
+                      aria-controls="dd-ompF-institucional"
+                    >
+                      Institucional
+                      <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </button>
+
+                    <div id="dd-ompF-institucional" data-acc-panel hidden class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1">
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">PGR</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Conselho Superior</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Conselho Institucional</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Corregedoria</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Ouvidoria</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Unidades</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Concursos</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Atuação -->
+              <li class="relative" data-dd-root>
+                <button type="button" class="mpf-nav-item gap-2" data-dd-button="dd-atuacao" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-atuacao">
+                  Atuação
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div id="dd-atuacao" data-dd-menu role="menu" hidden class="absolute left-0 top-full mt-1 w-[26rem] rounded-md border border-gray-300 bg-white shadow-lg p-2">
+                  <!-- NÍVEL 2: accordion -->
+                  <div class="rounded-md">
+                    <button
+                      type="button"
+                      class="w-full text-left rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 flex items-center justify-between"
+                      data-acc-button="dd-atuacao-camaras"
+                      aria-expanded="false"
+                      aria-controls="dd-atuacao-camaras"
+                    >
+                      Câmaras de Atuação
+                      <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </button>
+
+                    <div id="dd-atuacao-camaras" data-acc-panel hidden class="mt-1 ml-3 border-l border-gray-200 pl-3 grid gap-1">
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Direitos Sociais</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Criminal</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Ordem econômica</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Meio ambiente</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Combate a Corrupção</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Indígenas e Comunidades Tradicionais</a>
+                      <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Controle Externo da atividade Policial</a>
+                    </div>
+                  </div>
+
+                  <div class="mt-1 grid">
+                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">PFDC</a>
+                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">PGE</a>
+                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Cooperação Internacional</a>
+                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Gaeco</a>
+                    <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Perícia, Pesquisa e Análise</a>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Serviços -->
+              <li class="relative" data-dd-root>
+                <button type="button" class="mpf-nav-item gap-2" data-dd-button="dd-servicos" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-servicos">
+                  Serviços
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div id="dd-servicos" data-dd-menu role="menu" hidden class="absolute left-0 top-full mt-1 w-[26rem] rounded-md border border-gray-300 bg-white shadow-lg p-2">
+                  <a role="menuitem" href="./paginas-internas/servicos.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">MPF Serviços</a>
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Carta de Serviços ao Cidadão</a>
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Portal da Transparência do MPF</a>
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Acesso a Informação</a>
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">LGPD</a>
+                </div>
+              </li>
+
+              <!-- Comunicação -->
+              <li class="relative" data-dd-root>
+                <button type="button" class="mpf-nav-item gap-2" data-dd-button="dd-comunicacao" aria-haspopup="menu" aria-expanded="false" aria-controls="dd-comunicacao">
+                  Comunicação
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div id="dd-comunicacao" data-dd-menu role="menu" hidden class="absolute left-0 top-full mt-1 w-[26rem] rounded-md border border-gray-300 bg-white shadow-lg p-2">
+                  <a role="menuitem" href="./paginas-internas/noticias.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Notícias</a>
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Atendimento a Jornalistas</a>
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Canais Oficiais MPF</a>
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Campanhas Nacionais</a>
+                  <a role="menuitem" href="./paginas-internas/interna.html" class="block rounded-md px-3 py-2 text-sm text-gray-900 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">Grandes Casos</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Busca (desktop) -->
+          <form class="hidden md:flex items-center gap-2 ml-auto" role="search" aria-label="Buscar no site">
+            <label class="sr-only" for="site-search">Buscar</label>
+            <input
+              id="site-search"
+              name="q"
+              type="search"
+              placeholder="Buscar…"
+              class="w-72 rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+            />
+            <button type="submit" class="rounded-md bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">
+              Buscar
+            </button>
+          </form>
+
+          <!-- Mobile hint -->
+          <div class="md:hidden text-sm text-gray-600 py-3">
+            Use o menu para acessar páginas e busca.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE OVERLAY -->
+    <div data-menu-overlay class="fixed inset-0 z-50 bg-black/40" hidden></div>
+
+    <!-- MOBILE PANEL -->
+    <nav
+      id="mobile-menu"
+      data-menu-panel
+      class="fixed right-0 top-0 z-[60] h-full w-[88%] max-w-sm bg-white shadow-xl border-l border-gray-200 overflow-y-auto overscroll-contain"
+      hidden
+      tabindex="-1"
+      aria-label="Menu mobile"
+    >
+      <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+        <p class="font-semibold text-gray-900">Menu</p>
+
+        <button
+          type="button"
+          data-menu-close
+          class="inline-flex items-center justify-center rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+            focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+          aria-label="Fechar menu"
+        >
+          Fechar
+        </button>
+      </div>
+
+      <div class="p-4 grid gap-6 pb-10">
+        <!-- Busca mobile -->
+        <form role="search" aria-label="Buscar no site (mobile)">
+          <label class="sr-only" for="site-search-mobile">Buscar</label>
+          <input
+            id="site-search-mobile"
+            name="q"
+            type="search"
+            placeholder="Buscar…"
+            class="w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+          />
+          <button
+            type="submit"
+            class="mt-2 w-full rounded-md bg-[color:var(--mpf-blue)] px-4 py-2 text-sm font-medium text-white hover:opacity-95
+              focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+          >
+            Buscar
+          </button>
+        </form>
+
+        <!-- Links institucionais (mobile) -->
+        <section aria-label="Links institucionais" class="grid gap-2 text-sm">
+          <p class="font-semibold text-gray-900">Links institucionais</p>
+          <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Acesso à Informação</a>
+          <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Transparência</a>
+          <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Contatos</a>
+        </section>
+
+        <!-- Ferramentas -->
+        <section aria-label="Ferramentas de acessibilidade" class="grid gap-2 text-sm">
+          <a href="./paginas-internas/interna.html" class="font-semibold text-gray-900">Acessibilidade</a>
+
+          <button
+            type="button"
+            data-contrast-toggle
+            role="switch"
+            aria-checked="false"
+            class="w-full rounded-md border border-gray-200 px-4 py-3 text-left hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30"
+          >
+            Alto contraste
+          </button>
+
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" data-font="decrease" class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Diminuir tamanho do texto">A-</button>
+            <button type="button" data-font="reset" class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Restaurar tamanho do texto">A</button>
+            <button type="button" data-font="increase" class="rounded-md border border-gray-200 px-3 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" aria-label="Aumentar tamanho do texto">A+</button>
+          </div>
+
+          <a href="#vlibras" class="w-full rounded-md border border-gray-200 px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">Libras</a>
+          <a href="./paginas-internas/interna.html" class="w-full rounded-md border border-gray-200 px-4 py-3 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30">Mapa do site</a>
+        </section>
+
+        <!-- Navegação principal (mobile) com 2 níveis -->
+        <section aria-label="Navegação principal" class="grid gap-2 text-sm">
+          <p class="font-semibold text-gray-900">Páginas</p>
+
+          <!-- O MPF -->
+          <div class="rounded-md border border-gray-200 overflow-hidden">
+            <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-ompF" aria-expanded="false" aria-controls="m-ompF">
+              <span class="font-semibold text-gray-900">O MPF</span>
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            <div id="m-ompF" data-acc-panel hidden class="p-2 grid gap-1">
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Sobre o MPF</a>
+
+              <!-- 2º nível -->
+              <div class="rounded-md border border-gray-200 overflow-hidden mt-1">
+                <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-ompF-institucional" aria-expanded="false" aria-controls="m-ompF-institucional">
+                  <span class="text-gray-900">Institucional</span>
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div id="m-ompF-institucional" data-acc-panel hidden class="p-2 grid gap-1">
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">PGR</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Conselho Superior</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Conselho Institucional</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Corregedoria</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Ouvidoria</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Unidades</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Concursos</a>
+                </div>
               </div>
-            </article>
+            </div>
+          </div>
 
-            <article class="rounded-md border border-gray-300 p-3 sm:p-4">
-              <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicado</p>
-              <h3 class="mt-1 text-base font-semibold leading-snug">
-                <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                  MPF funciona em regime de plantão durante recesso forense
-                </a>
-              </h3>
-              <p class="mt-2 text-sm text-gray-700 leading-relaxed">
-                De 20 de dezembro de 2025 a 6 de janeiro de 2026, atendimento será para casos urgentes
+          <!-- Atuação -->
+          <div class="rounded-md border border-gray-200 overflow-hidden">
+            <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-atuacao" aria-expanded="false" aria-controls="m-atuacao">
+              <span class="font-semibold text-gray-900">Atuação</span>
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            <div id="m-atuacao" data-acc-panel hidden class="p-2 grid gap-1">
+              <!-- 2º nível -->
+              <div class="rounded-md border border-gray-200 overflow-hidden">
+                <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-atuacao-camaras" aria-expanded="false" aria-controls="m-atuacao-camaras">
+                  <span class="text-gray-900">Câmaras de Atuação</span>
+                  <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
+
+                <div id="m-atuacao-camaras" data-acc-panel hidden class="p-2 grid gap-1">
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Direitos Sociais</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Criminal</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Ordem econômica</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Meio ambiente</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Combate a Corrupção</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Indígenas e Comunidades Tradicionais</a>
+                  <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Controle Externo da atividade Policial</a>
+                </div>
+              </div>
+
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">PFDC</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">PGE</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Cooperação Internacional</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Gaeco</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Perícia, Pesquisa e Análise</a>
+            </div>
+          </div>
+
+          <!-- Serviços -->
+          <div class="rounded-md border border-gray-200 overflow-hidden">
+            <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-servicos" aria-expanded="false" aria-controls="m-servicos">
+              <span class="font-semibold text-gray-900">Serviços</span>
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            <div id="m-servicos" data-acc-panel hidden class="p-2 grid gap-1">
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/servicos.html">MPF Serviços</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Carta de Serviços ao Cidadão</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Portal da Transparência do MPF</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Acesso a Informação</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">LGPD</a>
+            </div>
+          </div>
+
+          <!-- Comunicação -->
+          <div class="rounded-md border border-gray-200 overflow-hidden">
+            <button type="button" class="w-full px-3 py-3 flex items-center justify-between hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" data-acc-button="m-comunicacao" aria-expanded="false" aria-controls="m-comunicacao">
+              <span class="font-semibold text-gray-900">Comunicação</span>
+              <svg aria-hidden="true" class="ml-1 inline-block h-3.5 w-3.5 opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            <div id="m-comunicacao" data-acc-panel hidden class="p-2 grid gap-1">
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/noticias.html">Notícias</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Atendimento a Jornalistas</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Canais Oficiais MPF</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Campanhas Nacionais</a>
+              <a class="rounded-md px-3 py-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--mpf-blue)]/30" href="./paginas-internas/interna.html">Grandes Casos</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Page -->
+  <div class="mpf-tailwind">
+    <main id="main-content" class="w-full">
+      <div class="mx-auto max-w-[1440px] px-3 py-5 sm:px-4 sm:py-8">
+
+        <!-- Aviso: Portal em transição -->
+        <section class="mb-4 sm:mb-6" aria-label="Aviso">
+          <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-3 sm:px-4 text-sm text-amber-900 flex gap-3">
+            <span aria-hidden="true" class="mt-0.5">ⓘ</span>
+            <div class="min-w-0">
+              <p class="font-semibold">Portal em transição</p>
+              <p class="mt-0.5 text-amber-900/90">
+                Este é um portal intermediário. Alguns conteúdos estão sendo migrados e estarão disponíveis em breve. Caso encontre algum link indisponível, você será direcionado(a) para uma página informativa.
               </p>
-              <p class="mt-3 text-xs text-gray-500">19/12/2025</p>
-            </article>
-
-            <article class="rounded-md border border-gray-300 p-3 sm:p-4">
-              <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Geral</p>
-              <h3 class="mt-1 text-base font-semibold leading-snug">
-                <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                  Atuação do MPF no Supremo cresce 10% em 2025
-                </a>
-              </h3>
-              <p class="mt-2 text-sm text-gray-700 leading-relaxed">
-                Dados foram apresentados pelo procurador-geral da República, Paulo Gonet, na última sessão do ano judiciário do STF
-              </p>
-              <p class="mt-3 text-xs text-gray-500">1/12/2025</p>
-            </article>
-
-            <!-- (link no final do container: fica como estava) -->
-            <a href="./paginas-internas/noticia.html"
-               class="mt-auto inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900
-                      hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-              Ver mais notícias
-            </a>
+            </div>
           </div>
         </section>
 
-        <!-- Carrossel -->
-        <section aria-labelledby="carrossel-titulo" class="rounded-md border border-gray-200 bg-white overflow-hidden">
-          <header class="p-4 sm:p-6 border-b border-gray-200">
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                <h2 id="carrossel-titulo" class="text-lg font-semibold text-gray-900">Em foco</h2>
-                <p class="mt-1 text-sm text-gray-600">Conteúdos selecionados.</p>
-              </div>
-            </div>
-          </header>
-
-          <div class="p-4 sm:p-6">
-            <div class="swiper mpf-swiper">
-              <div class="swiper-wrapper">
-
-                <div class="swiper-slide">
-                  <article class="group rounded-xl border border-gray-200 overflow-hidden">
-                    <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
-                      <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80"
-                           alt="Imagem ilustrativa do conteúdo"
-                           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                           loading="lazy" />
-                    </div>
-                    <div class="p-3 sm:p-4">
-                      <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Transparência</p>
-                      <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
-                        <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                          Acesso à Informação: solicite dados e acompanhe pedidos
-                        </a>
-                      </h3>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="swiper-slide">
-                  <article class="group rounded-2xl border border-gray-200 overflow-hidden">
-                    <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
-                      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
-                           alt="Imagem ilustrativa do conteúdo"
-                           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                           loading="lazy" />
-                    </div>
-                    <div class="p-3 sm:p-4">
-                      <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Serviços</p>
-                      <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
-                        <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                          Guia rápido: principais serviços ao cidadão
-                        </a>
-                      </h3>
-                    </div>
-                  </article>
-                </div>
-
-                <div class="swiper-slide">
-                  <article class="group rounded-2xl border border-gray-200 overflow-hidden">
-                    <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
-                      <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80"
-                           alt="Imagem ilustrativa do conteúdo"
-                           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                           loading="lazy" />
-                    </div>
-                    <div class="p-3 sm:p-4">
-                      <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Institucional</p>
-                      <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
-                        <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
-                          Conheça o MPF: atuação, unidades e canais oficiais
-                        </a>
-                      </h3>
-                    </div>
-                  </article>
-                </div>
-
-              </div>
-
-              <!-- Controles -->
-              <div class="mt-4 flex items-center justify-between gap-3">
-                <div class="flex items-center gap-2">
-                  <button type="button"
-                          class="mpf-swiper-prev rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                                 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-                          aria-label="Voltar">
-                    <svg aria-hidden="true" class="inline-block h-8 w-8 opacity-80"
-                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                         stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M15 18l-6-6 6-6" />
-                    </svg>
-                  </button>
-
-                  <button type="button"
-                          class="mpf-swiper-next rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
-                                 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-                          aria-label="Avançar">
-                    <svg aria-hidden="true" class="inline-block h-8 w-8 opacity-80"
-                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                         stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M9 18l6-6-6-6" />
-                    </svg>
-                  </button>
-                </div>
-
-                <div class="mpf-swiper-pagination"></div>
+        <!-- Banner principal -->
+        <section class="mb-4 sm:mb-6" aria-labelledby="boas-vindas-titulo">
+          <div class="rounded-2xl bg-[url(assets/banner-hero.png)] text-white px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-14 shadow-sm">
+            <div class="max-w-3xl">
+              <h1 id="boas-vindas-titulo" class="text-3xl md:text-4xl font-semibold leading-tight">
+                Bem-vindo ao novo Portal do MPF
+              </h1>
+              <p class="mt-3 text-white/90 text-base md:text-lg">
+                Ajude a melhorar o novo site do MPF enviando sua opinião.
+              </p>
+              <div class="mt-6 flex flex-col sm:flex-row gap-4">
+                <a href="paginas-internas/feedback.html"
+                  class="inline-flex items-center justify-center rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-[color:var(--brand)]
+                          hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white/40">
+                  Enviar feedback
+                </a>
+                <a href="./paginas-internas/noticias.html"
+                  class="inline-flex items-center justify-center rounded-md border border-white/30 px-5 py-2.5 text-sm font-semibold text-white
+                          hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                  Ir para notícias
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- Banner pequeno -->
-        <section aria-label="Banner" class="rounded-md border border-gray-300 bg-white overflow-hidden">
-          <div class="relative h-full p-4 sm:p-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <a href="./paginas-internas/interna.html" class="text-white max-w-xl">
-              <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
-              <div class="absolute inset-0 bg-black/60"></div>
+        <!-- Serviços (70%) + Destaques (30%) -->
+        <section aria-labelledby="hub-servicos-titulo" class="grid gap-4 sm:gap-6 lg:grid-cols-12 lg:items-stretch">
 
-              <div class="relative h-full p-4 sm:p-5 flex items-center justify-between gap-4">
-                <div class="text-white max-w-xl">
-                  <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">Transparência</p>
-                  <h3 class="mt-1 text-2xl font-semibold leading-tight">Acesso à Informação</h3>
-                  <p class="mt-1 text-sm text-white/90">
-                    Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
+          <!-- COLUNA 70% — SERVIÇOS -->
+          <div class="lg:col-span-8">
+            <div class="h-full overflow-hidden rounded-md border border-gray-300 bg-white flex flex-col">
+
+              <!-- Cabeçalho com imagem + shade -->
+              <header class="relative overflow-hidden">
+                <a href="./paginas-internas/servicos.html" class="w-full relative">
+                  <div class="relative h-[140px] sm:h-[150px] mpf-services-hero" aria-hidden="true"></div>
+
+                  <div class="absolute inset-0 border-b" style="background: url(assets/banner-servicos.png);"></div>
+
+                  <div class="absolute inset-0 p-4 sm:p-6 flex items-center">
+                    <div class="text-white max-w-2xl">
+                      <p class="text-[11px] font-semibold uppercase tracking-wider opacity-90">Para o cidadão</p>
+                      <h2 id="hub-servicos-titulo" class="mt-1 text-2xl sm:text-2xl font-semibold leading-tight">Serviços</h2>
+                    </div>
+                  </div>
+                </a>
+              </header>
+
+              <!-- Grid -->
+              <div class="p-4 sm:p-6 lg:p-7 flex-1">
+                <ul class="grid gap-4 sm:grid-cols-2">
+                  <li>
+                    <a href="#"
+                      class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                              focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                      <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                          <span class="text-[color:var(--brand)] font-semibold">P</span>
+                        </div>
+                        <div class="min-w-0">
+                          <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Protocolo</h3>
+                          <p class="mt-1 text-sm text-gray-700 leading-relaxed">Envie documentos e acompanhe o andamento do pedido.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#"
+                      class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                              focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                      <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                          <span class="text-[color:var(--brand)] font-semibold">D</span>
+                        </div>
+                        <div class="min-w-0">
+                          <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Denúncia</h3>
+                          <p class="mt-1 text-sm text-gray-700 leading-relaxed">Registre informações e solicite providências ao MPF.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#"
+                      class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                              focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                      <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                          <span class="text-[color:var(--brand)] font-semibold">🔎</span>
+                        </div>
+                        <div class="min-w-0">
+                          <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Pesquisa de processos</h3>
+                          <p class="mt-1 text-sm text-gray-700 leading-relaxed">Consulte processos e documentos públicos do MPF.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#"
+                      class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                              focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                      <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                          <span class="text-[color:var(--brand)] font-semibold">🎓</span>
+                        </div>
+                        <div class="min-w-0">
+                          <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Concursos</h3>
+                          <p class="mt-1 text-sm text-gray-700 leading-relaxed">Informações sobre concurso e estágio.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#"
+                      class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                              focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                      <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                          <span class="text-[color:var(--brand)] font-semibold">O</span>
+                        </div>
+                        <div class="min-w-0">
+                          <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Ouvidoria</h3>
+                          <p class="mt-1 text-sm text-gray-700 leading-relaxed">Envie reclamações, elogios, sugestões e pedidos.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#"
+                      class="group block h-full rounded-md border border-gray-300 bg-white p-4 sm:p-5 hover:bg-gray-50
+                              focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                      <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="h-10 w-10 shrink-0 rounded-md bg-gray-100 grid place-items-center border border-gray-300" aria-hidden="true">
+                          <span class="text-[color:var(--brand)] font-semibold">C</span>
+                        </div>
+                        <div class="min-w-0">
+                          <h3 class="text-base font-semibold text-gray-900 group-hover:underline">Certidões</h3>
+                          <p class="mt-1 text-sm text-gray-700 leading-relaxed">Emita certidões e consultas relacionadas ao MPF.</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="mt-5 sm:mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b pb-5 sm:pb-6">
+                  <p class="text-xs text-gray-600">Não achou? Use a página completa de serviços.</p>
+                  <a href="./paginas-internas/servicos.html"
+                    class="inline-flex items-center justify-center rounded-md bg-[color:var(--brand)] px-4 sm:px-5 py-2.5 text-sm font-semibold text-white hover:opacity-95
+                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                    Ver todos os serviços
+                  </a>
+                </div>
+
+                <!-- Últimas noticias -->
+                <section id="ultimas-noticias" aria-labelledby="ultimas-noticias-titulo" class="mt-8 sm:mt-10 rounded-md border border-gray-300 bg-white p-4 sm:p-6">
+                  <div class="flex items-center justify-between gap-4">
+                    <h2 id="ultimas-noticias-titulo" class="text-xl sm:text-2xl font-semibold">Últimas Notícias</h2>
+
+                    <!-- mobile: "+" | desktop: "Ver todas" + chevron-right -->
+                    <a href="./paginas-internas/noticias.html"
+                      class="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] hover:underline
+                              focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                      <span class="sm:hidden font-bold text-lg leading-none" aria-hidden="true">+</span>
+                      <span class="hidden sm:inline">Ver todas</span>
+
+                      <svg aria-hidden="true"
+                          class="ml-1 hidden sm:inline-block h-3.5 w-3.5 opacity-70"
+                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+
+                      <span class="sr-only sm:hidden">Ver todas</span>
+                    </a>
+                  </div>
+
+                  <div class="mt-5 sm:mt-6 grid gap-4 sm:gap-6 lg:grid-cols-12">
+                    <!-- Lista (maior) -->
+                    <div class="lg:col-span-7 grid gap-4 sm:gap-4">
+                      <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
+                        <div class="flex items-start justify-between gap-4">
+                          <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                            Notícias
+                          </p>
+                          <p class="text-xs text-gray-500 inline-flex items-center gap-2">
+                            <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
+                          </p>
+                        </div>
+                        <h3 class="mt-3 text-lg font-semibold leading-snug">
+                          <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                            MPF recomenda medidas para proteção de comunidades indígenas
+                          </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
+                        <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Atuação</p>
+                      </article>
+
+                      <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
+                        <div class="flex items-start justify-between gap-4">
+                          <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                            Comunicado
+                          </p>
+                          <p class="text-xs text-gray-500 inline-flex items-center gap-2">
+                            <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
+                          </p>
+                        </div>
+                        <h3 class="mt-3 text-lg font-semibold leading-snug">
+                          <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                            Nova resolução sobre procedimentos administrativos
+                          </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
+                        <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Assessoria</p>
+                      </article>
+
+                      <article class="rounded-md border border-gray-200 p-4 sm:p-5 hover:bg-gray-50 transition">
+                        <div class="flex items-start justify-between gap-4">
+                          <p class="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700">
+                            Institucional
+                          </p>
+                          <p class="text-xs text-gray-500 inline-flex items-center gap-2">
+                            <span aria-hidden="true"><img src="assets/calendar.svg" alt="calendário" height="12" width="12"></span> 18/12/2025
+                          </p>
+                        </div>
+                        <h3 class="mt-3 text-lg font-semibold leading-snug">
+                          <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                            Balanço de atividades do MPF no terceiro trimestre
+                          </a>
+                        </h3>
+                        <p class="mt-2 text-sm text-gray-700 leading-relaxed">Texto curto para resumir leitura rápida.</p>
+                        <p class="mt-3 text-sm text-[color:var(--brand)] font-semibold">Institucional</p>
+                      </article>
+                    </div>
+
+                    <!-- Cards com imagem (lado direito) -->
+                    <div class="lg:col-span-5 grid gap-4 sm:gap-4">
+                      <article class="relative overflow-hidden rounded-xl border border-gray-200">
+                        <div class="aspect-[15/10] bg-gray-300">
+                          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1400&q=80" alt="" class="h-full w-full object-cover" loading="lazy" />
+                        </div>
+                        <div class="absolute inset-0 bg-black/35"></div>
+                        <div class="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end">
+                          <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">Destaque</p>
+                          <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
+                            <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
+                              Operação combate fraudes em licitações públicas
+                            </a>
+                          </h3>
+                        </div>
+                      </article>
+
+                      <article class="relative overflow-hidden rounded-xl border border-gray-200">
+                        <div class="aspect-[16/10] bg-gray-300">
+                          <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1400&q=80" alt="" class="h-full w-full object-cover" loading="lazy" />
+                        </div>
+                        <div class="absolute inset-0 bg-black/35"></div>
+                        <div class="absolute inset-0 p-4 sm:p-5 flex flex-col justify-end">
+                          <p class="inline-flex w-fit items-center rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white">Inovação</p>
+                          <h3 class="mt-3 text-xl font-semibold text-white leading-snug">
+                            <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-white/40 rounded">
+                              MPF lança plataforma digital de atendimento
+                            </a>
+                          </h3>
+                        </div>
+                      </article>
+
+                      <aside class="rounded-xl bg-[color:var(--brand)] p-4 sm:p-6 text-white">
+                        <h3 class="text-lg font-semibold">Acompanhe o MPF</h3>
+                        <p class="mt-2 text-sm text-white/90">
+                          Fique por dentro das ações e novidades do Ministério Público Federal.
+                        </p>
+                        <a href="#"
+                          class="mt-5 inline-flex w-full items-center justify-center rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-[color:var(--brand)]
+                                  hover:bg-white/95 focus:outline-none focus:ring-2 focus:ring-white/40">
+                          Inscrever-se
+                        </a>
+                      </aside>
+                    </div>
+                  </div>
+                </section>
+
+                <section aria-label="Banner de serviço" class="mt-6 sm:mt-10 rounded-md border border-gray-300 overflow-hidden bg-white">
+                  <div class="relative h-[140px] sm:h-[150px]">
+                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/60"></div>
+
+                    <div class="relative h-full p-4 sm:p-5 flex items-center justify-between gap-4">
+                      <div class="text-white max-w-xl">
+                        <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">Transparência</p>
+                        <h3 class="mt-1 text-2xl font-semibold leading-tight">Acesso à Informação</h3>
+                        <p class="mt-1 text-sm text-white/90">
+                          Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
+                        </p>
+                      </div>
+
+                      <a href="#"
+                        class="shrink-0 inline-flex items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900
+                                hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white/30">
+                        Solicitar informação
+                      </a>
+                    </div>
+                  </div>
+                </section>
+
+                <section aria-label="Banner institucional" class="mt-6 sm:mt-7">
+                  <a href="#"
+                    class="relative block overflow-hidden rounded-xl border border-gray-200
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand)]/30">
+                    <div class="relative h-[160px] bg-gray-200">
+                      <img src="assets/mpf_oficial_cover.jpeg" alt="MPF – Guardião do futuro, protetor de direitos" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                    </div>
+                  </a>
+                </section>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUNA 30% — DESTAQUES + BANNER -->
+          <aside class="lg:col-span-4 flex flex-col gap-4 sm:gap-6">
+
+            <section aria-labelledby="destaques-titulo" class="flex-1 rounded-md border border-gray-300 bg-white overflow-hidden flex flex-col">
+              <header class="p-4 sm:p-6 border-b border-gray-200">
+                <h2 id="destaques-titulo" class="text-lg font-semibold text-gray-900">Em destaque</h2>
+                <p class="mt-1 text-sm text-gray-600">Atualizações institucionais selecionadas.</p>
+              </header>
+
+              <div class="p-4 sm:p-6 grid gap-4 sm:gap-4">
+                <article class="rounded-md border border-gray-300 overflow-hidden">
+                  <div class="aspect-[16/10] overflow-hidden bg-gray-200">
+                    <img src="https://serralheriamoreno.com.br/wp-content/uploads/2023/10/Torres-transmissao-energia-eletrica-1024x702.jpg" alt="Imagem do destaque" class="h-full w-full object-cover" loading="lazy" />
+                  </div>
+                  <div class="p-3 sm:p-4">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Meio Ambiente</p>
+                    <h3 class="mt-1 text-base font-semibold leading-snug">
+                      <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                        MPF obtém decisão para retirada de postes e estrutura elétrica de área ambiental invadida em Mirante da Serra (RO)
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-2">
+                      Energisa e Compel têm 60 dias para interromper fornecimento de energia a invasores das reservas legais
+                    </p>
+                    <p class="mt-3 text-xs text-gray-500">23/12/2025 • Assessoria de Comunicação</p>
+                  </div>
+                </article>
+
+                <article class="rounded-md border border-gray-300 p-3 sm:p-4">
+                  <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicado</p>
+                  <h3 class="mt-1 text-base font-semibold leading-snug">
+                    <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                      MPF funciona em regime de plantão durante recesso forense
+                    </a>
+                  </h3>
+                  <p class="mt-2 text-sm text-gray-700 leading-relaxed">
+                    De 20 de dezembro de 2025 a 6 de janeiro de 2026, atendimento será para casos urgentes
                   </p>
+                  <p class="mt-3 text-xs text-gray-500">19/12/2025</p>
+                </article>
+
+                <article class="rounded-md border border-gray-300 p-3 sm:p-4">
+                  <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Geral</p>
+                  <h3 class="mt-1 text-base font-semibold leading-snug">
+                    <a href="./paginas-internas/noticia.html" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                      Atuação do MPF no Supremo cresce 10% em 2025
+                    </a>
+                  </h3>
+                  <p class="mt-2 text-sm text-gray-700 leading-relaxed">
+                    Dados foram apresentados pelo procurador-geral da República, Paulo Gonet, na última sessão do ano judiciário do STF
+                  </p>
+                  <p class="mt-3 text-xs text-gray-500">1/12/2025</p>
+                </article>
+
+                <!-- (link no final do container: fica como estava) -->
+                <a href="./paginas-internas/noticia.html"
+                  class="mt-auto inline-flex items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900
+                          hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
+                  Ver mais notícias
+                </a>
+              </div>
+            </section>
+
+            <!-- Carrossel -->
+            <section aria-labelledby="carrossel-titulo" class="rounded-md border border-gray-200 bg-white overflow-hidden">
+              <header class="p-4 sm:p-6 border-b border-gray-200">
+                <div class="flex items-start justify-between gap-3">
+                  <div>
+                    <h2 id="carrossel-titulo" class="text-lg font-semibold text-gray-900">Em foco</h2>
+                    <p class="mt-1 text-sm text-gray-600">Conteúdos selecionados.</p>
+                  </div>
+                </div>
+              </header>
+
+              <div class="p-4 sm:p-6">
+                <div class="swiper mpf-swiper">
+                  <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                      <article class="group rounded-xl border border-gray-200 overflow-hidden">
+                        <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
+                          <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80"
+                              alt="Imagem ilustrativa do conteúdo"
+                              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                              loading="lazy" />
+                        </div>
+                        <div class="p-3 sm:p-4">
+                          <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Transparência</p>
+                          <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
+                            <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                              Acesso à Informação: solicite dados e acompanhe pedidos
+                            </a>
+                          </h3>
+                        </div>
+                      </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <article class="group rounded-2xl border border-gray-200 overflow-hidden">
+                        <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
+                          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
+                              alt="Imagem ilustrativa do conteúdo"
+                              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                              loading="lazy" />
+                        </div>
+                        <div class="p-3 sm:p-4">
+                          <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Serviços</p>
+                          <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
+                            <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                              Guia rápido: principais serviços ao cidadão
+                            </a>
+                          </h3>
+                        </div>
+                      </article>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <article class="group rounded-2xl border border-gray-200 overflow-hidden">
+                        <div class="aspect-[16/9] bg-gray-200 overflow-hidden">
+                          <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80"
+                              alt="Imagem ilustrativa do conteúdo"
+                              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                              loading="lazy" />
+                        </div>
+                        <div class="p-3 sm:p-4">
+                          <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Institucional</p>
+                          <h3 class="mt-1 text-base font-semibold leading-snug text-gray-900">
+                            <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
+                              Conheça o MPF: atuação, unidades e canais oficiais
+                            </a>
+                          </h3>
+                        </div>
+                      </article>
+                    </div>
+
+                  </div>
+
+                  <!-- Controles -->
+                  <div class="mt-4 flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                      <button type="button"
+                              class="mpf-swiper-prev rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                                    focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                              aria-label="Voltar">
+                        <svg aria-hidden="true" class="inline-block h-8 w-8 opacity-80"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                      </button>
+
+                      <button type="button"
+                              class="mpf-swiper-next rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-gray-900 hover:bg-gray-50
+                                    focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                              aria-label="Avançar">
+                        <svg aria-hidden="true" class="inline-block h-8 w-8 opacity-80"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="#555" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    <div class="mpf-swiper-pagination"></div>
+                  </div>
                 </div>
               </div>
-            </a>
-          </div>
+            </section>
+
+            <!-- Banner pequeno -->
+            <section aria-label="Banner" class="rounded-md border border-gray-300 bg-white overflow-hidden">
+              <div class="relative h-full p-4 sm:p-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <a href="./paginas-internas/interna.html" class="text-white max-w-xl">
+                  <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                  <div class="absolute inset-0 bg-black/60"></div>
+
+                  <div class="relative h-full p-4 sm:p-5 flex items-center justify-between gap-4">
+                    <div class="text-white max-w-xl">
+                      <p class="text-[11px] font-semibold uppercase tracking-wider text-white/90">Transparência</p>
+                      <h3 class="mt-1 text-2xl font-semibold leading-tight">Acesso à Informação</h3>
+                      <p class="mt-1 text-sm text-white/90">
+                        Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </section>
+
+          </aside>
         </section>
 
-      </aside>
-    </section>
+      </div>
+    </main>
+<!-- Footer (moderninho, a11y-friendly, sem repetir “Contatos”) -->
+<footer class="bg-[color:var(--brand)] text-white relative overflow-hidden">
+  <!-- textura/shape sutil -->
+  <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20">
+    <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-2xl"></div>
+    <div class="absolute -bottom-28 -left-24 h-80 w-80 rounded-full bg-white/10 blur-2xl"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-[1440px] px-6 py-14">
+    <!-- Topo: marca + pitch + chips + redes -->
+    <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+      <div class="max-w-2xl">
+        <a href="/" class="inline-flex items-center gap-3">
+          <img
+            src="assets/logo-branca-mpf.png"
+            alt="Ministério Público Federal"
+            class="w-full max-w-[132px] h-auto"
+          />
+        </a>
+
+        <p class="mt-4 text-sm text-white/85 leading-relaxed">
+          Portal institucional do Ministério Público Federal, com acesso a informações, notícias e serviços ao cidadão.
+        </p>
+
+        <!-- Chips (sem “Contatos” pra não duplicar) -->
+        <div class="mt-6 flex flex-wrap gap-5" aria-label="Atalhos principais">
+          <a
+            href="./paginas-internas/servicos.html"
+            class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span>
+            MPF Serviços
+          </a>
+
+          <a
+            href="./paginas-internas/noticias.html"
+            class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span>
+            Notícias
+          </a>
+
+          <a
+            href="./paginas-internas/interna.html"
+            class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span>
+            Portal da Transparência
+          </a>
+        </div>
+      </div>
+
+      <!-- Redes sociais (ícones-link simples, com área clicável boa) -->
+      <div class="lg:pt-1">
+        <p class="text-xs uppercase tracking-wide text-white/70 mb-4">MPF nas redes sociais</p>
+        <ul class="flex flex-wrap items-center gap-5" aria-label="Redes sociais do MPF">
+          <li>
+            <a
+              href="#"
+              aria-label="WhatsApp"
+              class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <img src="assets/whatsapp.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <img src="assets/facebook.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-label="Flickr"
+              class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <img src="assets/flickr.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-label="X"
+              class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <img src="assets/x.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-label="YouTube"
+              class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <img src="assets/youtube.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <img src="assets/instagram.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <img src="assets/linkedin.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divisória -->
+    <div class="mt-10 h-px w-full bg-white/15"></div>
+
+    <!-- Grid principal -->
+    <div class="mt-10 grid gap-10 lg:grid-cols-12">
+      <!-- Contatos (único lugar de contatos) -->
+      <section aria-label="Contatos" class="lg:col-span-5">
+        <div class="rounded-md bg-white/10 ring-1 ring-white/15 p-6">
+          <div class="flex items-start justify-between gap-5">
+            <div>
+              <p class="text-xs uppercase tracking-wide text-white/70">Contatos</p>
+              <h3 class="mt-1 text-base font-semibold">Procuradoria-Geral da República</h3>
+            </div>
+          </div>
+
+          <div class="mt-6 grid gap-5 text-sm text-white/85">
+            <div class="flex gap-4">
+              <span
+                class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15"
+                aria-hidden="true"
+              >
+                <!-- pin -->
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11z"></path>
+                  <path d="M12 10a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path>
+                </svg>
+              </span>
+              <p class="leading-relaxed">
+                SAF Sul Quadra 4 Conjunto C
+                <br />
+                Brasília/DF – CEP 70050-900
+              </p>
+            </div>
+
+            <div class="flex gap-4">
+              <span
+                class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15"
+                aria-hidden="true"
+              >
+                <!-- phone -->
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.09 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.59 2.5a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 4 4l1.58-1.16a2 2 0 0 1 2.11-.45c.8.27 1.64.47 2.5.59A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <p>
+                Tel.:
+                <a
+                  href="tel:+556131055100"
+                  class="ml-1 underline underline-offset-4 decoration-white/25 hover:decoration-white focus:outline-none focus:ring-2 focus:ring-white/40 rounded-md"
+                >
+                  (61) 3105-5100
+                </a>
+              </p>
+            </div>
+
+            <div class="flex gap-4">
+              <span
+                class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15"
+                aria-hidden="true"
+              >
+                <!-- clock -->
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10z"></path>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+              </span>
+              <p class="leading-relaxed">
+                Atendimento de segunda a sexta
+                <br />
+                das 10h às 18h
+              </p>
+            </div>
+          </div>
+
+          <!-- CTAs (gap >= 20px) -->
+          <div class="mt-7 grid gap-5" aria-label="Canais de contato">
+            <a
+              href="#"
+              class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <span class="text-sm text-white/90">Lista de contatos das salas de atendimento ao cidadão</span>
+              <span
+                class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </span>
+            </a>
+
+            <a
+              href="#"
+              class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <span class="text-sm text-white/90">Atendimento a Jornalistas</span>
+              <span
+                class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </span>
+            </a>
+
+            <a
+              href="#"
+              class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"
+            >
+              <span class="text-sm text-white/90">Informações das Unidades do MPF</span>
+              <span
+                class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 18l6-6-6-6"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Links + Atuação -->
+      <div class="lg:col-span-7">
+        <!-- Ajuste: O MPF antes de Serviços -->
+        <div class="grid gap-10 sm:grid-cols-2">
+          <!-- O MPF -->
+          <nav aria-label="O MPF">
+            <p class="text-xs uppercase tracking-wide text-white/70 font-bold mb-3">O MPF</p>
+            <ul class="grid gap-2 text-sm text-white/85">
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Sobre o MPF</a></li>
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">PGR</a></li>
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Unidades</a></li>
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Concursos</a></li>
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Ouvidoria</a></li>
+            </ul>
+          </nav>
+
+          <!-- Serviços -->
+          <nav aria-label="Serviços">
+            <p class="text-xs uppercase tracking-wide text-white/70 font-bold mb-3">Serviços</p>
+            <ul class="grid gap-2 text-sm text-white/85">
+              <li><a href="./paginas-internas/servicos.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">MPF Serviços</a></li>
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Carta de Serviços ao Cidadão</a></li>
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Portal da Transparência do MPF</a></li>
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Acesso a Informação</a></li>
+              <li><a href="./paginas-internas/interna.html" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">LGPD</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Atuação (alinhado ao menu novo) -->
+        <section aria-label="Atuação" class="mt-6">
+          <h3 class="text-xs uppercase tracking-wide text-white/70 font-bold mb-3">Atuação</h3>
+
+          <ul class="mt-4 grid gap-3 sm:grid-cols-2 text-sm">
+            <!-- Câmaras de Atuação -->
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Direitos Sociais</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Criminal</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Ordem econômica</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Meio ambiente</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Combate a Corrupção</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Indígenas e Comunidades Tradicionais</span>
+              </a>
+            </li>
+
+            <!-- ajuste: NÃO ocupar a linha toda -->
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white leading-snug max-w-[28ch]">
+                  Controle Externo da atividade Policial
+                </span>
+              </a>
+            </li>
+
+            <!-- Itens extras do menu Atuação -->
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">PFDC</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">PGE</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Cooperação Internacional</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Gaeco</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="./paginas-internas/interna.html" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+                <span class="text-white/70" aria-hidden="true">|</span>
+                <span class="block text-white/90 group-hover:text-white">Perícia, Pesquisa e Análise</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="mt-12 border-t border-white/15 pt-6">
+      <div class="flex flex-col-reverse gap-5 sm:flex-row items-center justify-center sm:justify-between text-xs text-white/70">
+        <p>© <span id="year">2025</span> Ministério Público Federal</p>
+
+        <!-- separadores | entre os links legais -->
+        <nav aria-label="Links legais" class="flex flex-wrap items-center gap-1 sm:gap-2">
+          <a href="./paginas-internas/interna.html" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+            Portal institucional
+          </a>
+          <span class="text-white/40" aria-hidden="true">|</span>
+          <a href="./paginas-internas/interna.html" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+            Política de Privacidade
+          </a>
+          <span class="text-white/40" aria-hidden="true">|</span>
+          <a href="./paginas-internas/interna.html" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">
+            Termos de Uso
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
   </div>
-</main>
-
-
-
-        <!-- Footer (moderninho, a11y-friendly, sem repetir “Contatos”) -->
-        <footer class="bg-[color:var(--brand)] text-white relative overflow-hidden">
-            <!-- textura/shape sutil -->
-            <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-20">
-                <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-white/10 blur-2xl"></div>
-                <div class="absolute -bottom-28 -left-24 h-80 w-80 rounded-full bg-white/10 blur-2xl"></div>
-            </div>
-            <div class="relative mx-auto max-w-[1440px] px-6 py-14">
-                <!-- Topo: marca + pitch + chips + redes -->
-                <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-                    <div class="max-w-2xl">
-                        <a href="/" class="inline-flex items-center gap-3"> <img src="assets/logo-branca-mpf.png" alt="Ministério Público Federal" class="w-full max-w-[132px] h-auto" /> </a>
-                        <p class="mt-4 text-sm text-white/85 leading-relaxed"> Portal institucional do Ministério Público Federal, com acesso a informações, notícias e serviços ao cidadão. </p>
-                        <!-- Chips (sem “Contatos” pra não duplicar) -->
-                        <div class="mt-6 flex flex-wrap gap-5" aria-label="Atalhos principais">
-                            <a href="#" class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span> Serviços </a>
-                            <a href="#" class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
-                            <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span> Notícias </a>
-                            <a href="#" class="inline-flex items-center gap-2 rounded-md bg-white/10 px-3 py-2 text-xs text-white/90 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
-                            <span class="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true"></span> Transparência </a>
-                        </div>
-                    </div>
-                    <!-- Redes sociais (ícones-link simples, com área clicável boa) -->
-                    <div class="lg:pt-1">
-                        <p class="text-xs uppercase tracking-wide text-white/70 mb-4"> MPF nas redes sociais </p>
-                        <ul class="flex flex-wrap items-center gap-5" aria-label="Redes sociais do MPF">
-                            <li>
-                                <a href="#" aria-label="WhatsApp" class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <img src="assets/whatsapp.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" /> </a>
-                            </li>
-                            <li>
-                                <a href="#" aria-label="Facebook" class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <img src="assets/facebook.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" /> </a>
-                            </li>
-                            <li>
-                                <a href="#" aria-label="Flickr" class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <img src="assets/flickr.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" /> </a>
-                            </li>
-                            <li>
-                                <a href="#" aria-label="X" class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <img src="assets/x.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" /> </a>
-                            </li>
-                            <li>
-                                <a href="#" aria-label="YouTube" class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <img src="assets/youtube.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" /> </a>
-                            </li>
-                            <li>
-                                <a href="#" aria-label="Instagram" class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <img src="assets/instagram.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" /> </a>
-                            </li>
-                            <li>
-                                <a href="#" aria-label="LinkedIn" class="inline-flex p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <img src="assets/linkedin.svg" alt="" class="h-6 w-6 opacity-95 hover:opacity-100" /> </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Divisória -->
-                <div class="mt-10 h-px w-full bg-white/15"></div>
-                <!-- Grid principal -->
-                <div class="mt-10 grid gap-10 lg:grid-cols-12">
-                    <!-- Contatos (único lugar de contatos) -->
-                    <section aria-label="Contatos" class="lg:col-span-5">
-                        <div class="rounded-md bg-white/10 ring-1 ring-white/15 p-6">
-                            <div class="flex items-start justify-between gap-5">
-                                <div>
-                                    <p class="text-xs uppercase tracking-wide text-white/70">Contatos</p>
-                                    <h3 class="mt-1 text-base font-semibold">Procuradoria-Geral da República</h3> </div>
-                            </div>
-                            <div class="mt-6 grid gap-5 text-sm text-white/85">
-                                <div class="flex gap-4"> <span class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15" aria-hidden="true"> <!-- pin --> <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"> <path d="M12 21s7-4.35 7-11a7 7 0 1 0-14 0c0 6.65 7 11 7 11z"></path> <path d="M12 10a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"></path> </svg> </span>
-                                    <p class="leading-relaxed"> SAF Sul Quadra 4 Conjunto C
-                                        <br /> Brasília/DF – CEP 70050-900 </p>
-                                </div>
-                                <div class="flex gap-4"> <span class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15" aria-hidden="true"> <!-- phone --> <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"> <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.09 5.18 2 2 0 0 1 5.11 3h3a2 2 0 0 1 2 1.72c.12.86.32 1.7.59 2.5a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 4 4l1.58-1.16a2 2 0 0 1 2.11-.45c.8.27 1.64.47 2.5.59A2 2 0 0 1 22 16.92z"></path> </svg> </span>
-                                    <p> Tel.: <a href="tel:+556131055100" class="ml-1 underline underline-offset-4 decoration-white/25 hover:decoration-white focus:outline-none focus:ring-2 focus:ring-white/40 rounded-md"> (61) 3105-5100 </a> </p>
-                                </div>
-                                <div class="flex gap-4"> <span class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15" aria-hidden="true"> <!-- clock --> <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"> <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10z"></path> <path d="M12 6v6l4 2"></path> </svg> </span>
-                                    <p class="leading-relaxed"> Atendimento de segunda a sexta
-                                        <br /> das 10h às 18h </p>
-                                </div>
-                            </div>
-                            <!-- CTAs (gap >= 20px) -->
-                            <div class="mt-7 grid gap-5" aria-label="Canais de contato">
-                                <a href="#" class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-sm text-white/90"> Lista de contatos das salas de atendimento ao cidadão </span> <span class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white"
-                                    aria-hidden="true"> <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"> <path d="M9 18l6-6-6-6"></path> </svg> </span> </a>
-                                <a href="#" class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40">
-                                <span class="text-sm text-white/90">Atendimento à Imprensa</span> <span class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white" aria-hidden="true"> <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"> <path d="M9 18l6-6-6-6"></path> </svg> </span>                                    </a>
-                                <a href="#" class="group flex items-center justify-between rounded-md bg-white/10 px-4 py-4 ring-1 ring-white/15 hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-sm text-white/90">Informações das Unidades do MPF</span> <span class="ml-5 inline-flex h-9 w-9 items-center justify-center rounded-md bg-white/10 ring-1 ring-white/15 text-white/70 group-hover:text-white"
-                                    aria-hidden="true"> <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"> <path d="M9 18l6-6-6-6"></path> </svg> </span> </a>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- Links + Áreas de atuação -->
-                    <div class="lg:col-span-7">
-                        <div class="grid gap-10 sm:grid-cols-2">
-                            <nav aria-label="Serviços">
-                                <p class="text-xs uppercase tracking-wide text-white/70 mb-4">Serviços</p>
-                                <ul class="grid gap-5 text-sm text-white/85">
-                                    <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Protocolo</a></li>
-                                    <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Denúncias</a></li>
-                                    <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Consultas</a></li>
-                                    <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Perguntas frequentes</a></li>
-                                </ul>
-                            </nav>
-                            <nav aria-label="Institucional">
-                                <p class="text-xs uppercase tracking-wide text-white/70 mb-4">Institucional</p>
-                                <ul class="grid gap-5 text-sm text-white/85">
-                                    <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">O MPF</a></li>
-                                    <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Unidades</a></li>
-                                    <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Atuação Temática</a></li>
-                                    <li><a href="#" class="inline-flex rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40">Notícias</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- Áreas de atuação (ajustes pedidos: remove contador/CTA; " | " só aqui; menos espaçamento) -->
-                        <section aria-label="Áreas de atuação" class="mt-10">
-                            <h3 class="text-xs uppercase tracking-wide text-white/70 mb-4">Áreas de atuação</h3>
-                            <ul class="mt-4 grid gap-3 sm:grid-cols-2 text-sm">
-                                <li>
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white"> Direitos sociais e fiscalização de atos administrativos em geral </span> </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white">Criminal</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white">Consumidor e ordem econômica</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white">Meio ambiente e patrimônio cultural</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white">Combate à corrupção</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white">Populações indígenas e comunidades tradicionais</span> </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white"> Controle externo da atividade policial e sistema prisional </span> </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white">Direitos do Cidadão</span> </a>
-                                </li>
-                                <li class="sm:col-span-2">
-                                    <a href="#" class="group flex items-start gap-3 rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> <span class="text-white/70" aria-hidden="true">|</span> <span class="block text-white/90 group-hover:text-white">Cooperação jurídica internacional</span> </a>
-                                </li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-                <!-- Barra inferior -->
-                <div class="mt-12 border-t border-white/15 pt-6">
-                    <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between text-xs text-white/70">
-                        <p>© <span id="year">2025</span> Ministério Público Federal</p>
-                        <!-- ajustes pedidos: inserir separadores | entre os links legais -->
-                        <nav aria-label="Links legais" class="flex flex-wrap items-center gap-2"> <a href="#" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> Portal institucional </a> <span class="text-white/40" aria-hidden="true">|</span> <a href="#" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> Política de Privacidade </a>                            <span class="text-white/40" aria-hidden="true">|</span> <a href="#" class="rounded-md px-3 py-2 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"> Termos de Uso </a> </nav>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-    
-    <!-- Cookie banner -->
-    <div id="cookie-banner" class="mpf-cookie" role="dialog" aria-label="Política de cookies" aria-modal="false" hidden>
-        <div class="mpf-cookie__inner">
-            <p class="text-sm text-gray-900"> Usamos cookies para melhorar sua experiência e medir o uso do portal. <a href="#" class="font-semibold text-[color:var(--brand)] hover:underline">Política de cookies</a>. </p>
-            <div class="mpf-cookie__actions">
-                <button type="button" id="cookie-reject" class="mpf-cookie__btn mpf-cookie__btn--ghost">Recusar</button>
-                <button type="button" id="cookie-settings" class="mpf-cookie__btn mpf-cookie__btn--ghost">Configurar</button>
-                <button type="button" id="cookie-accept" class="mpf-cookie__btn">Aceitar</button>
-            </div>
-        </div>
-        <div id="cookie-settings-panel" class="mpf-cookie__panel" hidden>
-            <p class="text-sm text-gray-700"> Preferências (protótipo): neste exemplo, mantemos apenas cookies essenciais e de métricas. </p>
-            <div class="mt-3 flex items-center justify-between gap-4 text-sm"> <span class="font-semibold">Essenciais</span> <span class="text-gray-600">Sempre ativos</span> </div>
-            <div class="mt-2 flex items-center justify-between gap-4 text-sm">
-                <label for="cookie-metrics" class="font-semibold">Métricas</label>
-                <input id="cookie-metrics" type="checkbox" checked /> </div>
-        </div>
-    </div>
+  
+  <!-- Cookie banner -->
+  <div id="cookie-banner" class="mpf-cookie" role="dialog" aria-label="Política de cookies" aria-modal="false" hidden>
+      <div class="mpf-cookie__inner">
+          <p class="text-sm text-gray-900"> Usamos cookies para melhorar sua experiência e medir o uso do portal. <a href="#" class="font-semibold text-[color:var(--brand)] hover:underline">Política de cookies</a>. </p>
+          <div class="mpf-cookie__actions">
+              <button type="button" id="cookie-reject" class="mpf-cookie__btn mpf-cookie__btn--ghost">Recusar</button>
+              <button type="button" id="cookie-settings" class="mpf-cookie__btn mpf-cookie__btn--ghost">Configurar</button>
+              <button type="button" id="cookie-accept" class="mpf-cookie__btn">Aceitar</button>
+          </div>
+      </div>
+      <div id="cookie-settings-panel" class="mpf-cookie__panel" hidden>
+          <p class="text-sm text-gray-700"> Preferências (protótipo): neste exemplo, mantemos apenas cookies essenciais e de métricas. </p>
+          <div class="mt-3 flex items-center justify-between gap-4 text-sm"> <span class="font-semibold">Essenciais</span> <span class="text-gray-600">Sempre ativos</span> </div>
+          <div class="mt-2 flex items-center justify-between gap-4 text-sm">
+              <label for="cookie-metrics" class="font-semibold">Métricas</label>
+              <input id="cookie-metrics" type="checkbox" checked /> </div>
+      </div>
+  </div>
 
 </body>
 
