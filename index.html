@@ -656,7 +656,7 @@
                   aria-label="Ir para MPF Serviços"
                 >
                   <!-- MOBILE (até sm-): só a logo no fundo branco -->
-                  <div class="sm:hidden flex items-center justify-start bg-white px-4 py-3 border-b border-gray-300">
+                  <div class="md:hidden flex items-center justify-start bg-white px-4 py-3 border-b border-gray-300">
                     <img
                       src="./assets/mpf-servicos-logo.svg"
                       alt="MPF Serviços"
@@ -674,10 +674,15 @@
 
                     <!-- imagem + shade -->
                     <div
-                      class="absolute inset-0 border-b bg-cover bg-left"
-                      style="background-image: url('assets/banner-servicos.png');"
+                      class="
+                        absolute inset-0 border-b
+                        bg-cover bg-right md:bg-left
+                        bg-[url('assets/banner-servicos-mobile.png')]
+                        sm:bg-[url('assets/banner-servicos.png')]
+                      "
                       aria-hidden="true"
                     ></div>
+
 
                     <!-- conteúdo -->
                     <div class="absolute inset-0 p-4 sm:p-6 flex items-center">
@@ -696,7 +701,7 @@
                       <img
                         src="./assets/mpf-servicos-logo.svg"
                         alt=""
-                        class="hidden sm:block h-16 w-auto"
+                        class="hidden md:block h-16 w-auto"
                         aria-hidden="true"
                       />
                     </div>
