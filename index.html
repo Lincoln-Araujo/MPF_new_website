@@ -655,18 +655,6 @@
                   class="block w-full"
                   aria-label="Ir para MPF Serviços"
                 >
-                  <!-- MOBILE (até sm-): só a logo no fundo branco -->
-                  <div class="md:hidden flex items-center justify-start bg-white px-4 py-3 border-b border-gray-300">
-                    <img
-                      src="./assets/mpf-servicos-logo.svg"
-                      alt="MPF Serviços"
-                      class="h-8 w-auto"
-                      loading="lazy"
-                    />
-                    <!-- título acessível (não aparece no mobile) -->
-                    <span class="sr-only">Serviços — Para o cidadão</span>
-                  </div>
-
                   <!-- DESKTOP/TABLET (sm+): banner completo -->
                   <div class="block relative">
                     <!-- altura do banner -->
@@ -697,11 +685,11 @@
                     </div>
 
                     <!-- (opcional) se você quiser a logo também no desktop no canto direito -->
-                    <div class="absolute inset-y-0 right-0 flex items-center pr-6">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-6 sm:pl-10">
                       <img
                         src="./assets/mpf-servicos-logo.svg"
                         alt=""
-                        class="hidden md:block h-16 w-auto"
+                        class="block h-10 sm:h-16 w-auto"
                         aria-hidden="true"
                       />
                     </div>
