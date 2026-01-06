@@ -580,22 +580,38 @@
 
     <!-- HERO -->
     <header class="rounded-md border border-gray-300 bg-white overflow-hidden">
-      <div class="w-full relative bg-white">
-        <div class="relative h-[170px] sm:h-[200px] mpf-services-hero" aria-hidden="true"></div>
+      <div class="block w-full">
+        <div class="block relative">
+          <div class="h-[140px] sm:h-[150px]"></div>
 
-        <div
-          class="absolute inset-0 border-b"
-          style="background: url(../assets/hero-servicos.png); background-size: cover"
-          aria-hidden="true"
-        ></div>
+          <div
+            class="
+              absolute inset-0 border-b border-gray-300
+              bg-contain bg-right bg-no-repeat
+              bg-[url('../assets/banner-servicos-mobile.png')]
+              sm:bg-[url('../assets/banner-servicos.png')]
+            "
+            aria-hidden="true"
+          ></div>
 
-        <div class="absolute inset-0 p-4 sm:p-6 flex items-center">
-          <div class="text-white max-w-2xl">
-            <p class="text-[11px] font-semibold uppercase tracking-wider opacity-90">Para o cidadão</p>
-            <h2 id="hub-servicos-titulo" class="mt-1 text-2xl sm:text-2xl font-semibold leading-tight">Serviços</h2>
+          <div class="absolute inset-0 p-4 sm:p-6 flex items-center">
+            <div class="text-white max-w-2xl">
+              <p class="text-[11px] font-semibold uppercase tracking-wider opacity-90">Para o cidadão</p>
+              <h2 id="hub-servicos-titulo" class="mt-1 text-2xl font-semibold leading-tight">Serviços</h2>
+            </div>
+          </div>
+
+          <div class="absolute inset-y-0 left-0 flex items-center pl-6 sm:pl-10 pointer-events-none">
+            <img
+              src="../assets/mpf-servicos-logo.svg"
+              alt=""
+              class="block h-10 sm:h-16 w-auto"
+              aria-hidden="true"
+            />
           </div>
         </div>
       </div>
+
 
       <!-- BUSCA + FILTROS -->
       <div class="p-4 sm:p-6 md:p-7 border-t border-gray-200">
