@@ -938,32 +938,54 @@
                   aria-label="Banner de serviço"
                   class="mt-6 sm:mt-10 rounded-xl border border-gray-300 overflow-hidden bg-white"
                 >
-                  <div class="grid">
+                  <a href="#" class="grid overflow-hidden">
                     <!-- imagem -->
-                     <div class="col-start-1 row-start-1 flex">
-                      <img
-                        src="./assets/banner-informacao.png"
-                        alt=""
-                        class="col-start-1 row-start-1 w-full h-auto object-cover object-right"
-                        loading="lazy"
-                      />
-                     </div>                    
+                     <div class="col-start-1 row-start-1">
+                      <picture>
+                        <!-- Mobile -->
+                        <source
+                          media="(max-width: 639px)"
+                          srcset="./assets/banner-informacao-mobile.png"
+                        />
+
+                        <!-- Desktop / Tablet -->
+                        <source
+                          media="(min-width: 640px)"
+                          srcset="./assets/banner-informacao.png"
+                        />
+
+                        <img
+                          src="./assets/banner-informacao.png"
+                          alt=""
+                          class="w-full h-auto object-cover object-right"
+                          loading="lazy"
+                        />
+                      </picture>
+
+                    </div>         
+                    
+                    <div
+                        aria-hidden="true"
+                        class="
+                          col-start-1 row-start-1
+                          block
+                          bg-white/70 sm:bg-white/0
+                          backdrop-blur-sm sm:backdrop-blur-0
+                        "
+                      ></div>
 
                     <!-- conteúdo -->
-                    <div class="col-start-1 row-start-1 p-4 sm:p-5 flex items-center justify-between gap-4">
+                    <div class="z-50 col-start-1 row-start-1 p-4 sm:p-5 flex items-center justify-between gap-4">
                       <div class="text-black max-w-xl">
-                        <p class="text-[11px] font-semibold uppercase tracking-wider text-black/90">
-                          Transparência
-                        </p>
-                        <h3 class="mt-1 text-2xl font-semibold leading-tight">
+                        <h3 class="mt-1 text-2xl font-semibold leading-relaxed">
                           Acesso à Informação
                         </h3>
-                        <p class="mt-1 text-sm text-black/90">
+                        <p class="mt-1 leading-relaxed text-sm text-black/90 w-80">
                           Solicite informações, acompanhe pedidos e consulte dados públicos do MPF.
                         </p>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </section>
 
                 <section aria-label="Banner institucional" class="mt-6 sm:mt-7">
