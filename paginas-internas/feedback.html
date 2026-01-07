@@ -562,18 +562,18 @@
         </nav>
     </header>
 
-    <main id="main-content" class="w-full">
+<main id="main-content" class="w-full">
   <div class="mx-auto max-w-[1440px] px-3 py-5 sm:px-4 sm:py-8">
 
-    <!-- Aviso: Portal em transição (mesmo padrão da capa) -->
+    <!-- Aviso: Portal em transição -->
     <section class="mb-4 sm:mb-6" aria-label="Aviso">
       <div class="rounded-md border border-amber-300 bg-amber-50 px-3 py-3 sm:px-4 text-sm text-amber-900 flex gap-3">
         <span aria-hidden="true" class="mt-0.5">ⓘ</span>
         <div class="min-w-0">
           <p class="font-semibold">Portal em transição</p>
           <p class="mt-0.5 text-amber-900/90">
-            Este é um portal intermediário. Alguns conteúdos estão sendo migrados e estarão disponíveis em breve.
-            Sua opinião nos ajuda a melhorar o novo site.
+            Este portal está em fase de transição. Sua participação ajudará o Ministério Público Federal a aprimorar
+            a navegação, os conteúdos e os serviços oferecidos à sociedade.
           </p>
         </div>
       </div>
@@ -582,7 +582,6 @@
     <!-- Hero -->
     <section class="mb-4 sm:mb-6" aria-labelledby="feedback-titulo">
       <div class="rounded-2xl bg-[color:var(--brand)] text-white px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12 shadow-sm relative overflow-hidden">
-        <!-- textura sutil -->
         <div
           class="absolute inset-0 opacity-15"
           style="background-image:
@@ -593,10 +592,10 @@
 
         <div class="relative max-w-3xl">
           <h1 id="feedback-titulo" class="text-3xl md:text-4xl font-semibold leading-tight">
-            Enviar feedback do novo Portal do MPF
+            Formulário de feedback — Novo Site do MPF
           </h1>
           <p class="mt-3 text-white/90 text-base md:text-lg">
-            Conte pra gente o que funcionou bem e o que podemos melhorar. Leva menos de 2 minutos.
+            Sua opinião é muito importante. Leva menos de 2 minutos.
           </p>
           <p class="mt-3 text-sm text-white/80">
             <span class="font-semibold">Dica:</span> se puder, informe o dispositivo e o navegador que você usou.
@@ -622,7 +621,7 @@
 
           <form
             id="feedback-form"
-            class="p-4 sm:p-6 lg:p-7 grid gap-5"
+            class="p-4 sm:p-6 lg:p-7 grid gap-6"
             action="#"
             method="post"
             novalidate
@@ -640,194 +639,510 @@
               </p>
             </div>
 
-            <!-- Categoria -->
-            <div>
-              <label for="categoria" class="block text-sm font-semibold text-gray-900">
-                Sobre o que é o seu feedback? <span class="text-red-600">*</span>
-              </label>
-              <div class="relative feedback-select text-gray-600 mt-2">
-                <select
-                    id="categoria"
-                    name="categoria"
-                    required
-                    class="
-                         w-full rounded-md border border-gray-300 bg-white
-                        px-3 py-2.5 pr-12
-                        text-sm text-gray-900
-                        appearance-none
-                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30
-                    "
-                >
-                    <option value="" selected disabled>Selecione uma opção</option>
-                    <option>Conteúdo (texto, atualização, clareza)</option>
-                    <option>Navegação (menus, links, encontrar informações)</option>
-                    <option>Serviços (formulários, acesso, orientações)</option>
-                    <option>Busca</option>
-                    <option>Acessibilidade</option>
-                    <option>Desempenho (lentidão, travamentos)</option>
-                    <option>Outro</option>
-                </select>
-                
-              </div>
-              
-              <p id="categoria-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
-                Selecione uma opção.
-              </p>
-            </div>
-
-            <!-- Nota (0–10) com peer-checked -->
+            <!-- 1) Perfil do usuário -->
             <fieldset class="rounded-md border border-gray-200 p-4">
               <legend class="px-1 text-sm font-semibold text-gray-900">
-                O quanto este novo portal te ajudou a resolver o que você precisava? <span class="text-red-600">*</span>
+                Você é: <span class="text-red-600">*</span>
               </legend>
 
-              <div class="mt-3 grid grid-cols-5 sm:grid-cols-11 gap-2" role="radiogroup" aria-label="Nota de 0 a 10">
-                <!-- 0 -->
-                <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="0" required />
-                  <span
-                    class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900
-                           hover:bg-gray-50
-                           peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                           peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30"
-                  >0</span>
+              <div class="mt-3 grid gap-2">
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="perfil" value="Cidadão" required />
+                  <span class="text-sm text-gray-800">Cidadão</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="perfil" value="Advogado(a)" />
+                  <span class="text-sm text-gray-800">Advogado(a)</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="perfil" value="Membro ou servidor(a) do MPF" />
+                  <span class="text-sm text-gray-800">Membro ou servidor(a) do MPF</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="perfil" value="Jornalista" />
+                  <span class="text-sm text-gray-800">Jornalista</span>
                 </label>
 
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="perfil" value="Outro" />
+                  <span class="text-sm text-gray-800">Outro</span>
+                </label>
+
+                <div class="pl-7">
+                  <label for="perfil_outro" class="sr-only">Se selecionou “Outro”, descreva</label>
+                  <input
+                    id="perfil_outro"
+                    name="perfil_outro"
+                    type="text"
+                    placeholder="Se outro, qual?"
+                    class="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
+                           focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                  />
+                </div>
+              </div>
+
+              <p id="perfil-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
+              </p>
+            </fieldset>
+
+            <!-- 2) Objetivo da visita -->
+            <fieldset class="rounded-md border border-gray-200 p-4">
+              <legend class="px-1 text-sm font-semibold text-gray-900">
+                O que você buscava hoje no site do MPF? <span class="text-red-600">*</span>
+              </legend>
+
+              <div class="mt-3 grid gap-2">
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="objetivo" value="Consultar processo" required />
+                  <span class="text-sm text-gray-800">Consultar processo</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="objetivo" value="Fazer denúncia ou comunicar irregularidade" />
+                  <span class="text-sm text-gray-800">Fazer denúncia ou comunicar irregularidade</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="objetivo" value="Buscar informações institucionais" />
+                  <span class="text-sm text-gray-800">Buscar informações institucionais</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="objetivo" value="Acessar serviços do MPF" />
+                  <span class="text-sm text-gray-800">Acessar serviços do MPF</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="objetivo" value="Ler notícias" />
+                  <span class="text-sm text-gray-800">Ler notícias</span>
+                </label>
+
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="objetivo" value="Outro" />
+                  <span class="text-sm text-gray-800">Outro</span>
+                </label>
+                <div class="pl-7">
+                  <label for="objetivo_outro" class="sr-only">Se selecionou “Outro”, descreva</label>
+                  <input
+                    id="objetivo_outro"
+                    name="objetivo_outro"
+                    type="text"
+                    placeholder="Se outro, qual?"
+                    class="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
+                           focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                  />
+                </div>
+              </div>
+
+              <p id="objetivo-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
+              </p>
+            </fieldset>
+
+            <!-- 3) Já utilizava o site anterior -->
+            <fieldset class="rounded-md border border-gray-200 p-4">
+              <legend class="px-1 text-sm font-semibold text-gray-900">
+                Você já utilizava o site anterior do MPF? <span class="text-red-600">*</span>
+              </legend>
+
+              <div class="mt-3 grid gap-2">
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="uso_anterior" value="Sim, com frequência" required />
+                  <span class="text-sm text-gray-800">Sim, com frequência</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="uso_anterior" value="Sim, poucas vezes" />
+                  <span class="text-sm text-gray-800">Sim, poucas vezes</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="uso_anterior" value="Não, é minha primeira vez" />
+                  <span class="text-sm text-gray-800">Não, é minha primeira vez</span>
+                </label>
+              </div>
+
+              <p id="uso_anterior-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
+              </p>
+            </fieldset>
+
+            <!-- 4) Facilidade (1–5) — estilo "cards" com peer-checked -->
+            <fieldset class="rounded-md border border-gray-200 p-4">
+              <legend class="px-1 text-sm font-semibold text-gray-900">
+                Em uma escala de 1 a 5, quão fácil foi encontrar o que você procurava?
+                <span class="text-red-600">*</span>
+              </legend>
+
+              <div
+                class="mt-3 grid grid-cols-5 gap-2 sm:max-w-md"
+                role="radiogroup"
+                aria-label="Escala de 1 a 5 (facilidade)"
+              >
                 <!-- 1 -->
                 <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="1" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">1</span>
+                  <input class="peer sr-only" type="radio" name="facilidade" value="1" required />
+                  <span
+                    class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900
+                          hover:bg-gray-50
+                          peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
+                          peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30"
+                  >1</span>
                 </label>
 
                 <!-- 2 -->
                 <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="2" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">2</span>
+                  <input class="peer sr-only" type="radio" name="facilidade" value="2" />
+                  <span
+                    class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900
+                          hover:bg-gray-50
+                          peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
+                          peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30"
+                  >2</span>
                 </label>
 
                 <!-- 3 -->
                 <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="3" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">3</span>
+                  <input class="peer sr-only" type="radio" name="facilidade" value="3" />
+                  <span
+                    class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900
+                          hover:bg-gray-50
+                          peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
+                          peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30"
+                  >3</span>
                 </label>
 
                 <!-- 4 -->
                 <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="4" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">4</span>
+                  <input class="peer sr-only" type="radio" name="facilidade" value="4" />
+                  <span
+                    class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900
+                          hover:bg-gray-50
+                          peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
+                          peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30"
+                  >4</span>
                 </label>
 
                 <!-- 5 -->
                 <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="5" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">5</span>
-                </label>
-
-                <!-- 6 -->
-                <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="6" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">6</span>
-                </label>
-
-                <!-- 7 -->
-                <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="7" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">7</span>
-                </label>
-
-                <!-- 8 -->
-                <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="8" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">8</span>
-                </label>
-
-                <!-- 9 -->
-                <label class="inline-flex items-center justify-center">
-                  <input class="peer sr-only" type="radio" name="nota" value="9" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">9</span>
-                </label>
-
-                <!-- 10 -->
-                <label class="inline-flex items-center justify-center sm:col-span-1 col-span-5">
-                  <input class="peer sr-only" type="radio" name="nota" value="10" />
-                  <span class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900 hover:bg-gray-50
-                               peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
-                               peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30">10</span>
+                  <input class="peer sr-only" type="radio" name="facilidade" value="5" />
+                  <span
+                    class="w-full rounded-md border border-gray-300 bg-white py-2 text-center text-sm font-semibold text-gray-900
+                          hover:bg-gray-50
+                          peer-checked:bg-[color:var(--brand)] peer-checked:text-white peer-checked:border-[color:var(--brand)]
+                          peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-[color:var(--brand)]/30"
+                  >5</span>
                 </label>
               </div>
 
-              <div class="mt-3 flex items-center justify-between text-xs text-gray-600">
-                <span>Pouco útil</span>
-                <span>Muito útil</span>
+              <div class="mt-3 flex items-center justify-between text-xs text-gray-600 sm:max-w-md">
+                <span>Muito difícil</span>
+                <span>Muito fácil</span>
               </div>
 
-              <p id="nota-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
-                Selecione uma nota.
+              <p id="facilidade-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
               </p>
             </fieldset>
 
-            <!-- O que funcionou -->
-            <div>
-              <label for="positivo" class="block text-sm font-semibold text-gray-900">
-                O que funcionou bem? <span class="text-red-600">*</span>
-              </label>
-              <p id="positivo-ajuda" class="mt-1 text-xs text-gray-500">
-                Ex.: “Encontrei rápido o serviço X”, “O layout está mais claro”.
+            <!-- 5) Conseguiu encontrar -->
+            <fieldset class="rounded-md border border-gray-200 p-4">
+              <legend class="px-1 text-sm font-semibold text-gray-900">
+                Você conseguiu encontrar o que procurava? <span class="text-red-600">*</span>
+              </legend>
+
+              <div class="mt-3 grid gap-2">
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="encontrou" value="Sim, com facilidade" required />
+                  <span class="text-sm text-gray-800">Sim, com facilidade</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="encontrou" value="Sim, com alguma dificuldade" />
+                  <span class="text-sm text-gray-800">Sim, com alguma dificuldade</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="encontrou" value="Não consegui encontrar" />
+                  <span class="text-sm text-gray-800">Não consegui encontrar</span>
+                </label>
+              </div>
+
+              <p id="encontrou-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
               </p>
+
+              <!-- 5.1) Onde teve mais dificuldade (aparece se teve dificuldade) -->
+              <div id="dificuldade-wrapper" class="mt-4 hidden">
+                <label for="dificuldade" class="block text-sm font-semibold text-gray-900">
+                  Se teve dificuldade: onde você encontrou mais dificuldade? <span class="text-red-600">*</span>
+                </label>
+                <p class="mt-1 text-xs text-gray-500">Resposta aberta curta.</p>
+                <textarea
+                  id="dificuldade"
+                  name="dificuldade"
+                  rows="3"
+                  class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                  placeholder="Ex.: menu, busca, serviço X, formulário Y..."
+                ></textarea>
+                <p id="dificuldade-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                  Preencha este campo.
+                </p>
+              </div>
+            </fieldset>
+
+            <!-- 6) Visual -->
+            <fieldset class="rounded-md border border-gray-200 p-4">
+              <legend class="px-1 text-sm font-semibold text-gray-900 flex items-center gap-2">
+                O que você achou do novo visual do site em comparação ao anterior?
+                <span class="text-red-600">*</span>
+
+                <button
+                  type="button"
+                  class="ml-1 inline-flex h-5 w-5 items-center justify-center rounded-full border border-white/0 bg-white/0
+                        text-xs font-bold text-gray-600 hover:bg-gray-100 hover:border-gray-200
+                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                  aria-expanded="false"
+                  aria-controls="ajuda-visual"
+                  data-help-toggle="ajuda-visual"
+                  title="Ver dica"
+                >
+                  ?
+                </button>
+              </legend>
+
+              <p id="ajuda-visual" class="mt-2 hidden text-xs text-gray-500">
+                Considere cores, tipografia, contraste, organização das informações e facilidade de leitura.
+              </p>
+
+              <div class="mt-3 grid gap-2">
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="visual" value="Melhor" required />
+                  <span class="text-sm text-gray-800">Melhor</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="visual" value="Pior" />
+                  <span class="text-sm text-gray-800">Pior</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="visual" value="Indiferente" />
+                  <span class="text-sm text-gray-800">Indiferente</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="visual" value="Não conhecia o site anterior" />
+                  <span class="text-sm text-gray-800">Não conhecia o site anterior</span>
+                </label>
+              </div>
+
+              <p id="visual-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
+              </p>
+
+              <!-- Ajuda progressiva + campo opcional (aparece quando marcar "Pior") -->
+              <div id="visual-detalhe-wrapper" class="mt-3 hidden">
+                <p class="text-xs text-gray-500">
+                  Se puder, descreva o que te incomodou (ex.: contraste, tamanho da fonte, excesso de elementos, hierarquia).
+                </p>
+
+                <label for="visual_detalhe" class="sr-only">Detalhe sobre o visual</label>
+                <textarea
+                  id="visual_detalhe"
+                  name="visual_detalhe"
+                  rows="3"
+                  class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
+                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                  placeholder="Opcional"
+                ></textarea>
+              </div>
+            </fieldset>
+
+            <!-- 7) Clareza -->
+            <fieldset class="rounded-md border border-gray-200 p-4">
+              <legend class="px-1 text-sm font-semibold text-gray-900">
+                As informações apresentadas no site são claras e fáceis de entender? <span class="text-red-600">*</span>
+              </legend>
+
+              <p class="mt-1 text-xs text-gray-500">
+                Pense se os textos são fáceis de entender, se os títulos ajudam e se o caminho até a informação fica evidente.
+              </p>
+
+              <div class="mt-3 grid gap-2">
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="clareza" value="Nada claras" required />
+                  <span class="text-sm text-gray-800">Nada claras</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="clareza" value="Pouco claras" />
+                  <span class="text-sm text-gray-800">Pouco claras</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="clareza" value="Razoavelmente claras" />
+                  <span class="text-sm text-gray-800">Razoavelmente claras</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="clareza" value="Claras" />
+                  <span class="text-sm text-gray-800">Claras</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="clareza" value="Muito claras" />
+                  <span class="text-sm text-gray-800">Muito claras</span>
+                </label>
+              </div>
+
+              <p id="clareza-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
+              </p>
+
+              <!-- Ajuda progressiva (aparece quando marcar respostas negativas) -->
+              <div id="clareza-detalhe-wrapper" class="mt-3 hidden">
+                <label for="clareza_detalhe" class="block text-sm font-semibold text-gray-900">
+                  Se não estava claro: o que ficou confuso? (opcional)
+                </label>
+                <textarea
+                  id="clareza_detalhe"
+                  name="clareza_detalhe"
+                  rows="3"
+                  class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
+                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                  placeholder="Ex.: termos técnicos, texto longo, falta de exemplo, labels do serviço..."
+                ></textarea>
+              </div>
+            </fieldset>
+
+            <!-- 8) Confiança -->
+            <fieldset class="rounded-md border border-gray-200 p-4">
+              <legend class="px-1 text-sm font-semibold text-gray-900">
+                O site transmite confiança e credibilidade institucional? <span class="text-red-600">*</span>
+              </legend>
+
+              <p class="mt-1 text-xs text-gray-500">
+                Pense se o site parece oficial, atualizado e seguro para buscar informações ou serviços.
+              </p>
+
+              <div class="mt-3 grid gap-2">
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="confianca" value="Não transmite" required />
+                  <span class="text-sm text-gray-800">Não transmite</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="confianca" value="Transmite pouco" />
+                  <span class="text-sm text-gray-800">Transmite pouco</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="confianca" value="Transmite razoavelmente" />
+                  <span class="text-sm text-gray-800">Transmite razoavelmente</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="confianca" value="Transmite bastante" />
+                  <span class="text-sm text-gray-800">Transmite bastante</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="confianca" value="Transmite totalmente" />
+                  <span class="text-sm text-gray-800">Transmite totalmente</span>
+                </label>
+              </div>
+
+              <p id="confianca-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
+              </p>
+
+              <!-- Ajuda progressiva (aparece quando marcar respostas negativas) -->
+              <div id="confianca-detalhe-wrapper" class="mt-3 hidden">
+                <label for="confianca_detalhe" class="block text-sm font-semibold text-gray-900">
+                  Se não transmitiu confiança: o que gerou essa impressão? (opcional)
+                </label>
+                <textarea
+                  id="confianca_detalhe"
+                  name="confianca_detalhe"
+                  rows="3"
+                  class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
+                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                  placeholder="Ex.: informações desatualizadas, aparência “não oficial”, erro/instabilidade, linguagem confusa..."
+                ></textarea>
+              </div>
+            </fieldset>
+
+            <!-- 9) Problemas técnicos -->
+            <fieldset class="rounded-md border border-gray-200 p-4">
+              <legend class="px-1 text-sm font-semibold text-gray-900">
+                Você encontrou algum erro técnico, problema de carregamento ou link quebrado? <span class="text-red-600">*</span>
+              </legend>
+
+              <div class="mt-3 grid gap-2">
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="problema_tecnico" value="Não" required />
+                  <span class="text-sm text-gray-800">Não</span>
+                </label>
+                <label class="flex items-start gap-3">
+                  <input class="mt-1 h-4 w-4" type="radio" name="problema_tecnico" value="Sim" />
+                  <span class="text-sm text-gray-800">Sim</span>
+                </label>
+              </div>
+
+              <p id="problema_tecnico-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                Selecione uma opção.
+              </p>
+
+              <!-- 9.1) Onde ocorreu (aparece se sim) -->
+              <div id="problema_local-wrapper" class="mt-4 hidden">
+                <label for="problema_local" class="block text-sm font-semibold text-gray-900">
+                  Se sim: onde ocorreu o problema? (página, link ou situação) <span class="text-red-600">*</span>
+                </label>
+                <textarea
+                  id="problema_local"
+                  name="problema_local"
+                  rows="4"
+                  class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
+                         focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                  placeholder="Ex.: na página X, ao clicar no link Y, apareceu erro Z..."
+                ></textarea>
+                <p id="problema_local-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
+                  Preencha este campo.
+                </p>
+              </div>
+            </fieldset>
+
+            <!-- 10) Gostou -->
+            <div>
+              <label for="gostou" class="block text-sm font-semibold text-gray-900">
+                O que você mais gostou no novo site? 
+              </label>
               <textarea
-                id="positivo"
-                name="positivo"
-                required
+                id="gostou"
+                name="gostou"
                 rows="4"
-                aria-describedby="positivo-ajuda"
                 class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
                 placeholder="Escreva sua resposta"
               ></textarea>
-              <p id="positivo-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
-                Preencha este campo.
-              </p>
             </div>
 
-            <!-- O que melhorar -->
+            <!-- 11) Melhorar -->
             <div>
               <label for="melhorar" class="block text-sm font-semibold text-gray-900">
-                O que podemos melhorar? <span class="text-red-600">*</span>
+                O que pode melhorar no site? <span class="text-red-600">*</span>
               </label>
-              <p id="melhorar-ajuda" class="mt-1 text-xs text-gray-500">
-                Se possível, descreva o caminho (passo a passo) e onde aconteceu.
-              </p>
               <textarea
                 id="melhorar"
                 name="melhorar"
                 required
                 rows="5"
-                aria-describedby="melhorar-ajuda"
                 class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
                        focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-                placeholder="Ex.: cliquei em..., fui para..., apareceu..."
+                placeholder="Ex.: encontrei dificuldade em..., faltou..., poderia ter..."
               ></textarea>
               <p id="melhorar-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
                 Preencha este campo.
               </p>
+            </div>
+
+            <!-- 12) Comentário adicional (opcional) -->
+            <div>
+              <label for="comentario" class="block text-sm font-semibold text-gray-900">
+                Se quiser, deixe um comentário ou sugestão adicional (opcional)
+              </label>
+              <textarea
+                id="comentario"
+                name="comentario"
+                rows="4"
+                class="mt-2 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900
+                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                placeholder="Opcional"
+              ></textarea>
             </div>
 
             <!-- Link + Dispositivo -->
@@ -855,23 +1170,23 @@
                   Dispositivo (opcional)
                 </label>
                 <div class="relative feedback-select text-gray-600 mt-2">
-                    <select
+                  <select
                     id="dispositivo"
                     name="dispositivo"
                     class="
-                            w-full rounded-md border border-gray-300 bg-white
-                            px-3 py-2.5 pr-12
-                            text-sm text-gray-900
-                            appearance-none
-                            focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30
-                        "
-                    >
+                      w-full rounded-md border border-gray-300 bg-white
+                      px-3 py-2.5 pr-12
+                      text-sm text-gray-900
+                      appearance-none
+                      focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30
+                    "
+                  >
                     <option value="" selected>Selecione</option>
                     <option>Celular</option>
                     <option>Tablet</option>
                     <option>Computador</option>
                     <option>Leitor de tela / Tecnologia assistiva</option>
-                    </select>
+                  </select>
                 </div>
               </div>
             </div>
@@ -927,7 +1242,7 @@
                     Concordo com o envio das informações <span class="text-red-600">*</span>
                   </label>
                   <p class="mt-1 text-xs text-gray-600">
-                    Usaremos os dados apenas para melhorar o portal. Evite enviar dados sensíveis (ex.: documentos pessoais).
+                    Usaremos os dados apenas para melhorar o site. Evite enviar dados sensíveis (ex.: documentos pessoais).
                   </p>
                   <p id="consentimento-erro" class="mt-2 hidden text-xs font-semibold text-red-700">
                     É necessário concordar para enviar.
@@ -954,6 +1269,23 @@
                 Enviar feedback
               </button>
             </div>
+
+            <!-- Honeypot (anti-bot simples) -->
+            <div class="hidden" aria-hidden="true">
+              <label for="website">Website</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <!-- Sinais de tempo (anti-bot passivo) -->
+            <input type="hidden" name="form_loaded_at" id="form_loaded_at" />
+            <input type="hidden" name="form_elapsed_ms" id="form_elapsed_ms" />
+
 
           </form>
         </div>
@@ -1021,6 +1353,7 @@
     <script src="../feedback.js"></script>
   </div>
 </main>
+
 
 
   <!-- Footer --><!-- Footer (moderninho, a11y-friendly, sem repetir “Contatos”) -->
