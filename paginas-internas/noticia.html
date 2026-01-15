@@ -633,20 +633,21 @@
               Título da notícia (placeholder)
             </h1>
 
+            <!-- ✅ Subtítulo / sutiã -->
+            <p class="mt-2 text-base text-gray-700 leading-relaxed">
+              Subtítulo/sutiã da notícia — texto curto que contextualiza rapidamente o conteúdo (placeholder).
+            </p>
+
+            <!-- ✅ Meta: data+hora + unidade (sem categoria) -->
             <div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-600">
               <span class="inline-flex items-center gap-2">
-                <span aria-hidden="true">📅</span>
-                <strong class="text-gray-900">Data:</strong> 18/12/2025
+                <span aria-hidden="true">🕒</span>
+                <strong class="text-gray-900">Data:</strong> 18/12/2025 • 14:32
               </span>
 
               <span class="inline-flex items-center gap-2">
                 <span aria-hidden="true" class="text-gray-400">•</span>
-                <strong class="text-gray-900">Autor:</strong> Assessoria
-              </span>
-
-              <span class="inline-flex items-center gap-2">
-                <span aria-hidden="true" class="text-gray-400">•</span>
-                <strong class="text-gray-900">Categoria:</strong> Comunicação
+                <strong class="text-gray-900">Unidade:</strong> Procuradoria-Geral da República
               </span>
             </div>
           </div>
@@ -679,13 +680,13 @@
           </div>
         </header>
 
-        <!-- Imagem destaque -->
-        <section aria-label="Imagem da notícia" class="mt-4 sm:mt-6 overflow-hidden rounded-md border border-gray-300 bg-gray-200">
-          <div class="aspect-[3/2] overflow-hidden">
+        <!-- ✅ Imagem destaque (menor, sem quebrar layout) -->
+        <section class="mt-4 sm:mt-6 rounded-md border border-gray-300 bg-gray-200 overflow-hidden">
+  <div class="max-h-[280px] overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=1600&q=80"
               alt="Imagem relacionada à notícia"
-              class="h-full w-full object-cover"
+               class="mx-auto h-full w-full max-w-[900px] object-cover"
               loading="lazy"
             />
           </div>
@@ -732,16 +733,12 @@
             </div>
           </div>
 
-          <!-- Rodapé do artigo: tags/categoria/voltar -->
-          <div class="border-t border-gray-200 p-4 sm:p-6 bg-gray-50 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p class="text-xs text-gray-600">
-              Categoria: <span class="font-semibold text-[color:var(--brand)]">Comunicação</span>
-            </p>
-
+          <!-- ✅ Rodapé do artigo (sem categoria / sem “ver todas”) -->
+          <div class="border-t border-gray-200 p-4 sm:p-6 bg-gray-50">
             <a href="noticias.html"
                class="inline-flex items-center justify-center rounded-md bg-[color:var(--brand)] px-4 sm:px-5 py-2.5 text-sm font-semibold text-white hover:opacity-95
                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-              Ver todas as notícias
+              Voltar para notícias
             </a>
           </div>
         </section>
@@ -832,11 +829,7 @@
               </li>
             </ul>
 
-            <a href="noticias.html"
-               class="mt-4 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900
-                      hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30">
-              Ver mais notícias
-            </a>
+            <!-- ✅ removido: botão "Ver mais notícias" -->
           </div>
         </section>
 
@@ -858,6 +851,7 @@
 
   </div>
 </main>
+
 
 
 
