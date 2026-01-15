@@ -577,7 +577,7 @@
             Notícias
           </h1>
           <p class="mt-1 text-sm text-white/90 max-w-3xl">
-            Filtre por UF ou órgão — e encontre rapidamente o que você precisa.
+            Filtre por unidade — e encontre rapidamente o que você precisa.
           </p>
         </div>
       </div>
@@ -605,7 +605,6 @@
           <div class="lg:col-span-3">
             <label for="news-category" class="text-xs font-semibold text-gray-700">Categoria</label>
 
-            <!-- ✅ wrapper p/ setinha do select não colar -->
             <div class="mpf-select mt-1 text-gray-700">
               <select
                 id="news-category"
@@ -625,7 +624,6 @@
           <div class="lg:col-span-3">
             <label for="news-sort" class="text-xs font-semibold text-gray-700">Ordenar</label>
 
-            <!-- ✅ wrapper p/ setinha do select não colar -->
             <div class="mpf-select mt-1 text-gray-700">
               <select
                 id="news-sort"
@@ -647,28 +645,15 @@
               Mostrando <span id="news-count" class="font-semibold">0</span> notícias
             </p>
 
-            <!-- Toggle (só desktop) -->
-            <div class="hidden lg:flex items-center gap-2" aria-label="Modo de visualização">
-              <span class="text-xs font-semibold text-gray-700 mr-2">Visualização</span>
-
+            <!-- ✅ Botão Filtrar (agora a filtragem não é automática) -->
+            <div class="flex items-center gap-2 sm:justify-end">
               <button
                 type="button"
-                data-view="cards"
-                aria-pressed="true"
-                class="news-view-btn rounded-md border border-gray-300 bg-gray-900 px-3 py-2 text-xs font-semibold text-white
+                id="applyFilters"
+                class="inline-flex items-center justify-center rounded-md bg-[color:var(--brand)] px-4 py-2.5 text-xs sm:text-sm font-semibold text-white
                        hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
               >
-                Cards
-              </button>
-
-              <button
-                type="button"
-                data-view="list"
-                aria-pressed="false"
-                class="news-view-btn rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900
-                       hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-              >
-                Lista
+                Filtrar
               </button>
             </div>
           </div>
@@ -676,16 +661,15 @@
       </div>
     </header>
 
-    <!-- MOBILE: dropdown para UF/Órgão -->
+    <!-- MOBILE: dropdown para Unidade -->
     <section class="mt-4 sm:mt-6 lg:hidden rounded-md border border-gray-300 bg-white overflow-hidden">
       <details class="group">
         <summary class="cursor-pointer list-none p-4 flex items-center justify-between gap-3">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Origem</p>
-            <h2 class="text-base font-semibold text-gray-900">UF / Órgão</h2>
+            <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Unidade</p>
+            <h2 class="text-base font-semibold text-gray-900">Selecionar unidade</h2>
           </div>
 
-          <!-- ✅ setinha padronizada -->
           <svg
             aria-hidden="true"
             class="h-4 w-4 text-gray-600 transition-transform duration-300 group-open:rotate-180"
@@ -703,25 +687,8 @@
 
         <div class="border-t border-gray-200 p-4 grid gap-4">
           <div>
-            <label for="groupByMobile" class="text-xs font-semibold text-gray-700">Agrupar por</label>
+            <label for="itemMobile" class="text-xs font-semibold text-gray-700">Unidade</label>
 
-            <!-- ✅ wrapper p/ setinha do select não colar -->
-            <div class="mpf-select mt-2 text-gray-700">
-              <select
-                id="groupByMobile"
-                class="w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm
-                       focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-              >
-                <option value="uf">UF (Estados)</option>
-                <option value="orgao">Órgão</option>
-              </select>
-            </div>
-          </div>
-
-          <div>
-            <label for="itemMobile" class="text-xs font-semibold text-gray-700">Selecionar</label>
-
-            <!-- ✅ wrapper p/ setinha do select não colar -->
             <div class="mpf-select mt-2 text-gray-700">
               <select
                 id="itemMobile"
@@ -730,15 +697,6 @@
               ></select>
             </div>
           </div>
-
-          <button
-            type="button"
-            id="clearFiltersMobile"
-            class="rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900
-                   hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-          >
-            Limpar filtros
-          </button>
         </div>
       </details>
     </section>
@@ -750,29 +708,47 @@
       <div class="lg:col-span-8">
         <section class="rounded-md border border-gray-300 bg-white overflow-hidden">
           <header class="p-4 sm:p-6 border-b border-gray-200">
-            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h2 class="text-lg font-semibold text-gray-900">Resultados</h2>
                 <p id="filter-status" class="mt-1 text-sm text-gray-600">Exibindo todas as notícias.</p>
               </div>
 
-              <button
-                type="button"
-                id="clearFiltersDesktop"
-                class="hidden sm:inline-flex rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900
-                       hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-              >
-                Limpar filtros
-              </button>
+              <!-- ✅ Visualização (agora fica aqui) -->
+              <div class="hidden sm:flex items-center gap-2" aria-label="Modo de visualização">
+                <span class="text-xs font-semibold text-gray-700 mr-2">Visualização</span>
+
+                <button
+                  type="button"
+                  data-view="cards"
+                  aria-pressed="false"
+                  class="news-view-btn rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900
+                         hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                >
+                  Cards
+                </button>
+
+                <button
+                  type="button"
+                  data-view="list"
+                  aria-pressed="true"
+                  class="news-view-btn rounded-md border border-gray-300 bg-gray-900 px-3 py-2 text-xs font-semibold text-white
+                         hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
+                >
+                  Lista
+                </button>
+              </div>
             </div>
           </header>
 
           <div class="p-4 sm:p-6">
-            <div id="news-results" class="news-results is-cards">
+            <!-- ✅ começa em LISTA -->
+            <div id="news-results" class="news-results is-list">
 
               <!-- EXEMPLOS (Plone vai renderizar os demais) -->
               <article class="news-item group rounded-md border border-gray-200 bg-white overflow-hidden"
-                       data-origin="/portal/pgr" data-category="comunicacao" data-date="2025-12-18">
+                       data-origin="/portal/pgr" data-category="comunicacao"
+                       data-datetime="2025-12-18T14:32:00-03:00">
                 <div class="news-media">
                   <img
                     src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1200&q=80"
@@ -780,26 +756,31 @@
                   />
                 </div>
                 <div class="p-5">
-                  <div class="flex items-start justify-between gap-4">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicação</p>
-                    <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                      <span aria-hidden="true">📅</span> 18/12/2025
-                    </p>
-                  </div>
+                  <!-- ✅ só chapéu no topo -->
+                  <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicação</p>
+
                   <h3 class="mt-2 text-base font-semibold leading-snug text-gray-900">
                     <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
                       MPF lança plataforma digital de atendimento
                     </a>
                   </h3>
+
                   <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-3">
                     Iniciativa busca facilitar o acesso do cidadão aos serviços do MPF.
                   </p>
+
+                  <!-- ✅ unidade + data/hora embaixo -->
                   <div class="mt-3 text-xs text-gray-500">Procuradoria-Geral da República</div>
+                  <div class="mt-1 text-xs text-gray-500 inline-flex items-center gap-2">
+                    <span aria-hidden="true">🕒</span>
+                    <time data-role="datetime">18/12/2025 • 14:32</time>
+                  </div>
                 </div>
               </article>
 
               <article class="news-item group rounded-md border border-gray-200 bg-white overflow-hidden"
-                       data-origin="/portal/sp" data-category="atuacao" data-date="2025-12-18">
+                       data-origin="/portal/sp" data-category="atuacao"
+                       data-datetime="2025-12-18T10:05:00-03:00">
                 <div class="news-media">
                   <img
                     src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
@@ -807,26 +788,29 @@
                   />
                 </div>
                 <div class="p-5">
-                  <div class="flex items-start justify-between gap-4">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Atuação</p>
-                    <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                      <span aria-hidden="true">📅</span> 18/12/2025
-                    </p>
-                  </div>
+                  <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Atuação</p>
+
                   <h3 class="mt-2 text-base font-semibold leading-snug text-gray-900">
                     <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
                       MPF recomenda medidas para proteção ambiental
                     </a>
                   </h3>
+
                   <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-3">
                     Atuação em defesa do meio ambiente com ações coordenadas em diferentes unidades.
                   </p>
+
                   <div class="mt-3 text-xs text-gray-500">Procuradoria da República em São Paulo</div>
+                  <div class="mt-1 text-xs text-gray-500 inline-flex items-center gap-2">
+                    <span aria-hidden="true">🕒</span>
+                    <time data-role="datetime">18/12/2025 • 10:05</time>
+                  </div>
                 </div>
               </article>
 
               <article class="news-item group rounded-md border border-gray-200 bg-white overflow-hidden"
-                       data-origin="/portal/mg" data-category="institucional" data-date="2025-12-16">
+                       data-origin="/portal/mg" data-category="institucional"
+                       data-datetime="2025-12-16T16:40:00-03:00">
                 <div class="news-media">
                   <img
                     src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=1200&q=80"
@@ -834,26 +818,29 @@
                   />
                 </div>
                 <div class="p-5">
-                  <div class="flex items-start justify-between gap-4">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Institucional</p>
-                    <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                      <span aria-hidden="true">📅</span> 16/12/2025
-                    </p>
-                  </div>
+                  <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Institucional</p>
+
                   <h3 class="mt-2 text-base font-semibold leading-snug text-gray-900">
                     <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
                       MPF-MG divulga balanço anual (1º grau)
                     </a>
                   </h3>
+
                   <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-3">
                     Relatório apresenta dados consolidados das atividades em Minas Gerais.
                   </p>
+
                   <div class="mt-3 text-xs text-gray-500">MPF-MG de 1º grau</div>
+                  <div class="mt-1 text-xs text-gray-500 inline-flex items-center gap-2">
+                    <span aria-hidden="true">🕒</span>
+                    <time data-role="datetime">16/12/2025 • 16:40</time>
+                  </div>
                 </div>
               </article>
 
               <article class="news-item group rounded-md border border-gray-200 bg-white overflow-hidden"
-                       data-origin="/portal/regiao6" data-category="institucional" data-date="2025-12-15">
+                       data-origin="/portal/regiao6" data-category="institucional"
+                       data-datetime="2025-12-15T09:15:00-03:00">
                 <div class="news-media">
                   <img
                     src="https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1200&q=80"
@@ -861,26 +848,29 @@
                   />
                 </div>
                 <div class="p-5">
-                  <div class="flex items-start justify-between gap-4">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Institucional</p>
-                    <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                      <span aria-hidden="true">📅</span> 15/12/2025
-                    </p>
-                  </div>
+                  <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Institucional</p>
+
                   <h3 class="mt-2 text-base font-semibold leading-snug text-gray-900">
                     <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
                       MPF-MG publica nota técnica (2º grau)
                     </a>
                   </h3>
+
                   <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-3">
                     Atualização institucional sobre procedimentos internos e orientações gerais.
                   </p>
+
                   <div class="mt-3 text-xs text-gray-500">MPF-MG de 2º Grau</div>
+                  <div class="mt-1 text-xs text-gray-500 inline-flex items-center gap-2">
+                    <span aria-hidden="true">🕒</span>
+                    <time data-role="datetime">15/12/2025 • 09:15</time>
+                  </div>
                 </div>
               </article>
 
               <article class="news-item group rounded-md border border-gray-200 bg-white overflow-hidden"
-                       data-origin="/portal/preac" data-category="comunicacao" data-date="2025-12-19">
+                       data-origin="/portal/preac" data-category="comunicacao"
+                       data-datetime="2025-12-19T08:02:00-03:00">
                 <div class="news-media">
                   <img
                     src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
@@ -888,21 +878,23 @@
                   />
                 </div>
                 <div class="p-5">
-                  <div class="flex items-start justify-between gap-4">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicação</p>
-                    <p class="text-xs text-gray-500 inline-flex items-center gap-2">
-                      <span aria-hidden="true">📅</span> 19/12/2025
-                    </p>
-                  </div>
+                  <p class="text-xs font-semibold uppercase tracking-wider text-[color:var(--brand)]">Comunicação</p>
+
                   <h3 class="mt-2 text-base font-semibold leading-snug text-gray-900">
                     <a href="#" class="hover:underline focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30 rounded">
                       PRE-AC orienta sobre prazos no recesso
                     </a>
                   </h3>
+
                   <p class="mt-2 text-sm text-gray-700 leading-relaxed line-clamp-3">
                     Informações úteis ao cidadão durante o período de plantão e recesso forense.
                   </p>
+
                   <div class="mt-3 text-xs text-gray-500">Procuradoria Regional Eleitoral no Acre</div>
+                  <div class="mt-1 text-xs text-gray-500 inline-flex items-center gap-2">
+                    <span aria-hidden="true">🕒</span>
+                    <time data-role="datetime">19/12/2025 • 08:02</time>
+                  </div>
                 </div>
               </article>
 
@@ -918,42 +910,16 @@
         </nav>
       </div>
 
-      <!-- ASIDE (desktop): botões UF/Órgão + busca + lista rolável sticky -->
-      <aside class="hidden lg:block lg:col-span-4">
-        <div class="lg:sticky lg:top-6">
+      <!-- ASIDE (desktop): filtro Unidade + busca + lista rolável sticky -->
+      <aside class="hidden lg:block lg:col-span-4 lg:sticky lg:top-6">
+        <div >
           <section class="rounded-md border border-gray-300 bg-white overflow-hidden">
             <header class="p-4 sm:p-6 border-b border-gray-200">
-              <h2 class="text-lg font-semibold text-gray-900">Filtro por origem</h2>
-              <p class="mt-1 text-sm text-gray-600">Escolha UF ou órgão publicador.</p>
+              <h2 class="text-lg font-semibold text-gray-900">Filtro por unidade</h2>
+              <p class="mt-1 text-sm text-gray-600">Escolha a unidade publicadora.</p>
             </header>
 
             <div class="p-4 sm:p-6 border-b border-gray-200 grid gap-4">
-              <!-- UF / Órgão (mesma largura) -->
-              <div>
-                <p class="text-xs font-semibold text-gray-700">Agrupar por</p>
-                <div class="mt-2 grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    class="groupby-btn rounded-md border border-gray-300 bg-gray-900 px-3 py-2 text-xs font-semibold text-white
-                           hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-                    data-groupby="uf"
-                    aria-pressed="true"
-                  >
-                    UF
-                  </button>
-
-                  <button
-                    type="button"
-                    class="groupby-btn rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-900
-                           hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-                    data-groupby="orgao"
-                    aria-pressed="false"
-                  >
-                    Órgão
-                  </button>
-                </div>
-              </div>
-
               <div>
                 <label for="asideSearch" class="text-xs font-semibold text-gray-700">Buscar na lista</label>
                 <input
@@ -968,20 +934,9 @@
 
             <!-- Lista rolável -->
             <div class="max-h-[calc(100vh-22rem)] overflow-y-auto p-3">
-              <ul id="asideList" class="grid gap-2" aria-label="Lista de filtros">
+              <ul id="asideList" class="grid gap-2" aria-label="Lista de unidades">
                 <!-- JS preenche -->
               </ul>
-            </div>
-
-            <div class="p-4 border-t border-gray-200 bg-white">
-              <button
-                type="button"
-                id="clearFiltersAside"
-                class="w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-900
-                       hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[color:var(--brand)]/30"
-              >
-                Limpar filtros
-              </button>
             </div>
           </section>
         </div>
@@ -991,6 +946,7 @@
 
   </div>
 </main>
+
 
 
 

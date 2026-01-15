@@ -10,7 +10,6 @@
       .trim();
   }
 
-  // ===== Serviços: Busca + filtros =====
   function initServicesPage() {
     const searchInput = $("#service-search");
     const levelSelect = $("#service-level");
@@ -24,16 +23,15 @@
     const chips = $$("[data-chip]");
     const categoryLinks = $$("[data-category-link]");
 
-    // estado
     const state = {
       q: "",
       level: "",
       scope: "",
-      category: "",
+      category: "", // vazio = todas
       featuredOnly: false,
     };
 
-    // marca links externos
+    // === externos ===
     items.forEach((li) => {
       const isExternal = li.dataset.external === "true";
       const link = li.querySelector("a");
@@ -42,7 +40,7 @@
       if (isExternal) {
         link.target = "_blank";
         link.rel = "noopener noreferrer";
-        // opcional: adiciona indicador visual ↗ no final do título
+
         const title = li.querySelector("h3");
         if (title && !title.querySelector(".ext-indicator")) {
           const span = document.createElement("span");
@@ -71,6 +69,22 @@
       });
     }
 
+    // === NOVO: link ativo no aside ===
+    function setActiveCategoryLink(categoryValue) {
+      const current = normalize(categoryValue); // "" = todas
+      categoryLinks.forEach((a) => {
+        const aCat = normalize(a.dataset.categoryLink);
+        const active = aCat === current;
+
+        // aria-current ajuda leitores de tela
+        if (active) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+
+        // opcional: estilo de ativo (não depende de CSS externo)
+        a.classList.toggle("bg-gray-100", active);
+      });
+    }
+
     function applyFilters({ scrollToCategory = false } = {}) {
       const q = normalize(state.q);
       const level = normalize(state.level);
@@ -87,13 +101,14 @@
         const featured = li.dataset.featured === "true";
 
         const matchQ =
-          !q ||
-          title.includes(q) ||
-          normalize(li.textContent).includes(q);
+          !q || title.includes(q) || normalize(li.textContent).includes(q);
 
         const matchLevel = !level || lvl === level;
         const matchScope = !scope || scp === scope;
+
+        // se category for "", passa em todas
         const matchCategory = !category || cat === category;
+
         const matchFeatured = !state.featuredOnly || featured;
 
         const show = matchQ && matchLevel && matchScope && matchCategory && matchFeatured;
@@ -104,13 +119,16 @@
 
       if (countEl) countEl.textContent = String(visibleCount);
 
+      // mantém o aside “sincronizado” com o estado atual
+      setActiveCategoryLink(state.category);
+
       if (scrollToCategory && category) {
         const anchor = document.getElementById(`cat-${category}`);
         if (anchor) anchor.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
 
-    // eventos
+    // eventos: busca e selects (se existirem)
     if (searchInput) {
       searchInput.addEventListener("input", (e) => {
         state.q = e.target.value || "";
@@ -132,12 +150,11 @@
       });
     }
 
-    // chips (ex.: data-chip="featured" / "denuncias" / etc)
+    // chips
     chips.forEach((btn) => {
       btn.addEventListener("click", () => {
         const chip = btn.dataset.chip;
 
-        // reset chip state
         state.featuredOnly = false;
         state.category = "";
 
@@ -145,7 +162,7 @@
           state.featuredOnly = true;
           setActiveChip("featured");
         } else {
-          state.category = chip; // chip = categoria
+          state.category = chip;
           setActiveChip(chip);
         }
 
@@ -153,14 +170,19 @@
       });
     });
 
-    // links do aside (scroll + filtra)
+    // === ALTERADO: links do aside agora suportam "todas" ===
     categoryLinks.forEach((a) => {
       a.addEventListener("click", (e) => {
         e.preventDefault();
-        const cat = a.dataset.categoryLink;
-        state.category = cat || "";
+
+        const raw = a.dataset.categoryLink || "";
+        const cat = normalize(raw);
+
+        // se vier vazio, é "todas"
+        state.category = cat; // "" => todas
         state.featuredOnly = false;
         clearChips();
+
         applyFilters({ scrollToCategory: true });
       });
     });
@@ -182,7 +204,7 @@
       });
     }
 
-    // inicializa contagem
+    // inicial
     applyFilters();
   }
 
