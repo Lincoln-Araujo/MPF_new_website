@@ -1,11 +1,12 @@
 /* mpf-noticias.js
-   ✅ UF + Órgão (SEM Região)
-   ✅ Lista completa de Órgãos (igual ao select do MPF)
+   ✅ Filtro por unidade (Órgão) apenas
    ✅ Lista do aside (sticky) + dropdown mobile
-   ✅ Busca por palavra-chave (título + resumo do card)
+   ✅ Busca por palavra-chave (título + resumo)
    ✅ Categoria
-   ✅ Ordenação por data (data-date="YYYY-MM-DD")
+   ✅ Ordenação por data/hora (data-datetime ISO) com fallback (data-date)
+   ✅ Filtragem NÃO automática: só aplica ao clicar "Filtrar"
    ✅ Toggle Cards/Lista (desktop) com localStorage
+   ✅ Default inicia em LISTA
 */
 
 (() => {
@@ -84,47 +85,14 @@
     ["presp", "/portal/presp"],
   ]);
 
+  const ORGAO_LABEL = new Map(ORGAOS_MPF_ATUAL.map((x) => [x.id, x.label]));
+
   function normalizeOriginId(raw) {
     const v = String(raw || "").trim();
     if (!v) return "";
     if (v.startsWith("/portal/")) return v;
     return ORIGIN_ALIASES.get(v) || v;
   }
-
-  // ====== UFs (pra renderizar botão/lista por UF) ======
-  // Se o Plone mandar data-uf="df", a filtragem por UF usa isso.
-  // Se NÃO mandar, a gente deriva a UF de data-origin="/portal/xx" quando fizer sentido.
-  const UF_ITEMS = [
-    { id: "ac", label: "Acre (AC)" },
-    { id: "al", label: "Alagoas (AL)" },
-    { id: "ap", label: "Amapá (AP)" },
-    { id: "am", label: "Amazonas (AM)" },
-    { id: "ba", label: "Bahia (BA)" },
-    { id: "ce", label: "Ceará (CE)" },
-    { id: "df", label: "Distrito Federal (DF)" },
-    { id: "es", label: "Espírito Santo (ES)" },
-    { id: "go", label: "Goiás (GO)" },
-    { id: "ma", label: "Maranhão (MA)" },
-    { id: "mt", label: "Mato Grosso (MT)" },
-    { id: "ms", label: "Mato Grosso do Sul (MS)" },
-    { id: "mg", label: "Minas Gerais (MG)" },
-    { id: "pa", label: "Pará (PA)" },
-    { id: "pb", label: "Paraíba (PB)" },
-    { id: "pr", label: "Paraná (PR)" },
-    { id: "pe", label: "Pernambuco (PE)" },
-    { id: "pi", label: "Piauí (PI)" },
-    { id: "rj", label: "Rio de Janeiro (RJ)" },
-    { id: "rn", label: "Rio Grande do Norte (RN)" },
-    { id: "rs", label: "Rio Grande do Sul (RS)" },
-    { id: "ro", label: "Rondônia (RO)" },
-    { id: "rr", label: "Roraima (RR)" },
-    { id: "sc", label: "Santa Catarina (SC)" },
-    { id: "sp", label: "São Paulo (SP)" },
-    { id: "se", label: "Sergipe (SE)" },
-    { id: "to", label: "Tocantins (TO)" },
-  ];
-  const UF_LABEL = new Map(UF_ITEMS.map((x) => [x.id, x.label]));
-  const ORGAO_LABEL = new Map(ORGAOS_MPF_ATUAL.map((x) => [x.id, x.label]));
 
   // ====== ELEMENTS ======
   const results = $("#news-results");
@@ -138,55 +106,30 @@
   const searchInput = $("#news-search");
   const catSelect = $("#news-category");
   const sortSelect = $("#news-sort");
+  const applyBtn = $("#applyFilters");
 
-  // View (Cards/Lista)
+  // View (Cards/Lista) - botões agora no header "Resultados"
   const viewBtns = $$(".news-view-btn");
-  function setView(view) {
-    // só faz sentido no desktop
-    if (!window.matchMedia("(min-width: 1024px)").matches) {
-      results.classList.remove("is-cards");
-      results.classList.add("is-list");
-      return;
-    }
 
-    results.classList.toggle("is-list", view === "list");
-    results.classList.toggle("is-cards", view === "cards");
-
-    viewBtns.forEach((b) => {
-      const active = b.dataset.view === view;
-      b.setAttribute("aria-pressed", active ? "true" : "false");
-      b.classList.toggle("bg-gray-900", active);
-      b.classList.toggle("text-white", active);
-      b.classList.toggle("bg-white", !active);
-      b.classList.toggle("text-gray-900", !active);
-    });
-
-    try {
-      localStorage.setItem("mpf_news_view", view);
-    } catch (e) {}
-  }
-
-  // Aside (UF/Órgão)
+  // Aside (Unidade)
   const asideSearch = $("#asideSearch");
   const asideList = $("#asideList");
-  const clearAside = $("#clearFiltersAside");
-  const clearDesktop = $("#clearFiltersDesktop");
-  const groupBtns = $$(".groupby-btn");
 
-  // Mobile filtros
-  const groupByMobile = $("#groupByMobile");
+  // Mobile unidade
   const itemMobile = $("#itemMobile");
-  const clearMobile = $("#clearFiltersMobile");
 
   // ====== STATE ======
+  // state = aplicado (só muda quando clica Filtrar)
   const state = {
-    groupBy: "uf", // "uf" | "orgao"
-    selected: "", // ufId OU orgaoId
+    selected: "",
     q: "",
     category: "",
     sort: "recentes",
-    view: "cards",
+    view: "list", // ✅ default lista
   };
+
+  // draft = o que o usuário está mexendo nos inputs
+  const draft = { ...state };
 
   // ====== HELPERS ======
   function normalizeText(s) {
@@ -196,34 +139,112 @@
       .replace(/\p{Diacritic}/gu, "");
   }
 
-  function buildGroupItems(groupBy) {
-    if (groupBy === "uf") return UF_ITEMS;
-    return ORGAOS_MPF_ATUAL;
+  function getSelectedLabel(originId) {
+    if (!originId) return "";
+    return ORGAO_LABEL.get(originId) || originId;
   }
 
-  function getSelectedLabel() {
-    if (!state.selected) return "";
-    if (state.groupBy === "uf") return UF_LABEL.get(state.selected) || state.selected;
-    return ORGAO_LABEL.get(state.selected) || state.selected;
+  function parseDateMs(el) {
+    // Prefer data-datetime ISO completo
+    const dt = el.dataset.datetime;
+    if (dt) {
+      const ms = new Date(dt).getTime();
+      if (!Number.isNaN(ms)) return ms;
+    }
+
+    // Fallback antigo: data-date="YYYY-MM-DD"
+    const d = el.dataset.date;
+    if (d) {
+      const ms = new Date(`${d}T00:00:00`).getTime();
+      if (!Number.isNaN(ms)) return ms;
+    }
+
+    return 0;
   }
 
-  function inferUfFromOrigin(originId) {
-    // tenta derivar uf quando o origin é "/portal/xx"
-    // não cobre todos (ex: /portal/preac, /portal/regiao1 etc.), por isso é só fallback.
-    const v = String(originId || "");
-    const m = v.match(/^\/portal\/([a-z]{2})$/i);
-    return m ? m[1].toLowerCase() : "";
+  function formatDateTime(isoOrDate) {
+    if (!isoOrDate) return "";
+
+    // aceita tanto ISO quanto "YYYY-MM-DD"
+    const d = new Date(isoOrDate.includes("T") ? isoOrDate : `${isoOrDate}T00:00:00`);
+    if (Number.isNaN(d.getTime())) return "";
+
+    const pad = (n) => String(n).padStart(2, "0");
+    const dd = pad(d.getDate());
+    const mm = pad(d.getMonth() + 1);
+    const yyyy = d.getFullYear();
+    const hh = pad(d.getHours());
+    const mi = pad(d.getMinutes());
+
+    // se veio só data (00:00), você pode preferir mostrar sem hora — mas aqui sempre mostra hora
+    return `${dd}/${mm}/${yyyy} • ${hh}:${mi}`;
+  }
+
+  // ====== VIEW ======
+  function setView(view) {
+    // no mobile, pode manter lista sempre (opcional)
+    if (!window.matchMedia("(min-width: 640px)").matches) {
+      results.classList.remove("is-cards");
+      results.classList.add("is-list");
+      return;
+    }
+
+    const v = view === "cards" ? "cards" : "list";
+
+    results.classList.toggle("is-list", v === "list");
+    results.classList.toggle("is-cards", v === "cards");
+
+    viewBtns.forEach((b) => {
+      const active = b.dataset.view === v;
+      b.setAttribute("aria-pressed", active ? "true" : "false");
+      b.classList.toggle("bg-gray-900", active);
+      b.classList.toggle("text-white", active);
+      b.classList.toggle("bg-white", !active);
+      b.classList.toggle("text-gray-900", !active);
+    });
+
+    try {
+      localStorage.setItem("mpf_news_view", v);
+    } catch (e) {}
+  }
+
+  // ====== HYDRATE TIME (preenche <time data-role="datetime"> ) ======
+  function hydrateTimes() {
+    items().forEach((el) => {
+      const t = el.querySelector('[data-role="datetime"]');
+      if (!t) return;
+
+      const iso = el.dataset.datetime;
+      const fallback = el.dataset.date;
+
+      const text = iso ? formatDateTime(iso) : formatDateTime(fallback);
+      if (text) t.textContent = text;
+    });
   }
 
   // ====== RENDER LISTS ======
+  function renderMobileOptions() {
+    if (!itemMobile) return;
+
+    itemMobile.innerHTML = [
+      `<option value="">Todas</option>`,
+      ...ORGAOS_MPF_ATUAL.map((x) => `<option value="${x.id}">${x.label}</option>`),
+    ].join("");
+  }
+
+  function syncMobile() {
+    if (itemMobile) itemMobile.value = draft.selected || "";
+  }
+
   function renderAsideList() {
     if (!asideList) return;
+
     const q = (asideSearch?.value || "").trim().toLowerCase();
-    const list = buildGroupItems(state.groupBy).filter((x) => !q || x.label.toLowerCase().includes(q));
+    const list = ORGAOS_MPF_ATUAL.filter((x) => !q || x.label.toLowerCase().includes(q));
 
     asideList.innerHTML = list
       .map((x) => {
-        const active = x.id === state.selected;
+        const active = x.id === draft.selected;
         return `
           <li>
             <button type="button"
@@ -240,44 +261,18 @@
 
     $$("#asideList [data-select]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        state.selected = btn.dataset.select || "";
-        applyAll();
+        draft.selected = btn.dataset.select || "";
         renderAsideList();
         syncMobile();
       });
     });
   }
 
-  function renderMobileOptions() {
-    if (!itemMobile) return;
-    const list = buildGroupItems(state.groupBy);
-    itemMobile.innerHTML = [
-      `<option value="">Todas</option>`,
-      ...list.map((x) => `<option value="${x.id}">${x.label}</option>`),
-    ].join("");
-  }
-
-  function syncMobile() {
-    if (groupByMobile) groupByMobile.value = state.groupBy;
-    if (itemMobile) itemMobile.value = state.selected || "";
-  }
-
   // ====== FILTER LOGIC ======
   function matchOrigin(el) {
     if (!state.selected) return true;
-
     const origin = normalizeOriginId(el.dataset.origin || "");
-    const ufFromDataset = String(el.dataset.uf || "").toLowerCase().trim();
-    const ufFromOrigin = inferUfFromOrigin(origin);
-
-    if (state.groupBy === "orgao") {
-      return origin === state.selected;
-    }
-
-    // groupBy === "uf"
-    const uf = ufFromDataset || ufFromOrigin;
-    if (!uf) return true; // se não veio info, não bloqueia
-    return uf === state.selected;
+    return origin === state.selected;
   }
 
   function matchCategory(el) {
@@ -289,13 +284,13 @@
     const q = normalizeText(state.q);
     if (!q) return true;
 
-    // tenta achar texto no elemento (título + primeiro parágrafo como resumo)
-    const title =
-      el.querySelector("h1,h2,h3,h4,a")?.textContent ||
-      "";
-    const summary =
-      el.querySelector("p")?.textContent ||
-      "";
+    // título
+    const title = el.querySelector("h1,h2,h3,h4")?.textContent || "";
+
+    // resumo (primeiro parágrafo descritivo)
+    // se o primeiro <p> for o chapéu em algum template futuro, você pode refinar,
+    // mas com seu HTML atual o resumo está no <p> com line-clamp.
+    const summary = el.querySelector("p.mt-2")?.textContent || el.querySelector("p")?.textContent || "";
 
     const hay = normalizeText(`${title} ${summary}`);
     return hay.includes(q);
@@ -313,11 +308,12 @@
     const visible = list.filter((el) => !el.hidden);
 
     visible.sort((a, b) => {
-      const da = new Date(a.dataset.date || "1970-01-01").getTime();
-      const db = new Date(b.dataset.date || "1970-01-01").getTime();
+      const da = parseDateMs(a);
+      const db = parseDateMs(b);
       return state.sort === "antigas" ? da - db : db - da;
     });
 
+    // reappend visíveis na ordem correta (mantém hidden fora)
     visible.forEach((el) => results.appendChild(el));
   }
 
@@ -331,7 +327,7 @@
     if (!statusEl) return;
 
     const parts = [];
-    if (state.selected) parts.push(`${state.groupBy.toUpperCase()}: ${getSelectedLabel()}`);
+    if (state.selected) parts.push(`Unidade: ${getSelectedLabel(state.selected)}`);
     if (state.category) parts.push(`Categoria: ${state.category}`);
     if (state.q) parts.push(`Busca: “${state.q}”`);
 
@@ -345,120 +341,75 @@
     updateStatus();
   }
 
-  // ====== GROUP BY ======
-  function setGroupBy(next) {
-    const gb = next === "orgao" ? "orgao" : "uf";
-    state.groupBy = gb;
-    state.selected = ""; // troca de modo zera seleção
-    if (asideSearch) asideSearch.value = "";
-
-    groupBtns.forEach((b) => {
-      const active = b.dataset.groupby === gb;
-      b.setAttribute("aria-pressed", active ? "true" : "false");
-      b.classList.toggle("bg-gray-900", active);
-      b.classList.toggle("text-white", active);
-      b.classList.toggle("bg-white", !active);
-      b.classList.toggle("text-gray-900", !active);
-    });
-
-    renderMobileOptions();
-    renderAsideList();
-    syncMobile();
-    applyAll();
-  }
-
-  function clearAll() {
-    state.selected = "";
-    state.q = "";
-    state.category = "";
-    state.sort = sortSelect?.value || "recentes";
-
-    if (searchInput) searchInput.value = "";
-    if (catSelect) catSelect.value = "";
-    if (asideSearch) asideSearch.value = "";
-    if (itemMobile) itemMobile.value = "";
-
-    applyAll();
-    renderAsideList();
-    syncMobile();
-  }
-
-  // ====== EVENTS ======
-  groupBtns.forEach((btn) =>
-    btn.addEventListener("click", () => setGroupBy(btn.dataset.groupby))
-  );
-
+  // ====== EVENTS (draft only) ======
   if (asideSearch) asideSearch.addEventListener("input", renderAsideList);
-
-  if (groupByMobile) groupByMobile.addEventListener("change", (e) => setGroupBy(e.target.value));
 
   if (itemMobile) {
     itemMobile.addEventListener("change", (e) => {
-      state.selected = e.target.value || "";
-      applyAll();
+      draft.selected = e.target.value || "";
       renderAsideList();
     });
   }
 
-  if (clearAside) clearAside.addEventListener("click", clearAll);
-  if (clearMobile) clearMobile.addEventListener("click", clearAll);
-  if (clearDesktop) clearDesktop.addEventListener("click", clearAll);
-
-  // Busca / categoria / ordenação
   if (searchInput) {
     searchInput.addEventListener("input", () => {
-      state.q = searchInput.value.trim();
-      applyAll();
+      draft.q = searchInput.value.trim();
     });
   }
 
   if (catSelect) {
     catSelect.addEventListener("change", () => {
-      state.category = catSelect.value || "";
-      applyAll();
+      draft.category = catSelect.value || "";
     });
   }
 
   if (sortSelect) {
     sortSelect.addEventListener("change", () => {
-      state.sort = sortSelect.value || "recentes";
+      draft.sort = sortSelect.value || "recentes";
+    });
+  }
+
+  // ✅ aplica quando clicar Filtrar
+  if (applyBtn) {
+    applyBtn.addEventListener("click", () => {
+      Object.assign(state, draft);
       applyAll();
     });
   }
 
-  // View toggle
+  // View toggle (imediato, não depende do Filtrar)
   viewBtns.forEach((b) => {
     b.addEventListener("click", () => {
-      const v = b.dataset.view || "cards";
+      const v = b.dataset.view || "list";
       state.view = v;
       setView(v);
     });
   });
 
   // ====== INIT ======
-  // count inicial (quantos existem, antes de filtrar)
+  // conta inicial
   if (countEl) countEl.textContent = String(items().length);
 
-  // view inicial (salva)
-  let saved = "cards";
+  // view inicial (default list)
+  let saved = "list";
   try {
-    saved = localStorage.getItem("mpf_news_view") || "cards";
+    saved = localStorage.getItem("mpf_news_view") || "list";
   } catch (e) {}
   state.view = saved;
-
   setView(state.view);
 
-  // se redimensionar: força lista no mobile
+  // mantém comportamento responsivo
   window.addEventListener("resize", () => setView(state.view));
 
-  // listas/inputs
+  // popula selects/listas
   renderMobileOptions();
-  renderAsideList();
   syncMobile();
+  renderAsideList();
 
-  // default group
-  setGroupBy(state.groupBy);
+  // preenche data/hora nos cards (se tiver data-datetime)
+  hydrateTimes();
 
-  // aplica filtros iniciais
+  // estado inicial: sem filtros aplicados
+  // (como draft começa igual state, não precisa aplicar nada)
   applyAll();
 })();
